@@ -1,0 +1,832 @@
+{
+  "profile_id": "pricing_saas",
+  "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+  "scoring_model": "rules-based (not ML)",
+  "weeks": [
+    {
+      "week_index": 1,
+      "week_label": "W1",
+      "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+      "summary": {
+        "total_accounts": 14,
+        "red_count": 4,
+        "amber_count": 2,
+        "green_count": 6,
+        "onboarding_count": 2,
+        "at_risk_mrr": 61600
+      },
+      "scored": [
+        {
+          "account": "Coastal Fiction Stays",
+          "health_score": 97,
+          "risk_tier": "Green",
+          "mrr": 14200
+        },
+        {
+          "account": "Mountain Mock Cabins",
+          "health_score": 8,
+          "risk_tier": "Red",
+          "mrr": 19800
+        },
+        {
+          "account": "City Demo Lofts",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 8700
+        },
+        {
+          "account": "Island Placeholder Rentals",
+          "health_score": 41,
+          "risk_tier": "Red",
+          "mrr": 15600
+        },
+        {
+          "account": "Lake Toy Houses",
+          "health_score": 96,
+          "risk_tier": "Green",
+          "mrr": 5200
+        },
+        {
+          "account": "Desert Sample Villas",
+          "health_score": 68,
+          "risk_tier": "Amber",
+          "mrr": 11300
+        },
+        {
+          "account": "Farmhouse Fiction Co",
+          "health_score": 21,
+          "risk_tier": "Red",
+          "mrr": 4100
+        },
+        {
+          "account": "Urban Sandbox Hosts",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 9900
+        },
+        {
+          "account": "Ski Demo Chalets",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 17400
+        },
+        {
+          "account": "Beach Placeholder Apt",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 6800
+        },
+        {
+          "account": "Countryside Mock Stays",
+          "health_score": 4,
+          "risk_tier": "Red",
+          "mrr": 22100
+        },
+        {
+          "account": "Harbour Sample Homes",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 7600
+        },
+        {
+          "account": "Riviera Onboard Villas",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 12400
+        },
+        {
+          "account": "Nordic Launch Cabins",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 9100
+        }
+      ]
+    },
+    {
+      "week_index": 2,
+      "week_label": "W2",
+      "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+      "summary": {
+        "total_accounts": 14,
+        "red_count": 4,
+        "amber_count": 2,
+        "green_count": 6,
+        "onboarding_count": 2,
+        "at_risk_mrr": 61600
+      },
+      "scored": [
+        {
+          "account": "Coastal Fiction Stays",
+          "health_score": 97,
+          "risk_tier": "Green",
+          "mrr": 14200
+        },
+        {
+          "account": "Mountain Mock Cabins",
+          "health_score": 8,
+          "risk_tier": "Red",
+          "mrr": 19800
+        },
+        {
+          "account": "City Demo Lofts",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 8700
+        },
+        {
+          "account": "Island Placeholder Rentals",
+          "health_score": 41,
+          "risk_tier": "Red",
+          "mrr": 15600
+        },
+        {
+          "account": "Lake Toy Houses",
+          "health_score": 96,
+          "risk_tier": "Green",
+          "mrr": 5200
+        },
+        {
+          "account": "Desert Sample Villas",
+          "health_score": 68,
+          "risk_tier": "Amber",
+          "mrr": 11300
+        },
+        {
+          "account": "Farmhouse Fiction Co",
+          "health_score": 21,
+          "risk_tier": "Red",
+          "mrr": 4100
+        },
+        {
+          "account": "Urban Sandbox Hosts",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 9900
+        },
+        {
+          "account": "Ski Demo Chalets",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 17400
+        },
+        {
+          "account": "Beach Placeholder Apt",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 6800
+        },
+        {
+          "account": "Countryside Mock Stays",
+          "health_score": 4,
+          "risk_tier": "Red",
+          "mrr": 22100
+        },
+        {
+          "account": "Harbour Sample Homes",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 7600
+        },
+        {
+          "account": "Riviera Onboard Villas",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 12400
+        },
+        {
+          "account": "Nordic Launch Cabins",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 9100
+        }
+      ]
+    },
+    {
+      "week_index": 3,
+      "week_label": "W3",
+      "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+      "summary": {
+        "total_accounts": 14,
+        "red_count": 4,
+        "amber_count": 2,
+        "green_count": 6,
+        "onboarding_count": 2,
+        "at_risk_mrr": 61600
+      },
+      "scored": [
+        {
+          "account": "Coastal Fiction Stays",
+          "health_score": 97,
+          "risk_tier": "Green",
+          "mrr": 14200
+        },
+        {
+          "account": "Mountain Mock Cabins",
+          "health_score": 8,
+          "risk_tier": "Red",
+          "mrr": 19800
+        },
+        {
+          "account": "City Demo Lofts",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 8700
+        },
+        {
+          "account": "Island Placeholder Rentals",
+          "health_score": 41,
+          "risk_tier": "Red",
+          "mrr": 15600
+        },
+        {
+          "account": "Lake Toy Houses",
+          "health_score": 96,
+          "risk_tier": "Green",
+          "mrr": 5200
+        },
+        {
+          "account": "Desert Sample Villas",
+          "health_score": 68,
+          "risk_tier": "Amber",
+          "mrr": 11300
+        },
+        {
+          "account": "Farmhouse Fiction Co",
+          "health_score": 21,
+          "risk_tier": "Red",
+          "mrr": 4100
+        },
+        {
+          "account": "Urban Sandbox Hosts",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 9900
+        },
+        {
+          "account": "Ski Demo Chalets",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 17400
+        },
+        {
+          "account": "Beach Placeholder Apt",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 6800
+        },
+        {
+          "account": "Countryside Mock Stays",
+          "health_score": 4,
+          "risk_tier": "Red",
+          "mrr": 22100
+        },
+        {
+          "account": "Harbour Sample Homes",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 7600
+        },
+        {
+          "account": "Riviera Onboard Villas",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 12400
+        },
+        {
+          "account": "Nordic Launch Cabins",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 9100
+        }
+      ]
+    },
+    {
+      "week_index": 4,
+      "week_label": "W4",
+      "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+      "summary": {
+        "total_accounts": 14,
+        "red_count": 4,
+        "amber_count": 2,
+        "green_count": 6,
+        "onboarding_count": 2,
+        "at_risk_mrr": 61600
+      },
+      "scored": [
+        {
+          "account": "Coastal Fiction Stays",
+          "health_score": 97,
+          "risk_tier": "Green",
+          "mrr": 14200
+        },
+        {
+          "account": "Mountain Mock Cabins",
+          "health_score": 22,
+          "risk_tier": "Red",
+          "mrr": 19800
+        },
+        {
+          "account": "City Demo Lofts",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 8700
+        },
+        {
+          "account": "Island Placeholder Rentals",
+          "health_score": 41,
+          "risk_tier": "Red",
+          "mrr": 15600
+        },
+        {
+          "account": "Lake Toy Houses",
+          "health_score": 96,
+          "risk_tier": "Green",
+          "mrr": 5200
+        },
+        {
+          "account": "Desert Sample Villas",
+          "health_score": 68,
+          "risk_tier": "Amber",
+          "mrr": 11300
+        },
+        {
+          "account": "Farmhouse Fiction Co",
+          "health_score": 21,
+          "risk_tier": "Red",
+          "mrr": 4100
+        },
+        {
+          "account": "Urban Sandbox Hosts",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 9900
+        },
+        {
+          "account": "Ski Demo Chalets",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 17400
+        },
+        {
+          "account": "Beach Placeholder Apt",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 6800
+        },
+        {
+          "account": "Countryside Mock Stays",
+          "health_score": 4,
+          "risk_tier": "Red",
+          "mrr": 22100
+        },
+        {
+          "account": "Harbour Sample Homes",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 7600
+        },
+        {
+          "account": "Riviera Onboard Villas",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 12400
+        },
+        {
+          "account": "Nordic Launch Cabins",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 9100
+        }
+      ]
+    },
+    {
+      "week_index": 5,
+      "week_label": "W5",
+      "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+      "summary": {
+        "total_accounts": 14,
+        "red_count": 4,
+        "amber_count": 2,
+        "green_count": 6,
+        "onboarding_count": 2,
+        "at_risk_mrr": 61600
+      },
+      "scored": [
+        {
+          "account": "Coastal Fiction Stays",
+          "health_score": 97,
+          "risk_tier": "Green",
+          "mrr": 14200
+        },
+        {
+          "account": "Mountain Mock Cabins",
+          "health_score": 20,
+          "risk_tier": "Red",
+          "mrr": 19800
+        },
+        {
+          "account": "City Demo Lofts",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 8700
+        },
+        {
+          "account": "Island Placeholder Rentals",
+          "health_score": 41,
+          "risk_tier": "Red",
+          "mrr": 15600
+        },
+        {
+          "account": "Lake Toy Houses",
+          "health_score": 96,
+          "risk_tier": "Green",
+          "mrr": 5200
+        },
+        {
+          "account": "Desert Sample Villas",
+          "health_score": 68,
+          "risk_tier": "Amber",
+          "mrr": 11300
+        },
+        {
+          "account": "Farmhouse Fiction Co",
+          "health_score": 21,
+          "risk_tier": "Red",
+          "mrr": 4100
+        },
+        {
+          "account": "Urban Sandbox Hosts",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 9900
+        },
+        {
+          "account": "Ski Demo Chalets",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 17400
+        },
+        {
+          "account": "Beach Placeholder Apt",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 6800
+        },
+        {
+          "account": "Countryside Mock Stays",
+          "health_score": 16,
+          "risk_tier": "Red",
+          "mrr": 22100
+        },
+        {
+          "account": "Harbour Sample Homes",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 7600
+        },
+        {
+          "account": "Riviera Onboard Villas",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 12400
+        },
+        {
+          "account": "Nordic Launch Cabins",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 9100
+        }
+      ]
+    },
+    {
+      "week_index": 6,
+      "week_label": "W6",
+      "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+      "summary": {
+        "total_accounts": 14,
+        "red_count": 4,
+        "amber_count": 2,
+        "green_count": 6,
+        "onboarding_count": 2,
+        "at_risk_mrr": 61600
+      },
+      "scored": [
+        {
+          "account": "Coastal Fiction Stays",
+          "health_score": 97,
+          "risk_tier": "Green",
+          "mrr": 14200
+        },
+        {
+          "account": "Mountain Mock Cabins",
+          "health_score": 11,
+          "risk_tier": "Red",
+          "mrr": 19800
+        },
+        {
+          "account": "City Demo Lofts",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 8700
+        },
+        {
+          "account": "Island Placeholder Rentals",
+          "health_score": 41,
+          "risk_tier": "Red",
+          "mrr": 15600
+        },
+        {
+          "account": "Lake Toy Houses",
+          "health_score": 96,
+          "risk_tier": "Green",
+          "mrr": 5200
+        },
+        {
+          "account": "Desert Sample Villas",
+          "health_score": 68,
+          "risk_tier": "Amber",
+          "mrr": 11300
+        },
+        {
+          "account": "Farmhouse Fiction Co",
+          "health_score": 21,
+          "risk_tier": "Red",
+          "mrr": 4100
+        },
+        {
+          "account": "Urban Sandbox Hosts",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 9900
+        },
+        {
+          "account": "Ski Demo Chalets",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 17400
+        },
+        {
+          "account": "Beach Placeholder Apt",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 6800
+        },
+        {
+          "account": "Countryside Mock Stays",
+          "health_score": 7,
+          "risk_tier": "Red",
+          "mrr": 22100
+        },
+        {
+          "account": "Harbour Sample Homes",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 7600
+        },
+        {
+          "account": "Riviera Onboard Villas",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 12400
+        },
+        {
+          "account": "Nordic Launch Cabins",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 9100
+        }
+      ]
+    },
+    {
+      "week_index": 7,
+      "week_label": "W7",
+      "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+      "summary": {
+        "total_accounts": 14,
+        "red_count": 4,
+        "amber_count": 1,
+        "green_count": 7,
+        "onboarding_count": 2,
+        "at_risk_mrr": 61600
+      },
+      "scored": [
+        {
+          "account": "Coastal Fiction Stays",
+          "health_score": 97,
+          "risk_tier": "Green",
+          "mrr": 14200
+        },
+        {
+          "account": "Mountain Mock Cabins",
+          "health_score": 10,
+          "risk_tier": "Red",
+          "mrr": 19800
+        },
+        {
+          "account": "City Demo Lofts",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 8700
+        },
+        {
+          "account": "Island Placeholder Rentals",
+          "health_score": 41,
+          "risk_tier": "Red",
+          "mrr": 15600
+        },
+        {
+          "account": "Lake Toy Houses",
+          "health_score": 96,
+          "risk_tier": "Green",
+          "mrr": 5200
+        },
+        {
+          "account": "Desert Sample Villas",
+          "health_score": 70,
+          "risk_tier": "Green",
+          "mrr": 11300
+        },
+        {
+          "account": "Farmhouse Fiction Co",
+          "health_score": 21,
+          "risk_tier": "Red",
+          "mrr": 4100
+        },
+        {
+          "account": "Urban Sandbox Hosts",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 9900
+        },
+        {
+          "account": "Ski Demo Chalets",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 17400
+        },
+        {
+          "account": "Beach Placeholder Apt",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 6800
+        },
+        {
+          "account": "Countryside Mock Stays",
+          "health_score": 6,
+          "risk_tier": "Red",
+          "mrr": 22100
+        },
+        {
+          "account": "Harbour Sample Homes",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 7600
+        },
+        {
+          "account": "Riviera Onboard Villas",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 12400
+        },
+        {
+          "account": "Nordic Launch Cabins",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 9100
+        }
+      ]
+    },
+    {
+      "week_index": 8,
+      "week_label": "W8",
+      "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+      "summary": {
+        "total_accounts": 14,
+        "red_count": 4,
+        "amber_count": 1,
+        "green_count": 7,
+        "onboarding_count": 2,
+        "at_risk_mrr": 61600
+      },
+      "scored": [
+        {
+          "account": "Coastal Fiction Stays",
+          "health_score": 97,
+          "risk_tier": "Green",
+          "mrr": 14200
+        },
+        {
+          "account": "Mountain Mock Cabins",
+          "health_score": 8,
+          "risk_tier": "Red",
+          "mrr": 19800
+        },
+        {
+          "account": "City Demo Lofts",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 8700
+        },
+        {
+          "account": "Island Placeholder Rentals",
+          "health_score": 41,
+          "risk_tier": "Red",
+          "mrr": 15600
+        },
+        {
+          "account": "Lake Toy Houses",
+          "health_score": 96,
+          "risk_tier": "Green",
+          "mrr": 5200
+        },
+        {
+          "account": "Desert Sample Villas",
+          "health_score": 77,
+          "risk_tier": "Green",
+          "mrr": 11300
+        },
+        {
+          "account": "Farmhouse Fiction Co",
+          "health_score": 21,
+          "risk_tier": "Red",
+          "mrr": 4100
+        },
+        {
+          "account": "Urban Sandbox Hosts",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 9900
+        },
+        {
+          "account": "Ski Demo Chalets",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 17400
+        },
+        {
+          "account": "Beach Placeholder Apt",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 6800
+        },
+        {
+          "account": "Countryside Mock Stays",
+          "health_score": 5,
+          "risk_tier": "Red",
+          "mrr": 22100
+        },
+        {
+          "account": "Harbour Sample Homes",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 7600
+        },
+        {
+          "account": "Riviera Onboard Villas",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 12400
+        },
+        {
+          "account": "Nordic Launch Cabins",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 9100
+        }
+      ]
+    }
+  ],
+  "week_over_week_latest": {
+    "from": "W7",
+    "to": "W8",
+    "red_delta": 0,
+    "at_risk_mrr_delta": 0
+  },
+  "interventions_simulated": [
+    {
+      "week": "W4",
+      "account": "Desert Sample Villas",
+      "owner": "Cara",
+      "action": "nurture: expand autopush coverage + review min/max guardrails",
+      "outcome": "SIMULATED: autopush +12pp by W7",
+      "label": "SIMULATED intervention outcome — not real"
+    },
+    {
+      "week": "W5",
+      "account": "Island Placeholder Rentals",
+      "owner": "Ben",
+      "action": "nurture: expand autopush coverage + review min/max guardrails",
+      "outcome": "SIMULATED: accept-rate +5; still Amber",
+      "label": "SIMULATED intervention outcome — not real"
+    },
+    {
+      "week": "W6",
+      "account": "Mountain Mock Cabins",
+      "owner": "Ben",
+      "action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "outcome": "SIMULATED: still Red; PMS unhealthy",
+      "label": "SIMULATED intervention outcome — not real"
+    }
+  ],
+  "note": "SIMULATED multi-week history for demo narrative only. Not production telemetry."
+}

@@ -1,0 +1,26 @@
+Customer Health Intelligence — DEMO-LITE package
+================================================
+
+This is the lightweight zip (<25 MB) for quick demos.
+
+INCLUDED
+- START-HERE.html / START-HERE.txt (double-click demo, file:// safe)
+- command-center/ with embedded data (Healthcare · Real estate · Pricing SaaS · base)
+- engine, profiles, tests, docs
+- docs/assets/hero-command-center.jpg (README hero) + docs/screenshots/ gallery
+
+OMITTED vs FULL package
+- screenshots/final/ (hi-res per-view captures)
+- screenshots/command-center/ (extra UI shots)
+- (demo video may also be omitted to stay under size)
+
+FUNCTIONALITY
+Identical Command Center and scoring engine. Open START-HERE.html — no server.
+
+TESTS
+npm test / npm run test:summary
+Visual/file:// tests need a Chrome/Chromium binary (portable detection).
+If none is found they SKIP with an explicit reason — that is expected on
+minimal machines. Unit/drift/engine/link tests still run.
+
+Version: 1.2.1 (bugfix on frozen 1.2.0)

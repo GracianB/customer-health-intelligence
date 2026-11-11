@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Real-estate agent/agency SaaS — FICTITIOUS SAMPLE — Customer Health Report (DEMO)</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:24px;color:#122;background:#f7f8fa}
+.banner{background:#7c2d12;color:#fff;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-weight:600}
+h1{font-size:1.4rem;margin:0 0 8px}
+.meta{color:#445;margin-bottom:20px}
+.cards{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.card{background:#fff;border:1px solid #dde;border-radius:8px;padding:12px 16px;min-width:140px}
+.card b{display:block;font-size:1.4rem}
+table{border-collapse:collapse;width:100%;background:#fff;margin:12px 0 24px}
+th,td{border:1px solid #dde;padding:8px;text-align:left;font-size:0.9rem}
+th{background:#eef2f7}
+.tier-Red{background:#fef2f2}.tier-Amber{background:#fffbeb}.tier-Green{background:#f0fdf4}
+.small{font-size:0.85rem;color:#556}
+</style>
+</head>
+<body>
+<div class="banner">DEMO / SAMPLE DATA — fictitious accounts. Rules-based scoring (not ML). Simulated MRR at risk is not real protected revenue. Slack delivery is NoOp (pending configuration).</div>
+<h1>Real-estate agent/agency SaaS — FICTITIOUS SAMPLE</h1>
+<p class="meta">FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.<br/>Generated 2026-11-09T14:19:40.186Z · Scoring: rules-based (not ML)</p>
+<div class="cards">
+  <div class="card">Accounts<b>13</b></div>
+  <div class="card">Red / Amber / Green<b>4 / 3 / 6</b></div>
+  <div class="card">Simulated MRR at risk (sample)<b>44700</b></div>
+  <div class="card">Green expansion MRR (sample)<b>48400</b></div>
+</div>
+<h2>Prioritised action queue (MRR × risk weight)</h2>
+<table><thead><tr><th>Priority</th><th>Account</th><th>Tier</th><th>MRR</th><th>Owner</th><th>Next action</th><th>SLA</th></tr></thead><tbody>
+<tr><td>50400</td><td>Lake Placeholder Homes</td><td>Red</td><td>16800</td><td>Mia</td><td>agency QBR: reactivate CRM logins + lead SLAs; rescue open mandates</td><td>24h</td></tr>
+<tr><td>44700</td><td>Valais Demo Mandates</td><td>Red</td><td>14900</td><td>Lea</td><td>agency QBR: reactivate CRM logins + lead SLAs; rescue open mandates</td><td>24h</td></tr>
+<tr><td>42000</td><td>Zurich Mock Brokers</td><td>Amber</td><td>21000</td><td>Mia</td><td>nurture: task cadences + listing publish checklist</td><td>72h</td></tr>
+<tr><td>26100</td><td>Fribourg Mock Homes</td><td>Red</td><td>8700</td><td>Mia</td><td>agency QBR: reactivate CRM logins + lead SLAs; rescue open mandates</td><td>24h</td></tr>
+<tr><td>20400</td><td>Lucerne Fiction Brokers</td><td>Amber</td><td>10200</td><td>Noah</td><td>nurture: task cadences + listing publish checklist</td><td>72h</td></tr>
+<tr><td>15600</td><td>Bern Toy Partners</td><td>Amber</td><td>7800</td><td>Lea</td><td>nurture: task cadences + listing publish checklist</td><td>72h</td></tr>
+<tr><td>12900</td><td>Ticino Fiction Group</td><td>Red</td><td>4300</td><td>Mia</td><td>agency QBR: reactivate CRM logins + lead SLAs; rescue open mandates</td><td>24h</td></tr>
+<tr><td>12500</td><td>Alpine Fiction Realty</td><td>Green</td><td>12500</td><td>Noah</td><td>expansion: more seats / multi-team / premium visibility modules</td><td>168h</td></tr>
+<tr><td>11200</td><td>Basel Sandbox Realty</td><td>Green</td><td>11200</td><td>Noah</td><td>expansion: more seats / multi-team / premium visibility modules</td><td>168h</td></tr>
+<tr><td>9400</td><td>Geneva Demo Estates</td><td>Green</td><td>9400</td><td>Noah</td><td>expansion: more seats / multi-team / premium visibility modules</td><td>168h</td></tr>
+</tbody></table>
+<h2>All accounts</h2>
+<table><thead><tr><th>Account</th><th>Score</th><th>Tier</th><th>MRR</th><th>CSM</th><th>Reason</th></tr></thead><tbody>
+<tr class="tier-Green"><td>Alpine Fiction Realty</td><td>95</td><td>Green</td><td>12500</td><td>Noah</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Lake Placeholder Homes</td><td>8</td><td>Red</td><td>16800</td><td>Mia</td><td>inactive &gt;30d; low listing activity; many open tickets; slow lead-response health; pipeline setup incomplete</td></tr>
+<tr class="tier-Green"><td>Geneva Demo Estates</td><td>82</td><td>Green</td><td>9400</td><td>Noah</td><td>healthy signals</td></tr>
+<tr class="tier-Amber"><td>Zurich Mock Brokers</td><td>56</td><td>Amber</td><td>21000</td><td>Mia</td><td>aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 48→10/20, onboarding done→10/10, adoption 44%→11/25)</td></tr>
+<tr class="tier-Green"><td>Lausanne Sample Agency</td><td>98</td><td>Green</td><td>5600</td><td>Lea</td><td>healthy signals</td></tr>
+<tr class="tier-Amber"><td>Bern Toy Partners</td><td>67</td><td>Amber</td><td>7800</td><td>Lea</td><td>aggregate risk: score 67 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 52%→13/25, tickets 2→14/20)</td></tr>
+<tr class="tier-Red"><td>Ticino Fiction Group</td><td>22</td><td>Red</td><td>4300</td><td>Mia</td><td>low listing activity; many open tickets; slow lead-response health; pipeline setup incomplete</td></tr>
+<tr class="tier-Green"><td>Basel Sandbox Realty</td><td>92</td><td>Green</td><td>11200</td><td>Noah</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Valais Demo Mandates</td><td>43</td><td>Red</td><td>14900</td><td>Lea</td><td>low listing activity</td></tr>
+<tr class="tier-Green"><td>Neuchâtel Placeholder Co</td><td>79</td><td>Green</td><td>3600</td><td>Noah</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Fribourg Mock Homes</td><td>5</td><td>Red</td><td>8700</td><td>Mia</td><td>inactive &gt;30d; low listing activity; many open tickets; slow lead-response health; pipeline setup incomplete</td></tr>
+<tr class="tier-Green"><td>Winterthur Sample Desk</td><td>90</td><td>Green</td><td>6100</td><td>Lea</td><td>healthy signals</td></tr>
+<tr class="tier-Amber"><td>Lucerne Fiction Brokers</td><td>66</td><td>Amber</td><td>10200</td><td>Noah</td><td>aggregate risk: score 66 below Amber threshold 70; several signals mid-range (NPS 50→10/20, onboarding done→10/10, adoption 55%→14/25, tickets 2→14/20)</td></tr>
+</tbody></table>
+<p class="small">Customer Health Intelligence v1.2.0 · Public MIT demo · Industry signals inspired by public product docs only.</p>
+</body></html>

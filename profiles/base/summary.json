@@ -1,0 +1,364 @@
+{
+  "report": "Weekly Customer Health Summary",
+  "profile_id": "base",
+  "profile_name": "Generic B2B SaaS — Customer Health (SAMPLE DATA)",
+  "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+  "scoring_model": "rules-based (not ML)",
+  "generated_at": "2026-11-09T14:18:02.196Z",
+  "total_accounts": 10,
+  "red_count": 4,
+  "amber_count": 1,
+  "green_count": 5,
+  "red_accounts": [
+    "Nordic Pricing Co",
+    "MedTech Hub",
+    "EduLearn Cloud",
+    "TravelSync EMEA"
+  ],
+  "amber_accounts": [
+    "Hotel Ops Pro"
+  ],
+  "green_accounts": [
+    "Acme Retail EU",
+    "Iberia SaaS Labs",
+    "Commerce Pulse",
+    "FinServe Analytics",
+    "GreenSupply Chain"
+  ],
+  "at_risk_mrr": 38600,
+  "revenue_lens": {
+    "by_tier": {
+      "Red": {
+        "accounts": 4,
+        "mrr": 38600
+      },
+      "Amber": {
+        "accounts": 1,
+        "mrr": 7400
+      },
+      "Green": {
+        "accounts": 5,
+        "mrr": 28800
+      }
+    },
+    "simulated_mrr_at_risk_sample_data": 38600,
+    "expansion_pipeline_green": {
+      "accounts": 5,
+      "mrr": 28800,
+      "note": "Green accounts flagged for upsell / referral conversations (rules-based, SAMPLE DATA)"
+    }
+  },
+  "action_queue": [
+    {
+      "account": "TravelSync EMEA",
+      "risk_tier": "Red",
+      "mrr": 15000,
+      "health_score": 43,
+      "owner": "Ana",
+      "next_action": "schedule QBR / re-onboarding",
+      "sla_hours": 24,
+      "priority_score": 45000,
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 8,
+          "max": 25,
+          "utilization": 32
+        },
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        },
+        {
+          "signal": "adoption",
+          "pts": 10,
+          "max": 25,
+          "utilization": 40
+        }
+      ],
+      "reason": "aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 3→7/20, login 22d→8/25, NPS 40→8/20, adoption 40%→10/25)"
+    },
+    {
+      "account": "MedTech Hub",
+      "risk_tier": "Red",
+      "mrr": 12500,
+      "health_score": 6,
+      "owner": "Luis",
+      "next_action": "schedule QBR / re-onboarding",
+      "sla_hours": 24,
+      "priority_score": 37500,
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 0,
+          "max": 25,
+          "utilization": 0
+        },
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        }
+      ],
+      "reason": "inactive >30d; low adoption; many open tickets; low NPS; onboarding incomplete"
+    },
+    {
+      "account": "Nordic Pricing Co",
+      "risk_tier": "Red",
+      "mrr": 8900,
+      "health_score": 40,
+      "owner": "Luis",
+      "next_action": "schedule QBR / re-onboarding",
+      "sla_hours": 24,
+      "priority_score": 26700,
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 6,
+          "max": 20,
+          "utilization": 30
+        },
+        {
+          "signal": "login",
+          "pts": 8,
+          "max": 25,
+          "utilization": 32
+        },
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        }
+      ],
+      "reason": "low adoption; low NPS"
+    },
+    {
+      "account": "Hotel Ops Pro",
+      "risk_tier": "Amber",
+      "mrr": 7400,
+      "health_score": 63,
+      "owner": "Marta",
+      "next_action": "nurture: check-in + feature adoption plan",
+      "sla_hours": 72,
+      "priority_score": 14800,
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 9,
+          "max": 20,
+          "utilization": 45
+        },
+        {
+          "signal": "adoption",
+          "pts": 12,
+          "max": 25,
+          "utilization": 48
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "reason": "aggregate risk: score 63 below Amber threshold 70; several signals mid-range (NPS 45→9/20, onboarding done→10/10, adoption 48%→12/25, tickets 2→14/20)"
+    },
+    {
+      "account": "FinServe Analytics",
+      "risk_tier": "Green",
+      "mrr": 9800,
+      "health_score": 96,
+      "owner": "Ana",
+      "next_action": "expansion candidate: upsell / referral ask",
+      "sla_hours": 168,
+      "priority_score": 9800,
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 18,
+          "max": 20,
+          "utilization": 90
+        },
+        {
+          "signal": "adoption",
+          "pts": 23,
+          "max": 25,
+          "utilization": 92
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "reason": "healthy signals"
+    },
+    {
+      "account": "EduLearn Cloud",
+      "risk_tier": "Red",
+      "mrr": 2200,
+      "health_score": 20,
+      "owner": "Luis",
+      "next_action": "schedule QBR / re-onboarding",
+      "sla_hours": 24,
+      "priority_score": 6600,
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        },
+        {
+          "signal": "adoption",
+          "pts": 6,
+          "max": 25,
+          "utilization": 24
+        }
+      ],
+      "reason": "low adoption; many open tickets; low NPS; onboarding incomplete"
+    },
+    {
+      "account": "GreenSupply Chain",
+      "risk_tier": "Green",
+      "mrr": 6100,
+      "health_score": 75,
+      "owner": "Marta",
+      "next_action": "expansion candidate: upsell / referral ask",
+      "sla_hours": 168,
+      "priority_score": 6100,
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 14,
+          "max": 25,
+          "utilization": 56
+        },
+        {
+          "signal": "nps",
+          "pts": 12,
+          "max": 20,
+          "utilization": 60
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "reason": "healthy signals"
+    },
+    {
+      "account": "Commerce Pulse",
+      "risk_tier": "Green",
+      "mrr": 5600,
+      "health_score": 91,
+      "owner": "Marta",
+      "next_action": "expansion candidate: upsell / referral ask",
+      "sla_hours": 168,
+      "priority_score": 5600,
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 20,
+          "max": 25,
+          "utilization": 80
+        },
+        {
+          "signal": "nps",
+          "pts": 16,
+          "max": 20,
+          "utilization": 80
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "reason": "healthy signals"
+    },
+    {
+      "account": "Acme Retail EU",
+      "risk_tier": "Green",
+      "mrr": 4200,
+      "health_score": 83,
+      "owner": "Ana",
+      "next_action": "expansion candidate: upsell / referral ask",
+      "sla_hours": 168,
+      "priority_score": 4200,
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        },
+        {
+          "signal": "nps",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        },
+        {
+          "signal": "adoption",
+          "pts": 20,
+          "max": 25,
+          "utilization": 80
+        }
+      ],
+      "reason": "healthy signals"
+    },
+    {
+      "account": "Iberia SaaS Labs",
+      "risk_tier": "Green",
+      "mrr": 3100,
+      "health_score": 84,
+      "owner": "Ana",
+      "next_action": "expansion candidate: upsell / referral ask",
+      "sla_hours": 168,
+      "priority_score": 3100,
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 16,
+          "max": 25,
+          "utilization": 64
+        },
+        {
+          "signal": "nps",
+          "pts": 13,
+          "max": 20,
+          "utilization": 65
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "reason": "healthy signals"
+    }
+  ],
+  "notes": "SAMPLE DATA only — rules-based demo (not ML). Simulated MRR at risk; Slack NoOp pending configuration."
+}

@@ -1,0 +1,125 @@
+{
+  "profile_id": "base",
+  "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+  "baseline": {
+    "red": 4,
+    "amber": 1,
+    "green": 5,
+    "at_risk_mrr": 38600
+  },
+  "sweeps": [
+    {
+      "change": "weight.login*0.8",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    },
+    {
+      "change": "weight.login*1.2",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    },
+    {
+      "change": "weight.adoption*0.8",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    },
+    {
+      "change": "weight.adoption*1.2",
+      "red": 3,
+      "amber": 2,
+      "green": 5,
+      "at_risk_mrr": 23600,
+      "red_delta": -1
+    },
+    {
+      "change": "weight.tickets*0.8",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    },
+    {
+      "change": "weight.tickets*1.2",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    },
+    {
+      "change": "weight.nps*0.8",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    },
+    {
+      "change": "weight.nps*1.2",
+      "red": 3,
+      "amber": 2,
+      "green": 5,
+      "at_risk_mrr": 23600,
+      "red_delta": -1
+    },
+    {
+      "change": "weight.onboarding*0.8",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    },
+    {
+      "change": "weight.onboarding*1.2",
+      "red": 3,
+      "amber": 2,
+      "green": 5,
+      "at_risk_mrr": 23600,
+      "red_delta": -1
+    },
+    {
+      "change": "thresholds red<40 amber<70",
+      "red": 2,
+      "amber": 3,
+      "green": 5,
+      "at_risk_mrr": 14700,
+      "red_delta": -2
+    },
+    {
+      "change": "thresholds red<50 amber<70",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    },
+    {
+      "change": "thresholds red<45 amber<65",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    },
+    {
+      "change": "thresholds red<45 amber<75",
+      "red": 4,
+      "amber": 1,
+      "green": 5,
+      "at_risk_mrr": 38600,
+      "red_delta": 0
+    }
+  ],
+  "note": "Rules-based sensitivity only. Not calibrated on real churn. SAMPLE/FICTITIOUS data."
+}

@@ -1,0 +1,2139 @@
+{
+  "config": {
+    "profile_id": "pricing_saas",
+    "profile_name": "Dynamic pricing for short-term rentals — FICTITIOUS SAMPLE",
+    "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+    "subtitle": "Customer Intelligence, Revenue Protection & Growth Automation",
+    "industry": "str_dynamic_pricing",
+    "inspired_by_public_product": {
+      "archetype": "Dynamic pricing SaaS for short-term rentals (generic sector archetype)",
+      "note": "Signals reflect common capabilities of dynamic pricing tools (listing sync, PMS integrations, price push, customizations). No company-specific data or inside knowledge."
+    },
+    "weights": {
+      "login": 25,
+      "adoption": 25,
+      "tickets": 20,
+      "nps": 20,
+      "onboarding": 10
+    },
+    "thresholds": {
+      "red": 45,
+      "amber": 70
+    },
+    "signal_glossary": {
+      "days_since_dashboard_login": "Days since last pricing dashboard login.",
+      "listings_with_autopush_pct": "% of listings with auto price push / sync enabled (public: sync + push to channels).",
+      "open_tickets": "Open vendor support tickets (often PMS sync issues).",
+      "recommendation_accept_pct": "0–100 proxy for how often pricing recommendations/customizations are accepted/active.",
+      "pms_integration_healthy": "Whether PMS/channel connection is healthy (public: 160+ PMS integrations)."
+    },
+    "metric_groups": {
+      "product": [
+        "days_since_dashboard_login",
+        "listings_with_autopush_pct",
+        "recommendation_accept_pct",
+        "pms_integration_healthy",
+        "properties_connected",
+        "pricing_recs_applied_7d",
+        "feature_adoption_score",
+        "support_friction_flags",
+        "listings"
+      ],
+      "commercial": [
+        "mrr",
+        "days_to_renewal",
+        "risk_tier",
+        "health_score",
+        "segment",
+        "owner"
+      ]
+    },
+    "product_value_chain": [
+      "adoption",
+      "value",
+      "retention"
+    ],
+    "metric_glossary": {
+      "days_since_dashboard_login": "Days since last pricing dashboard login.",
+      "listings_with_autopush_pct": "Product / Adoption: % listings with auto price push enabled (fictitious).",
+      "open_tickets": "Open vendor support tickets (often PMS sync issues).",
+      "recommendation_accept_pct": "Product / Value: how often pricing recommendations stay active (fictitious proxy).",
+      "pms_integration_healthy": "Whether PMS/channel connection is healthy (public: 160+ PMS integrations).",
+      "health_score": "Rules-based host/PM health from dashboard login, autopush coverage, tickets, recommendation accept, PMS health.",
+      "risk_tier": "Red <45 · Amber <70 · Green ≥70 · Onboarding if tenure <21d.",
+      "support_friction_flags": "Product: count of friction signals (tickets/sync issues) — fictitious.",
+      "at_risk_mrr": "Commercial: Red MRR only (simulated).",
+      "expansion_mrr": "Commercial: Green MRR treated as expansion pipeline (simulated)."
+    },
+    "scoring_explanation": {
+      "model": "rules-based (not ML)",
+      "weights": {
+        "login": 25,
+        "adoption": 25,
+        "tickets": 20,
+        "nps": 20,
+        "onboarding": 10
+      },
+      "thresholds": {
+        "red": 45,
+        "amber": 70
+      },
+      "onboarding_grace_days": 21,
+      "at_risk_definition": "Red MRR only",
+      "limitations": [
+        "Not calibrated on real churn",
+        "SAMPLE/FICTITIOUS demo data",
+        "Slack remains NoOp (pending configuration)",
+        "No live CRM credentials in this package"
+      ]
+    },
+    "demo_as_of": "2026-11-10"
+  },
+  "summary": {
+    "report": "Customer Health Summary",
+    "profile_id": "pricing_saas",
+    "profile_name": "Dynamic pricing for short-term rentals — FICTITIOUS SAMPLE",
+    "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+    "scoring_model": "rules-based (not ML)",
+    "generated_at": "2026-11-11T01:19:23.314Z",
+    "total_accounts": 14,
+    "red_count": 4,
+    "amber_count": 2,
+    "green_count": 6,
+    "onboarding_count": 2,
+    "healthy_count": 6,
+    "at_risk_count": 6,
+    "red_accounts": [
+      "Mountain Mock Cabins",
+      "Island Placeholder Rentals",
+      "Farmhouse Fiction Co",
+      "Countryside Mock Stays"
+    ],
+    "amber_accounts": [
+      "Desert Sample Villas",
+      "Ski Demo Chalets"
+    ],
+    "green_accounts": [
+      "Coastal Fiction Stays",
+      "City Demo Lofts",
+      "Lake Toy Houses",
+      "Urban Sandbox Hosts",
+      "Beach Placeholder Apt",
+      "Harbour Sample Homes"
+    ],
+    "at_risk_mrr": 61600,
+    "revenue_lens": {
+      "by_tier": {
+        "Red": {
+          "accounts": 4,
+          "mrr": 61600
+        },
+        "Amber": {
+          "accounts": 2,
+          "mrr": 28700
+        },
+        "Green": {
+          "accounts": 6,
+          "mrr": 52400
+        },
+        "Onboarding": {
+          "accounts": 2,
+          "mrr": 21500
+        }
+      },
+      "simulated_mrr_at_risk_sample_data": 61600,
+      "expansion_pipeline_green": {
+        "accounts": 6,
+        "mrr": 52400,
+        "note": "Green accounts flagged for upsell / referral (rules-based, SAMPLE/FICTITIOUS data)"
+      },
+      "upcoming_renewals": {
+        "window_days": 45,
+        "accounts": 6,
+        "mrr": 90300
+      }
+    },
+    "action_queue": [
+      {
+        "account": "Countryside Mock Stays",
+        "risk_tier": "Red",
+        "mrr": 22100,
+        "health_score": 4,
+        "owner": "Ben",
+        "next_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 265200,
+        "top_drivers": [
+          {
+            "signal": "login",
+            "pts": 0,
+            "max": 25,
+            "utilization": 0
+          },
+          {
+            "signal": "tickets",
+            "pts": 0,
+            "max": 20,
+            "utilization": 0
+          },
+          {
+            "signal": "onboarding",
+            "pts": 0,
+            "max": 10,
+            "utilization": 0
+          }
+        ],
+        "reason": "inactive >30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+        "days_to_renewal": 9,
+        "segment": "pms_partner_portfolio"
+      },
+      {
+        "account": "Mountain Mock Cabins",
+        "risk_tier": "Red",
+        "mrr": 19800,
+        "health_score": 8,
+        "owner": "Ben",
+        "next_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 178200,
+        "top_drivers": [
+          {
+            "signal": "login",
+            "pts": 0,
+            "max": 25,
+            "utilization": 0
+          },
+          {
+            "signal": "tickets",
+            "pts": 0,
+            "max": 20,
+            "utilization": 0
+          },
+          {
+            "signal": "onboarding",
+            "pts": 0,
+            "max": 10,
+            "utilization": 0
+          }
+        ],
+        "reason": "inactive >30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+        "days_to_renewal": 18,
+        "segment": "pms_partner_portfolio"
+      },
+      {
+        "account": "Ski Demo Chalets",
+        "risk_tier": "Amber",
+        "mrr": 17400,
+        "health_score": 56,
+        "owner": "Cara",
+        "next_action": "nurture: expand autopush coverage + review min/max guardrails",
+        "due_date": "2026-11-13",
+        "sla_hours": 72,
+        "priority_score": 104400,
+        "top_drivers": [
+          {
+            "signal": "tickets",
+            "pts": 7,
+            "max": 20,
+            "utilization": 35
+          },
+          {
+            "signal": "nps",
+            "pts": 9,
+            "max": 20,
+            "utilization": 45
+          },
+          {
+            "signal": "adoption",
+            "pts": 12,
+            "max": 25,
+            "utilization": 48
+          }
+        ],
+        "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 44→9/20, onboarding done→10/10, adoption 48%→12/25)",
+        "days_to_renewal": 15,
+        "segment": "seasonal_portfolio"
+      },
+      {
+        "account": "Island Placeholder Rentals",
+        "risk_tier": "Red",
+        "mrr": 15600,
+        "health_score": 41,
+        "owner": "Ben",
+        "next_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 93600,
+        "top_drivers": [
+          {
+            "signal": "login",
+            "pts": 8,
+            "max": 25,
+            "utilization": 32
+          },
+          {
+            "signal": "tickets",
+            "pts": 7,
+            "max": 20,
+            "utilization": 35
+          },
+          {
+            "signal": "nps",
+            "pts": 7,
+            "max": 20,
+            "utilization": 35
+          }
+        ],
+        "reason": "low autopush/sync coverage; low recommendation acceptance",
+        "days_to_renewal": 28,
+        "segment": "multi_property_host"
+      },
+      {
+        "account": "Farmhouse Fiction Co",
+        "risk_tier": "Red",
+        "mrr": 4100,
+        "health_score": 21,
+        "owner": "Ben",
+        "next_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 24600,
+        "top_drivers": [
+          {
+            "signal": "tickets",
+            "pts": 0,
+            "max": 20,
+            "utilization": 0
+          },
+          {
+            "signal": "onboarding",
+            "pts": 0,
+            "max": 10,
+            "utilization": 0
+          },
+          {
+            "signal": "adoption",
+            "pts": 7,
+            "max": 25,
+            "utilization": 28
+          }
+        ],
+        "reason": "low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+        "days_to_renewal": 22,
+        "segment": "boutique_host"
+      },
+      {
+        "account": "Desert Sample Villas",
+        "risk_tier": "Amber",
+        "mrr": 11300,
+        "health_score": 68,
+        "owner": "Cara",
+        "next_action": "nurture: expand autopush coverage + review min/max guardrails",
+        "due_date": "2026-11-13",
+        "sla_hours": 72,
+        "priority_score": 22600,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 14,
+            "max": 25,
+            "utilization": 56
+          },
+          {
+            "signal": "nps",
+            "pts": 12,
+            "max": 20,
+            "utilization": 60
+          },
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          }
+        ],
+        "reason": "aggregate risk: score 68 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 55%→14/25, tickets 2→14/20)",
+        "days_to_renewal": 40,
+        "segment": "multi_property_host"
+      },
+      {
+        "account": "Coastal Fiction Stays",
+        "risk_tier": "Green",
+        "mrr": 14200,
+        "health_score": 97,
+        "owner": "Ava",
+        "next_action": "expansion: more listings / multi-PMS / advanced customizations",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 14200,
+        "top_drivers": [
+          {
+            "signal": "nps",
+            "pts": 18,
+            "max": 20,
+            "utilization": 90
+          },
+          {
+            "signal": "adoption",
+            "pts": 24,
+            "max": 25,
+            "utilization": 96
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 75,
+        "segment": "multi_property_host"
+      },
+      {
+        "account": "Urban Sandbox Hosts",
+        "risk_tier": "Green",
+        "mrr": 9900,
+        "health_score": 92,
+        "owner": "Ava",
+        "next_action": "expansion: more listings / multi-PMS / advanced customizations",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 9900,
+        "top_drivers": [
+          {
+            "signal": "nps",
+            "pts": 16,
+            "max": 20,
+            "utilization": 80
+          },
+          {
+            "signal": "adoption",
+            "pts": 21,
+            "max": 25,
+            "utilization": 84
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 88,
+        "segment": "urban_host"
+      },
+      {
+        "account": "City Demo Lofts",
+        "risk_tier": "Green",
+        "mrr": 8700,
+        "health_score": 82,
+        "owner": "Ava",
+        "next_action": "expansion: more listings / multi-PMS / advanced customizations",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 8700,
+        "top_drivers": [
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          },
+          {
+            "signal": "adoption",
+            "pts": 18,
+            "max": 25,
+            "utilization": 72
+          },
+          {
+            "signal": "nps",
+            "pts": 15,
+            "max": 20,
+            "utilization": 75
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 55,
+        "segment": "urban_host"
+      },
+      {
+        "account": "Harbour Sample Homes",
+        "risk_tier": "Green",
+        "mrr": 7600,
+        "health_score": 94,
+        "owner": "Cara",
+        "next_action": "expansion: more listings / multi-PMS / advanced customizations",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 7600,
+        "top_drivers": [
+          {
+            "signal": "nps",
+            "pts": 17,
+            "max": 20,
+            "utilization": 85
+          },
+          {
+            "signal": "adoption",
+            "pts": 22,
+            "max": 25,
+            "utilization": 88
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 95,
+        "segment": "boutique_host"
+      },
+      {
+        "account": "Beach Placeholder Apt",
+        "risk_tier": "Green",
+        "mrr": 6800,
+        "health_score": 82,
+        "owner": "Ava",
+        "next_action": "expansion: more listings / multi-PMS / advanced customizations",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 6800,
+        "top_drivers": [
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          },
+          {
+            "signal": "nps",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          },
+          {
+            "signal": "adoption",
+            "pts": 19,
+            "max": 25,
+            "utilization": 76
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 60,
+        "segment": "boutique_host"
+      },
+      {
+        "account": "Lake Toy Houses",
+        "risk_tier": "Green",
+        "mrr": 5200,
+        "health_score": 96,
+        "owner": "Cara",
+        "next_action": "expansion: more listings / multi-PMS / advanced customizations",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 5200,
+        "top_drivers": [
+          {
+            "signal": "nps",
+            "pts": 18,
+            "max": 20,
+            "utilization": 90
+          },
+          {
+            "signal": "adoption",
+            "pts": 23,
+            "max": 25,
+            "utilization": 92
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 110,
+        "segment": "boutique_host"
+      }
+    ],
+    "portfolio_by_csm": [
+      {
+        "owner": "Ava",
+        "accounts": 5,
+        "red": 0,
+        "amber": 0,
+        "green": 4,
+        "onboarding": 1,
+        "mrr": 52000,
+        "mrr_at_risk": 0
+      },
+      {
+        "owner": "Ben",
+        "accounts": 4,
+        "red": 4,
+        "amber": 0,
+        "green": 0,
+        "onboarding": 0,
+        "mrr": 61600,
+        "mrr_at_risk": 61600
+      },
+      {
+        "owner": "Cara",
+        "accounts": 5,
+        "red": 0,
+        "amber": 2,
+        "green": 2,
+        "onboarding": 1,
+        "mrr": 50600,
+        "mrr_at_risk": 0
+      }
+    ],
+    "notes": "FICTITIOUS SAMPLE — Dynamic pricing SaaS (STR). Rules-based (not ML). Simulated MRR at risk. Slack NoOp pending configuration.",
+    "demo_as_of": "2026-11-10"
+  },
+  "accounts": [
+    {
+      "account": "Coastal Fiction Stays",
+      "mrr": 14200,
+      "days_since_dashboard_login": 1,
+      "listings_with_autopush_pct": 94,
+      "open_tickets": 0,
+      "recommendation_accept_pct": 89,
+      "pms_integration_healthy": true,
+      "csm": "Ava",
+      "listings": 48,
+      "tenure_days": 520,
+      "days_to_renewal": 75,
+      "segment": "multi_property_host",
+      "client_type": "professional_host",
+      "properties_connected": 48,
+      "pricing_recs_applied_7d": 41,
+      "feature_adoption_score": 91,
+      "support_friction_flags": 0,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 97,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: more listings / multi-PMS / advanced customizations",
+      "recommended_action": "expansion: more listings / multi-PMS / advanced customizations",
+      "owner": "Ava",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 18,
+          "max": 20,
+          "utilization": 90
+        },
+        {
+          "signal": "adoption",
+          "pts": 24,
+          "max": 25,
+          "utilization": 96
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Mountain Mock Cabins",
+      "mrr": 19800,
+      "days_since_dashboard_login": 35,
+      "listings_with_autopush_pct": 14,
+      "open_tickets": 8,
+      "recommendation_accept_pct": 20,
+      "pms_integration_healthy": false,
+      "csm": "Ben",
+      "listings": 62,
+      "tenure_days": 310,
+      "days_to_renewal": 18,
+      "segment": "pms_partner_portfolio",
+      "client_type": "property_manager",
+      "properties_connected": 40,
+      "pricing_recs_applied_7d": 3,
+      "feature_adoption_score": 22,
+      "support_friction_flags": 5,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 8,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "inactive >30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+      "playbook": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "recommended_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "owner": "Ben",
+      "due_date": "2026-11-11",
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 0,
+          "max": 25,
+          "utilization": 0
+        },
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "City Demo Lofts",
+      "mrr": 8700,
+      "days_since_dashboard_login": 4,
+      "listings_with_autopush_pct": 71,
+      "open_tickets": 1,
+      "recommendation_accept_pct": 74,
+      "pms_integration_healthy": true,
+      "csm": "Ava",
+      "listings": 22,
+      "tenure_days": 240,
+      "days_to_renewal": 55,
+      "segment": "urban_host",
+      "client_type": "professional_host",
+      "properties_connected": 22,
+      "pricing_recs_applied_7d": 15,
+      "feature_adoption_score": 78,
+      "support_friction_flags": 0,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 82,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: more listings / multi-PMS / advanced customizations",
+      "recommended_action": "expansion: more listings / multi-PMS / advanced customizations",
+      "owner": "Ava",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        },
+        {
+          "signal": "adoption",
+          "pts": 18,
+          "max": 25,
+          "utilization": 72
+        },
+        {
+          "signal": "nps",
+          "pts": 15,
+          "max": 20,
+          "utilization": 75
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Island Placeholder Rentals",
+      "mrr": 15600,
+      "days_since_dashboard_login": 15,
+      "listings_with_autopush_pct": 37,
+      "open_tickets": 4,
+      "recommendation_accept_pct": 36,
+      "pms_integration_healthy": true,
+      "csm": "Ben",
+      "listings": 35,
+      "tenure_days": 190,
+      "days_to_renewal": 28,
+      "segment": "multi_property_host",
+      "client_type": "professional_host",
+      "properties_connected": 35,
+      "pricing_recs_applied_7d": 6,
+      "feature_adoption_score": 41,
+      "support_friction_flags": 2,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 41,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "low autopush/sync coverage; low recommendation acceptance",
+      "playbook": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "recommended_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "owner": "Ben",
+      "due_date": "2026-11-11",
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 8,
+          "max": 25,
+          "utilization": 32
+        },
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        },
+        {
+          "signal": "nps",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Lake Toy Houses",
+      "mrr": 5200,
+      "days_since_dashboard_login": 2,
+      "listings_with_autopush_pct": 90,
+      "open_tickets": 0,
+      "recommendation_accept_pct": 92,
+      "pms_integration_healthy": true,
+      "csm": "Cara",
+      "listings": 12,
+      "tenure_days": 410,
+      "days_to_renewal": 110,
+      "segment": "boutique_host",
+      "client_type": "individual_host",
+      "properties_connected": 12,
+      "pricing_recs_applied_7d": 11,
+      "feature_adoption_score": 93,
+      "support_friction_flags": 0,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 96,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: more listings / multi-PMS / advanced customizations",
+      "recommended_action": "expansion: more listings / multi-PMS / advanced customizations",
+      "owner": "Cara",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 18,
+          "max": 20,
+          "utilization": 90
+        },
+        {
+          "signal": "adoption",
+          "pts": 23,
+          "max": 25,
+          "utilization": 92
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Desert Sample Villas",
+      "mrr": 11300,
+      "days_since_dashboard_login": 9,
+      "listings_with_autopush_pct": 55,
+      "open_tickets": 2,
+      "recommendation_accept_pct": 58,
+      "pms_integration_healthy": true,
+      "csm": "Cara",
+      "listings": 28,
+      "tenure_days": 160,
+      "days_to_renewal": 40,
+      "segment": "multi_property_host",
+      "client_type": "professional_host",
+      "properties_connected": 28,
+      "pricing_recs_applied_7d": 10,
+      "feature_adoption_score": 60,
+      "support_friction_flags": 1,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 68,
+      "risk_tier": "Amber",
+      "risk_level": "Amber",
+      "status": "Amber",
+      "reason": "aggregate risk: score 68 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 55%→14/25, tickets 2→14/20)",
+      "playbook": "nurture: expand autopush coverage + review min/max guardrails",
+      "recommended_action": "nurture: expand autopush coverage + review min/max guardrails",
+      "owner": "Cara",
+      "due_date": "2026-11-13",
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 14,
+          "max": 25,
+          "utilization": 56
+        },
+        {
+          "signal": "nps",
+          "pts": 12,
+          "max": 20,
+          "utilization": 60
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Farmhouse Fiction Co",
+      "mrr": 4100,
+      "days_since_dashboard_login": 27,
+      "listings_with_autopush_pct": 26,
+      "open_tickets": 5,
+      "recommendation_accept_pct": 31,
+      "pms_integration_healthy": false,
+      "csm": "Ben",
+      "listings": 9,
+      "tenure_days": 95,
+      "days_to_renewal": 22,
+      "segment": "boutique_host",
+      "client_type": "individual_host",
+      "properties_connected": 6,
+      "pricing_recs_applied_7d": 1,
+      "feature_adoption_score": 28,
+      "support_friction_flags": 3,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 21,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+      "playbook": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "recommended_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "owner": "Ben",
+      "due_date": "2026-11-11",
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        },
+        {
+          "signal": "adoption",
+          "pts": 7,
+          "max": 25,
+          "utilization": 28
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Urban Sandbox Hosts",
+      "mrr": 9900,
+      "days_since_dashboard_login": 3,
+      "listings_with_autopush_pct": 83,
+      "open_tickets": 0,
+      "recommendation_accept_pct": 81,
+      "pms_integration_healthy": true,
+      "csm": "Ava",
+      "listings": 30,
+      "tenure_days": 365,
+      "days_to_renewal": 88,
+      "segment": "urban_host",
+      "client_type": "professional_host",
+      "properties_connected": 30,
+      "pricing_recs_applied_7d": 24,
+      "feature_adoption_score": 85,
+      "support_friction_flags": 0,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 92,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: more listings / multi-PMS / advanced customizations",
+      "recommended_action": "expansion: more listings / multi-PMS / advanced customizations",
+      "owner": "Ava",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 16,
+          "max": 20,
+          "utilization": 80
+        },
+        {
+          "signal": "adoption",
+          "pts": 21,
+          "max": 25,
+          "utilization": 84
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Ski Demo Chalets",
+      "mrr": 17400,
+      "days_since_dashboard_login": 12,
+      "listings_with_autopush_pct": 48,
+      "open_tickets": 3,
+      "recommendation_accept_pct": 44,
+      "pms_integration_healthy": true,
+      "csm": "Cara",
+      "listings": 41,
+      "tenure_days": 280,
+      "days_to_renewal": 15,
+      "segment": "seasonal_portfolio",
+      "client_type": "property_manager",
+      "properties_connected": 41,
+      "pricing_recs_applied_7d": 9,
+      "feature_adoption_score": 52,
+      "support_friction_flags": 2,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 56,
+      "risk_tier": "Amber",
+      "risk_level": "Amber",
+      "status": "Amber",
+      "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 44→9/20, onboarding done→10/10, adoption 48%→12/25)",
+      "playbook": "nurture: expand autopush coverage + review min/max guardrails",
+      "recommended_action": "nurture: expand autopush coverage + review min/max guardrails",
+      "owner": "Cara",
+      "due_date": "2026-11-13",
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        },
+        {
+          "signal": "nps",
+          "pts": 9,
+          "max": 20,
+          "utilization": 45
+        },
+        {
+          "signal": "adoption",
+          "pts": 12,
+          "max": 25,
+          "utilization": 48
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Beach Placeholder Apt",
+      "mrr": 6800,
+      "days_since_dashboard_login": 5,
+      "listings_with_autopush_pct": 76,
+      "open_tickets": 1,
+      "recommendation_accept_pct": 70,
+      "pms_integration_healthy": true,
+      "csm": "Ava",
+      "listings": 18,
+      "tenure_days": 200,
+      "days_to_renewal": 60,
+      "segment": "boutique_host",
+      "client_type": "individual_host",
+      "properties_connected": 18,
+      "pricing_recs_applied_7d": 12,
+      "feature_adoption_score": 74,
+      "support_friction_flags": 0,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 82,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: more listings / multi-PMS / advanced customizations",
+      "recommended_action": "expansion: more listings / multi-PMS / advanced customizations",
+      "owner": "Ava",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        },
+        {
+          "signal": "nps",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        },
+        {
+          "signal": "adoption",
+          "pts": 19,
+          "max": 25,
+          "utilization": 76
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Countryside Mock Stays",
+      "mrr": 22100,
+      "days_since_dashboard_login": 42,
+      "listings_with_autopush_pct": 8,
+      "open_tickets": 9,
+      "recommendation_accept_pct": 12,
+      "pms_integration_healthy": false,
+      "csm": "Ben",
+      "listings": 75,
+      "tenure_days": 450,
+      "days_to_renewal": 9,
+      "segment": "pms_partner_portfolio",
+      "client_type": "property_manager",
+      "properties_connected": 50,
+      "pricing_recs_applied_7d": 0,
+      "feature_adoption_score": 11,
+      "support_friction_flags": 6,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 4,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "inactive >30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+      "playbook": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "recommended_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "owner": "Ben",
+      "due_date": "2026-11-11",
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 0,
+          "max": 25,
+          "utilization": 0
+        },
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Harbour Sample Homes",
+      "mrr": 7600,
+      "days_since_dashboard_login": 2,
+      "listings_with_autopush_pct": 88,
+      "open_tickets": 0,
+      "recommendation_accept_pct": 86,
+      "pms_integration_healthy": true,
+      "csm": "Cara",
+      "listings": 16,
+      "tenure_days": 330,
+      "days_to_renewal": 95,
+      "segment": "boutique_host",
+      "client_type": "individual_host",
+      "properties_connected": 16,
+      "pricing_recs_applied_7d": 14,
+      "feature_adoption_score": 88,
+      "support_friction_flags": 0,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": 94,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: more listings / multi-PMS / advanced customizations",
+      "recommended_action": "expansion: more listings / multi-PMS / advanced customizations",
+      "owner": "Cara",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 17,
+          "max": 20,
+          "utilization": 85
+        },
+        {
+          "signal": "adoption",
+          "pts": 22,
+          "max": 25,
+          "utilization": 88
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Riviera Onboard Villas",
+      "mrr": 12400,
+      "days_since_dashboard_login": 6,
+      "listings_with_autopush_pct": 20,
+      "open_tickets": 1,
+      "recommendation_accept_pct": 25,
+      "pms_integration_healthy": false,
+      "csm": "Ava",
+      "listings": 20,
+      "tenure_days": 12,
+      "days_to_renewal": 350,
+      "segment": "multi_property_host",
+      "client_type": "professional_host",
+      "properties_connected": 8,
+      "pricing_recs_applied_7d": 2,
+      "feature_adoption_score": 18,
+      "support_friction_flags": 1,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": null,
+      "risk_tier": "Onboarding",
+      "risk_level": "Onboarding",
+      "status": "Onboarding – insufficient data",
+      "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+      "playbook": "complete PMS connect + first autopush; activation review in 14d",
+      "recommended_action": "complete PMS connect + first autopush; activation review in 14d",
+      "owner": "Ava",
+      "due_date": "2026-11-17",
+      "top_drivers": [],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": true
+    },
+    {
+      "account": "Nordic Launch Cabins",
+      "mrr": 9100,
+      "days_since_dashboard_login": 3,
+      "listings_with_autopush_pct": 35,
+      "open_tickets": 0,
+      "recommendation_accept_pct": 40,
+      "pms_integration_healthy": true,
+      "csm": "Cara",
+      "listings": 14,
+      "tenure_days": 8,
+      "days_to_renewal": 360,
+      "segment": "boutique_host",
+      "client_type": "individual_host",
+      "properties_connected": 10,
+      "pricing_recs_applied_7d": 4,
+      "feature_adoption_score": 32,
+      "support_friction_flags": 0,
+      "data_source": "FICTITIOUS SAMPLE DATA — invented host/portfolio names for portfolio demos only. NOT real customers.",
+      "health_score": null,
+      "risk_tier": "Onboarding",
+      "risk_level": "Onboarding",
+      "status": "Onboarding – insufficient data",
+      "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+      "playbook": "complete PMS connect + first autopush; activation review in 14d",
+      "recommended_action": "complete PMS connect + first autopush; activation review in 14d",
+      "owner": "Cara",
+      "due_date": "2026-11-17",
+      "top_drivers": [],
+      "profile_id": "pricing_saas",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": true
+    }
+  ],
+  "weeks": {
+    "profile_id": "pricing_saas",
+    "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+    "scoring_model": "rules-based (not ML)",
+    "weeks": [
+      {
+        "week_index": 1,
+        "week_label": "W1",
+        "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 4,
+          "amber_count": 2,
+          "green_count": 6,
+          "onboarding_count": 2,
+          "at_risk_mrr": 61600
+        },
+        "scored": [
+          {
+            "account": "Coastal Fiction Stays",
+            "health_score": 97,
+            "risk_tier": "Green",
+            "mrr": 14200
+          },
+          {
+            "account": "Mountain Mock Cabins",
+            "health_score": 8,
+            "risk_tier": "Red",
+            "mrr": 19800
+          },
+          {
+            "account": "City Demo Lofts",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 8700
+          },
+          {
+            "account": "Island Placeholder Rentals",
+            "health_score": 41,
+            "risk_tier": "Red",
+            "mrr": 15600
+          },
+          {
+            "account": "Lake Toy Houses",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 5200
+          },
+          {
+            "account": "Desert Sample Villas",
+            "health_score": 68,
+            "risk_tier": "Amber",
+            "mrr": 11300
+          },
+          {
+            "account": "Farmhouse Fiction Co",
+            "health_score": 21,
+            "risk_tier": "Red",
+            "mrr": 4100
+          },
+          {
+            "account": "Urban Sandbox Hosts",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 9900
+          },
+          {
+            "account": "Ski Demo Chalets",
+            "health_score": 56,
+            "risk_tier": "Amber",
+            "mrr": 17400
+          },
+          {
+            "account": "Beach Placeholder Apt",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 6800
+          },
+          {
+            "account": "Countryside Mock Stays",
+            "health_score": 4,
+            "risk_tier": "Red",
+            "mrr": 22100
+          },
+          {
+            "account": "Harbour Sample Homes",
+            "health_score": 94,
+            "risk_tier": "Green",
+            "mrr": 7600
+          },
+          {
+            "account": "Riviera Onboard Villas",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 12400
+          },
+          {
+            "account": "Nordic Launch Cabins",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 9100
+          }
+        ]
+      },
+      {
+        "week_index": 2,
+        "week_label": "W2",
+        "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 4,
+          "amber_count": 2,
+          "green_count": 6,
+          "onboarding_count": 2,
+          "at_risk_mrr": 61600
+        },
+        "scored": [
+          {
+            "account": "Coastal Fiction Stays",
+            "health_score": 97,
+            "risk_tier": "Green",
+            "mrr": 14200
+          },
+          {
+            "account": "Mountain Mock Cabins",
+            "health_score": 8,
+            "risk_tier": "Red",
+            "mrr": 19800
+          },
+          {
+            "account": "City Demo Lofts",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 8700
+          },
+          {
+            "account": "Island Placeholder Rentals",
+            "health_score": 41,
+            "risk_tier": "Red",
+            "mrr": 15600
+          },
+          {
+            "account": "Lake Toy Houses",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 5200
+          },
+          {
+            "account": "Desert Sample Villas",
+            "health_score": 68,
+            "risk_tier": "Amber",
+            "mrr": 11300
+          },
+          {
+            "account": "Farmhouse Fiction Co",
+            "health_score": 21,
+            "risk_tier": "Red",
+            "mrr": 4100
+          },
+          {
+            "account": "Urban Sandbox Hosts",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 9900
+          },
+          {
+            "account": "Ski Demo Chalets",
+            "health_score": 56,
+            "risk_tier": "Amber",
+            "mrr": 17400
+          },
+          {
+            "account": "Beach Placeholder Apt",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 6800
+          },
+          {
+            "account": "Countryside Mock Stays",
+            "health_score": 4,
+            "risk_tier": "Red",
+            "mrr": 22100
+          },
+          {
+            "account": "Harbour Sample Homes",
+            "health_score": 94,
+            "risk_tier": "Green",
+            "mrr": 7600
+          },
+          {
+            "account": "Riviera Onboard Villas",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 12400
+          },
+          {
+            "account": "Nordic Launch Cabins",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 9100
+          }
+        ]
+      },
+      {
+        "week_index": 3,
+        "week_label": "W3",
+        "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 4,
+          "amber_count": 2,
+          "green_count": 6,
+          "onboarding_count": 2,
+          "at_risk_mrr": 61600
+        },
+        "scored": [
+          {
+            "account": "Coastal Fiction Stays",
+            "health_score": 97,
+            "risk_tier": "Green",
+            "mrr": 14200
+          },
+          {
+            "account": "Mountain Mock Cabins",
+            "health_score": 8,
+            "risk_tier": "Red",
+            "mrr": 19800
+          },
+          {
+            "account": "City Demo Lofts",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 8700
+          },
+          {
+            "account": "Island Placeholder Rentals",
+            "health_score": 41,
+            "risk_tier": "Red",
+            "mrr": 15600
+          },
+          {
+            "account": "Lake Toy Houses",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 5200
+          },
+          {
+            "account": "Desert Sample Villas",
+            "health_score": 68,
+            "risk_tier": "Amber",
+            "mrr": 11300
+          },
+          {
+            "account": "Farmhouse Fiction Co",
+            "health_score": 21,
+            "risk_tier": "Red",
+            "mrr": 4100
+          },
+          {
+            "account": "Urban Sandbox Hosts",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 9900
+          },
+          {
+            "account": "Ski Demo Chalets",
+            "health_score": 56,
+            "risk_tier": "Amber",
+            "mrr": 17400
+          },
+          {
+            "account": "Beach Placeholder Apt",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 6800
+          },
+          {
+            "account": "Countryside Mock Stays",
+            "health_score": 4,
+            "risk_tier": "Red",
+            "mrr": 22100
+          },
+          {
+            "account": "Harbour Sample Homes",
+            "health_score": 94,
+            "risk_tier": "Green",
+            "mrr": 7600
+          },
+          {
+            "account": "Riviera Onboard Villas",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 12400
+          },
+          {
+            "account": "Nordic Launch Cabins",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 9100
+          }
+        ]
+      },
+      {
+        "week_index": 4,
+        "week_label": "W4",
+        "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 4,
+          "amber_count": 2,
+          "green_count": 6,
+          "onboarding_count": 2,
+          "at_risk_mrr": 61600
+        },
+        "scored": [
+          {
+            "account": "Coastal Fiction Stays",
+            "health_score": 97,
+            "risk_tier": "Green",
+            "mrr": 14200
+          },
+          {
+            "account": "Mountain Mock Cabins",
+            "health_score": 22,
+            "risk_tier": "Red",
+            "mrr": 19800
+          },
+          {
+            "account": "City Demo Lofts",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 8700
+          },
+          {
+            "account": "Island Placeholder Rentals",
+            "health_score": 41,
+            "risk_tier": "Red",
+            "mrr": 15600
+          },
+          {
+            "account": "Lake Toy Houses",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 5200
+          },
+          {
+            "account": "Desert Sample Villas",
+            "health_score": 68,
+            "risk_tier": "Amber",
+            "mrr": 11300
+          },
+          {
+            "account": "Farmhouse Fiction Co",
+            "health_score": 21,
+            "risk_tier": "Red",
+            "mrr": 4100
+          },
+          {
+            "account": "Urban Sandbox Hosts",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 9900
+          },
+          {
+            "account": "Ski Demo Chalets",
+            "health_score": 56,
+            "risk_tier": "Amber",
+            "mrr": 17400
+          },
+          {
+            "account": "Beach Placeholder Apt",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 6800
+          },
+          {
+            "account": "Countryside Mock Stays",
+            "health_score": 4,
+            "risk_tier": "Red",
+            "mrr": 22100
+          },
+          {
+            "account": "Harbour Sample Homes",
+            "health_score": 94,
+            "risk_tier": "Green",
+            "mrr": 7600
+          },
+          {
+            "account": "Riviera Onboard Villas",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 12400
+          },
+          {
+            "account": "Nordic Launch Cabins",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 9100
+          }
+        ]
+      },
+      {
+        "week_index": 5,
+        "week_label": "W5",
+        "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 4,
+          "amber_count": 2,
+          "green_count": 6,
+          "onboarding_count": 2,
+          "at_risk_mrr": 61600
+        },
+        "scored": [
+          {
+            "account": "Coastal Fiction Stays",
+            "health_score": 97,
+            "risk_tier": "Green",
+            "mrr": 14200
+          },
+          {
+            "account": "Mountain Mock Cabins",
+            "health_score": 20,
+            "risk_tier": "Red",
+            "mrr": 19800
+          },
+          {
+            "account": "City Demo Lofts",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 8700
+          },
+          {
+            "account": "Island Placeholder Rentals",
+            "health_score": 41,
+            "risk_tier": "Red",
+            "mrr": 15600
+          },
+          {
+            "account": "Lake Toy Houses",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 5200
+          },
+          {
+            "account": "Desert Sample Villas",
+            "health_score": 68,
+            "risk_tier": "Amber",
+            "mrr": 11300
+          },
+          {
+            "account": "Farmhouse Fiction Co",
+            "health_score": 21,
+            "risk_tier": "Red",
+            "mrr": 4100
+          },
+          {
+            "account": "Urban Sandbox Hosts",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 9900
+          },
+          {
+            "account": "Ski Demo Chalets",
+            "health_score": 56,
+            "risk_tier": "Amber",
+            "mrr": 17400
+          },
+          {
+            "account": "Beach Placeholder Apt",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 6800
+          },
+          {
+            "account": "Countryside Mock Stays",
+            "health_score": 16,
+            "risk_tier": "Red",
+            "mrr": 22100
+          },
+          {
+            "account": "Harbour Sample Homes",
+            "health_score": 94,
+            "risk_tier": "Green",
+            "mrr": 7600
+          },
+          {
+            "account": "Riviera Onboard Villas",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 12400
+          },
+          {
+            "account": "Nordic Launch Cabins",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 9100
+          }
+        ]
+      },
+      {
+        "week_index": 6,
+        "week_label": "W6",
+        "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 4,
+          "amber_count": 2,
+          "green_count": 6,
+          "onboarding_count": 2,
+          "at_risk_mrr": 61600
+        },
+        "scored": [
+          {
+            "account": "Coastal Fiction Stays",
+            "health_score": 97,
+            "risk_tier": "Green",
+            "mrr": 14200
+          },
+          {
+            "account": "Mountain Mock Cabins",
+            "health_score": 11,
+            "risk_tier": "Red",
+            "mrr": 19800
+          },
+          {
+            "account": "City Demo Lofts",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 8700
+          },
+          {
+            "account": "Island Placeholder Rentals",
+            "health_score": 41,
+            "risk_tier": "Red",
+            "mrr": 15600
+          },
+          {
+            "account": "Lake Toy Houses",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 5200
+          },
+          {
+            "account": "Desert Sample Villas",
+            "health_score": 68,
+            "risk_tier": "Amber",
+            "mrr": 11300
+          },
+          {
+            "account": "Farmhouse Fiction Co",
+            "health_score": 21,
+            "risk_tier": "Red",
+            "mrr": 4100
+          },
+          {
+            "account": "Urban Sandbox Hosts",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 9900
+          },
+          {
+            "account": "Ski Demo Chalets",
+            "health_score": 56,
+            "risk_tier": "Amber",
+            "mrr": 17400
+          },
+          {
+            "account": "Beach Placeholder Apt",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 6800
+          },
+          {
+            "account": "Countryside Mock Stays",
+            "health_score": 7,
+            "risk_tier": "Red",
+            "mrr": 22100
+          },
+          {
+            "account": "Harbour Sample Homes",
+            "health_score": 94,
+            "risk_tier": "Green",
+            "mrr": 7600
+          },
+          {
+            "account": "Riviera Onboard Villas",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 12400
+          },
+          {
+            "account": "Nordic Launch Cabins",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 9100
+          }
+        ]
+      },
+      {
+        "week_index": 7,
+        "week_label": "W7",
+        "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 4,
+          "amber_count": 1,
+          "green_count": 7,
+          "onboarding_count": 2,
+          "at_risk_mrr": 61600
+        },
+        "scored": [
+          {
+            "account": "Coastal Fiction Stays",
+            "health_score": 97,
+            "risk_tier": "Green",
+            "mrr": 14200
+          },
+          {
+            "account": "Mountain Mock Cabins",
+            "health_score": 10,
+            "risk_tier": "Red",
+            "mrr": 19800
+          },
+          {
+            "account": "City Demo Lofts",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 8700
+          },
+          {
+            "account": "Island Placeholder Rentals",
+            "health_score": 41,
+            "risk_tier": "Red",
+            "mrr": 15600
+          },
+          {
+            "account": "Lake Toy Houses",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 5200
+          },
+          {
+            "account": "Desert Sample Villas",
+            "health_score": 70,
+            "risk_tier": "Green",
+            "mrr": 11300
+          },
+          {
+            "account": "Farmhouse Fiction Co",
+            "health_score": 21,
+            "risk_tier": "Red",
+            "mrr": 4100
+          },
+          {
+            "account": "Urban Sandbox Hosts",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 9900
+          },
+          {
+            "account": "Ski Demo Chalets",
+            "health_score": 56,
+            "risk_tier": "Amber",
+            "mrr": 17400
+          },
+          {
+            "account": "Beach Placeholder Apt",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 6800
+          },
+          {
+            "account": "Countryside Mock Stays",
+            "health_score": 6,
+            "risk_tier": "Red",
+            "mrr": 22100
+          },
+          {
+            "account": "Harbour Sample Homes",
+            "health_score": 94,
+            "risk_tier": "Green",
+            "mrr": 7600
+          },
+          {
+            "account": "Riviera Onboard Villas",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 12400
+          },
+          {
+            "account": "Nordic Launch Cabins",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 9100
+          }
+        ]
+      },
+      {
+        "week_index": 8,
+        "week_label": "W8",
+        "data_label": "SIMULATED weekly snapshot — FICTITIOUS",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 4,
+          "amber_count": 1,
+          "green_count": 7,
+          "onboarding_count": 2,
+          "at_risk_mrr": 61600
+        },
+        "scored": [
+          {
+            "account": "Coastal Fiction Stays",
+            "health_score": 97,
+            "risk_tier": "Green",
+            "mrr": 14200
+          },
+          {
+            "account": "Mountain Mock Cabins",
+            "health_score": 8,
+            "risk_tier": "Red",
+            "mrr": 19800
+          },
+          {
+            "account": "City Demo Lofts",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 8700
+          },
+          {
+            "account": "Island Placeholder Rentals",
+            "health_score": 41,
+            "risk_tier": "Red",
+            "mrr": 15600
+          },
+          {
+            "account": "Lake Toy Houses",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 5200
+          },
+          {
+            "account": "Desert Sample Villas",
+            "health_score": 77,
+            "risk_tier": "Green",
+            "mrr": 11300
+          },
+          {
+            "account": "Farmhouse Fiction Co",
+            "health_score": 21,
+            "risk_tier": "Red",
+            "mrr": 4100
+          },
+          {
+            "account": "Urban Sandbox Hosts",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 9900
+          },
+          {
+            "account": "Ski Demo Chalets",
+            "health_score": 56,
+            "risk_tier": "Amber",
+            "mrr": 17400
+          },
+          {
+            "account": "Beach Placeholder Apt",
+            "health_score": 82,
+            "risk_tier": "Green",
+            "mrr": 6800
+          },
+          {
+            "account": "Countryside Mock Stays",
+            "health_score": 5,
+            "risk_tier": "Red",
+            "mrr": 22100
+          },
+          {
+            "account": "Harbour Sample Homes",
+            "health_score": 94,
+            "risk_tier": "Green",
+            "mrr": 7600
+          },
+          {
+            "account": "Riviera Onboard Villas",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 12400
+          },
+          {
+            "account": "Nordic Launch Cabins",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 9100
+          }
+        ]
+      }
+    ],
+    "week_over_week_latest": {
+      "from": "W7",
+      "to": "W8",
+      "red_delta": 0,
+      "at_risk_mrr_delta": 0
+    },
+    "interventions_simulated": [
+      {
+        "week": "W4",
+        "account": "Desert Sample Villas",
+        "owner": "Cara",
+        "action": "nurture: expand autopush coverage + review min/max guardrails",
+        "outcome": "SIMULATED: autopush +12pp by W7",
+        "label": "SIMULATED intervention outcome — not real"
+      },
+      {
+        "week": "W5",
+        "account": "Island Placeholder Rentals",
+        "owner": "Ben",
+        "action": "nurture: expand autopush coverage + review min/max guardrails",
+        "outcome": "SIMULATED: accept-rate +5; still Amber",
+        "label": "SIMULATED intervention outcome — not real"
+      },
+      {
+        "week": "W6",
+        "account": "Mountain Mock Cabins",
+        "owner": "Ben",
+        "action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+        "outcome": "SIMULATED: still Red; PMS unhealthy",
+        "label": "SIMULATED intervention outcome — not real"
+      }
+    ],
+    "note": "SIMULATED multi-week history for demo narrative only. Not production telemetry."
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "profile_id": "pricing_saas",
+  "profile_name": "Dynamic pricing for short-term rentals — FICTITIOUS SAMPLE",
+  "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+  "version": "1.2.0",
+  "industry": "str_dynamic_pricing",
+  "inspired_by_public_product": {
+    "archetype": "Dynamic pricing SaaS for short-term rentals (generic sector archetype)",
+    "note": "Signals reflect common capabilities of dynamic pricing tools (listing sync, PMS integrations, price push, customizations). No company-specific data or inside knowledge."
+  },
+  "weights": {
+    "login": 25,
+    "adoption": 25,
+    "tickets": 20,
+    "nps": 20,
+    "onboarding": 10
+  },
+  "thresholds": {
+    "red": 45,
+    "amber": 70
+  },
+  "signalFields": {
+    "login_days": "days_since_dashboard_login",
+    "adoption": "listings_with_autopush_pct",
+    "tickets": "open_tickets",
+    "nps": "recommendation_accept_pct",
+    "onboarding": "pms_integration_healthy"
+  },
+  "signal_glossary": {
+    "days_since_dashboard_login": "Days since last pricing dashboard login.",
+    "listings_with_autopush_pct": "% of listings with auto price push / sync enabled (public: sync + push to channels).",
+    "open_tickets": "Open vendor support tickets (often PMS sync issues).",
+    "recommendation_accept_pct": "0–100 proxy for how often pricing recommendations/customizations are accepted/active.",
+    "pms_integration_healthy": "Whether PMS/channel connection is healthy (public: 160+ PMS integrations)."
+  },
+  "bands": {
+    "login": [
+      {
+        "maxDays": 7,
+        "pts": 25
+      },
+      {
+        "maxDays": 14,
+        "pts": 18
+      },
+      {
+        "maxDays": 30,
+        "pts": 8,
+        "elsePts": 0,
+        "elseFlag": "inactive >30d"
+      }
+    ],
+    "tickets": [
+      {
+        "max": 0,
+        "pts": 20
+      },
+      {
+        "max": 2,
+        "pts": 14
+      },
+      {
+        "max": 4,
+        "pts": 7
+      },
+      {
+        "max": 9999,
+        "pts": 0,
+        "flag": true
+      }
+    ]
+  },
+  "flags": {
+    "adoption_below": 40,
+    "nps_below": 40
+  },
+  "flagLabels": {
+    "adoption": "low autopush/sync coverage",
+    "tickets": "many open tickets",
+    "nps": "low recommendation acceptance",
+    "onboarding": "PMS integration unhealthy/incomplete"
+  },
+  "playbooks": {
+    "red": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+    "amber": "nurture: expand autopush coverage + review min/max guardrails",
+    "green": "expansion: more listings / multi-PMS / advanced customizations",
+    "onboarding": "complete PMS connect + first autopush; activation review in 14d"
+  },
+  "summary_notes": "FICTITIOUS SAMPLE — Dynamic pricing SaaS (STR). Rules-based (not ML). Simulated MRR at risk. Slack NoOp pending configuration.",
+  "min_tenure_days": 21,
+  "tenure_field": "tenure_days",
+  "subtitle": "Customer Intelligence, Revenue Protection & Growth Automation",
+  "metric_groups": {
+    "product": [
+      "days_since_dashboard_login",
+      "listings_with_autopush_pct",
+      "recommendation_accept_pct",
+      "pms_integration_healthy",
+      "properties_connected",
+      "pricing_recs_applied_7d",
+      "feature_adoption_score",
+      "support_friction_flags",
+      "listings"
+    ],
+    "commercial": [
+      "mrr",
+      "days_to_renewal",
+      "risk_tier",
+      "health_score",
+      "segment",
+      "owner"
+    ]
+  },
+  "product_value_chain": [
+    "adoption",
+    "value",
+    "retention"
+  ],
+  "metric_glossary": {
+    "days_since_dashboard_login": "Days since last pricing dashboard login.",
+    "listings_with_autopush_pct": "Product / Adoption: % listings with auto price push enabled (fictitious).",
+    "open_tickets": "Open vendor support tickets (often PMS sync issues).",
+    "recommendation_accept_pct": "Product / Value: how often pricing recommendations stay active (fictitious proxy).",
+    "pms_integration_healthy": "Whether PMS/channel connection is healthy (public: 160+ PMS integrations).",
+    "health_score": "Rules-based host/PM health from dashboard login, autopush coverage, tickets, recommendation accept, PMS health.",
+    "risk_tier": "Red <45 · Amber <70 · Green ≥70 · Onboarding if tenure <21d.",
+    "support_friction_flags": "Product: count of friction signals (tickets/sync issues) — fictitious.",
+    "at_risk_mrr": "Commercial: Red MRR only (simulated).",
+    "expansion_mrr": "Commercial: Green MRR treated as expansion pipeline (simulated)."
+  },
+  "scoring_explanation": {
+    "model": "rules-based (not ML)",
+    "weights": {
+      "login": 25,
+      "adoption": 25,
+      "tickets": 20,
+      "nps": 20,
+      "onboarding": 10
+    },
+    "thresholds": {
+      "red": 45,
+      "amber": 70
+    },
+    "onboarding_grace_days": 21,
+    "at_risk_definition": "Red MRR only",
+    "limitations": [
+      "Not calibrated on real churn",
+      "SAMPLE/FICTITIOUS demo data",
+      "Slack remains NoOp (pending configuration)",
+      "No live CRM credentials in this package"
+    ]
+  }
+}

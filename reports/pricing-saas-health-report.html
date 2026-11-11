@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Dynamic pricing for short-term rentals — FICTITIOUS SAMPLE — Customer Health Report (DEMO)</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:24px;color:#122;background:#f7f8fa}
+.banner{background:#7c2d12;color:#fff;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-weight:600}
+h1{font-size:1.4rem;margin:0 0 8px}
+.meta{color:#445;margin-bottom:20px}
+.cards{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.card{background:#fff;border:1px solid #dde;border-radius:8px;padding:12px 16px;min-width:140px}
+.card b{display:block;font-size:1.4rem}
+table{border-collapse:collapse;width:100%;background:#fff;margin:12px 0 24px}
+th,td{border:1px solid #dde;padding:8px;text-align:left;font-size:0.9rem}
+th{background:#eef2f7}
+.tier-Red{background:#fef2f2}.tier-Amber{background:#fffbeb}.tier-Green{background:#f0fdf4}
+.small{font-size:0.85rem;color:#556}
+</style>
+</head>
+<body>
+<div class="banner">DEMO / SAMPLE DATA — fictitious accounts. Rules-based scoring (not ML). Simulated MRR at risk is not real protected revenue. Slack delivery is NoOp (pending configuration).</div>
+<h1>Dynamic pricing for short-term rentals — FICTITIOUS SAMPLE</h1>
+<p class="meta">FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.<br/>Generated 2026-11-09T14:19:40.219Z · Scoring: rules-based (not ML)</p>
+<div class="cards">
+  <div class="card">Accounts<b>14</b></div>
+  <div class="card">Red / Amber / Green<b>4 / 3 / 7</b></div>
+  <div class="card">Simulated MRR at risk (sample)<b>61600</b></div>
+  <div class="card">Green expansion MRR (sample)<b>65800</b></div>
+</div>
+<h2>Prioritised action queue (MRR × risk weight)</h2>
+<table><thead><tr><th>Priority</th><th>Account</th><th>Tier</th><th>MRR</th><th>Owner</th><th>Next action</th><th>SLA</th></tr></thead><tbody>
+<tr><td>66300</td><td>Countryside Mock Stays</td><td>Red</td><td>22100</td><td>Ben</td><td>rescue sync: fix PMS connection + re-enable autopush; QBR on base prices</td><td>24h</td></tr>
+<tr><td>59400</td><td>Mountain Mock Cabins</td><td>Red</td><td>19800</td><td>Ben</td><td>rescue sync: fix PMS connection + re-enable autopush; QBR on base prices</td><td>24h</td></tr>
+<tr><td>46800</td><td>Island Placeholder Rentals</td><td>Red</td><td>15600</td><td>Ben</td><td>rescue sync: fix PMS connection + re-enable autopush; QBR on base prices</td><td>24h</td></tr>
+<tr><td>34800</td><td>Ski Demo Chalets</td><td>Amber</td><td>17400</td><td>Cara</td><td>nurture: expand autopush coverage + review min/max guardrails</td><td>72h</td></tr>
+<tr><td>22600</td><td>Desert Sample Villas</td><td>Amber</td><td>11300</td><td>Cara</td><td>nurture: expand autopush coverage + review min/max guardrails</td><td>72h</td></tr>
+<tr><td>21000</td><td>Forest Fiction Retreats</td><td>Amber</td><td>10500</td><td>Ava</td><td>nurture: expand autopush coverage + review min/max guardrails</td><td>72h</td></tr>
+<tr><td>14200</td><td>Coastal Fiction Stays</td><td>Green</td><td>14200</td><td>Ava</td><td>expansion: more listings / multi-PMS / advanced customizations</td><td>168h</td></tr>
+<tr><td>13400</td><td>Metro Toy Portfolio</td><td>Green</td><td>13400</td><td>Cara</td><td>expansion: more listings / multi-PMS / advanced customizations</td><td>168h</td></tr>
+<tr><td>12300</td><td>Farmhouse Fiction Co</td><td>Red</td><td>4100</td><td>Ben</td><td>rescue sync: fix PMS connection + re-enable autopush; QBR on base prices</td><td>24h</td></tr>
+<tr><td>9900</td><td>Urban Sandbox Hosts</td><td>Green</td><td>9900</td><td>Ava</td><td>expansion: more listings / multi-PMS / advanced customizations</td><td>168h</td></tr>
+</tbody></table>
+<h2>All accounts</h2>
+<table><thead><tr><th>Account</th><th>Score</th><th>Tier</th><th>MRR</th><th>CSM</th><th>Reason</th></tr></thead><tbody>
+<tr class="tier-Green"><td>Coastal Fiction Stays</td><td>97</td><td>Green</td><td>14200</td><td>Ava</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Mountain Mock Cabins</td><td>8</td><td>Red</td><td>19800</td><td>Ben</td><td>inactive &gt;30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete</td></tr>
+<tr class="tier-Green"><td>City Demo Lofts</td><td>82</td><td>Green</td><td>8700</td><td>Ava</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Island Placeholder Rentals</td><td>41</td><td>Red</td><td>15600</td><td>Ben</td><td>low autopush/sync coverage; low recommendation acceptance</td></tr>
+<tr class="tier-Green"><td>Lake Toy Houses</td><td>96</td><td>Green</td><td>5200</td><td>Cara</td><td>healthy signals</td></tr>
+<tr class="tier-Amber"><td>Desert Sample Villas</td><td>68</td><td>Amber</td><td>11300</td><td>Cara</td><td>aggregate risk: score 68 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 55%→14/25, tickets 2→14/20)</td></tr>
+<tr class="tier-Red"><td>Farmhouse Fiction Co</td><td>21</td><td>Red</td><td>4100</td><td>Ben</td><td>low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete</td></tr>
+<tr class="tier-Green"><td>Urban Sandbox Hosts</td><td>92</td><td>Green</td><td>9900</td><td>Ava</td><td>healthy signals</td></tr>
+<tr class="tier-Amber"><td>Ski Demo Chalets</td><td>45</td><td>Amber</td><td>17400</td><td>Cara</td><td>aggregate risk: score 45 below Amber threshold 70; several signals mid-range (tickets 3→7/20, login 19d→8/25, NPS 45→9/20, onboarding done→10/10)</td></tr>
+<tr class="tier-Green"><td>Beach Placeholder Apt</td><td>80</td><td>Green</td><td>6800</td><td>Ava</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Countryside Mock Stays</td><td>4</td><td>Red</td><td>22100</td><td>Ben</td><td>inactive &gt;30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete</td></tr>
+<tr class="tier-Green"><td>Harbour Sample Homes</td><td>92</td><td>Green</td><td>7600</td><td>Cara</td><td>healthy signals</td></tr>
+<tr class="tier-Amber"><td>Forest Fiction Retreats</td><td>66</td><td>Amber</td><td>10500</td><td>Ava</td><td>aggregate risk: score 66 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 53→11/20, adoption 50%→13/25, tickets 2→14/20)</td></tr>
+<tr class="tier-Green"><td>Metro Toy Portfolio</td><td>70</td><td>Green</td><td>13400</td><td>Cara</td><td>healthy signals</td></tr>
+</tbody></table>
+<p class="small">Customer Health Intelligence v1.2.0 · Public MIT demo · Industry signals inspired by public product docs only.</p>
+</body></html>

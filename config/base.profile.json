@@ -1,0 +1,111 @@
+{
+  "profile_id": "base",
+  "profile_name": "Generic B2B SaaS — Customer Health (SAMPLE DATA)",
+  "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+  "version": "1.2.0",
+  "weights": {
+    "login": 25,
+    "adoption": 25,
+    "tickets": 20,
+    "nps": 20,
+    "onboarding": 10
+  },
+  "thresholds": {
+    "red": 45,
+    "amber": 70
+  },
+  "signalFields": {
+    "login_days": "last_login_days",
+    "adoption": "active_users_pct",
+    "tickets": "open_tickets",
+    "nps": "nps",
+    "onboarding": "onboarding_completed"
+  },
+  "bands": {
+    "login": [
+      {
+        "maxDays": 7,
+        "pts": 25
+      },
+      {
+        "maxDays": 14,
+        "pts": 18
+      },
+      {
+        "maxDays": 30,
+        "pts": 8,
+        "elsePts": 0,
+        "elseFlag": "inactive >30d"
+      }
+    ],
+    "tickets": [
+      {
+        "max": 0,
+        "pts": 20
+      },
+      {
+        "max": 2,
+        "pts": 14
+      },
+      {
+        "max": 4,
+        "pts": 7
+      },
+      {
+        "max": 9999,
+        "pts": 0,
+        "flag": true
+      }
+    ]
+  },
+  "flags": {
+    "adoption_below": 40,
+    "nps_below": 40
+  },
+  "flagLabels": {
+    "adoption": "low adoption",
+    "tickets": "many open tickets",
+    "nps": "low NPS",
+    "onboarding": "onboarding incomplete"
+  },
+  "playbooks": {
+    "red": "schedule QBR / re-onboarding",
+    "amber": "nurture: check-in + feature adoption plan",
+    "green": "expansion candidate: upsell / referral ask",
+    "onboarding": "complete onboarding checklist; schedule activation review"
+  },
+  "summary_notes": "SAMPLE DATA only — rules-based demo (not ML). Simulated MRR at risk; Slack NoOp pending configuration.",
+  "min_tenure_days": 0,
+  "default_tenure_days": 365,
+  "tenure_field": "tenure_days",
+  "renewal_field": "days_to_renewal",
+  "renewal_alert_days": 45,
+  "metric_glossary": {
+    "health_score": "Weighted 0–100 from login, adoption, tickets, NPS, onboarding (rules).",
+    "risk_tier": "Red <45 · Amber <70 · Green ≥70 · Onboarding = tenure gate.",
+    "at_risk_mrr": "Sum of MRR for Red accounts only (simulated SAMPLE data).",
+    "priority_score": "Internal rank key ≈ MRR × risk weight × renewal urgency (shown as #rank in UI)."
+  },
+  "scoring_explanation": {
+    "model": "rules-based (not ML)",
+    "weights": {
+      "login": 25,
+      "adoption": 25,
+      "tickets": 20,
+      "nps": 20,
+      "onboarding": 10
+    },
+    "thresholds": {
+      "red": 45,
+      "amber": 70
+    },
+    "onboarding_grace_days": 0,
+    "at_risk_definition": "Red MRR only",
+    "limitations": [
+      "Not calibrated on real churn",
+      "SAMPLE/FICTITIOUS demo data",
+      "Slack remains NoOp (pending configuration)",
+      "No live CRM credentials in this package"
+    ]
+  }
+}

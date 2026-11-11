@@ -1,0 +1,135 @@
+{
+  "profile_id": "realestate_brokerage",
+  "profile_name": "Real-estate agent/agency SaaS — FICTITIOUS SAMPLE",
+  "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+  "version": "1.2.0",
+  "industry": "real_estate_crm_saas",
+  "inspired_by_public_product": {
+    "archetype": "Real-estate brokerage CRM (generic sector archetype)",
+    "note": "Signals reflect common capabilities of real-estate agency CRMs (pipeline, leads, listings, tasks/logins). No company-specific data or inside knowledge."
+  },
+  "weights": {
+    "login": 25,
+    "adoption": 25,
+    "tickets": 20,
+    "nps": 20,
+    "onboarding": 10
+  },
+  "thresholds": {
+    "red": 45,
+    "amber": 70
+  },
+  "signalFields": {
+    "login_days": "days_since_crm_login",
+    "adoption": "listing_activity_pct",
+    "tickets": "open_tickets",
+    "nps": "lead_response_health",
+    "onboarding": "pipeline_setup_complete"
+  },
+  "signal_glossary": {
+    "days_since_crm_login": "Days since last CRM login (public product: CRM / PRO Agent engagement).",
+    "listing_activity_pct": "0–100 proxy for active listing/publishing activity vs expected (public: listings & portal publish).",
+    "open_tickets": "Open vendor support tickets.",
+    "lead_response_health": "0–100 proxy for timely lead follow-up health (public: lead pipeline & tasks).",
+    "pipeline_setup_complete": "Whether seller pipeline stages/tasks are configured (public: CRM pipeline setup)."
+  },
+  "bands": {
+    "login": [
+      {
+        "maxDays": 7,
+        "pts": 25
+      },
+      {
+        "maxDays": 14,
+        "pts": 18
+      },
+      {
+        "maxDays": 30,
+        "pts": 8,
+        "elsePts": 0,
+        "elseFlag": "inactive >30d"
+      }
+    ],
+    "tickets": [
+      {
+        "max": 0,
+        "pts": 20
+      },
+      {
+        "max": 2,
+        "pts": 14
+      },
+      {
+        "max": 4,
+        "pts": 7
+      },
+      {
+        "max": 9999,
+        "pts": 0,
+        "flag": true
+      }
+    ]
+  },
+  "flags": {
+    "adoption_below": 40,
+    "nps_below": 40
+  },
+  "flagLabels": {
+    "adoption": "low listing activity",
+    "tickets": "many open tickets",
+    "nps": "slow lead-response health",
+    "onboarding": "pipeline setup incomplete"
+  },
+  "playbooks": {
+    "red": "agency QBR: reactivate CRM logins + lead SLAs; rescue open mandates",
+    "amber": "nurture: task cadences + listing publish checklist",
+    "green": "expansion: more seats / multi-team / premium visibility modules",
+    "onboarding": "activation: CRM pipeline setup + first lead SLA training"
+  },
+  "summary_notes": "FICTITIOUS SAMPLE — Real-estate brokerage CRM. Rules-based (not ML). Simulated MRR at risk. Slack NoOp pending configuration.",
+  "min_tenure_days": 21,
+  "default_tenure_days": 365,
+  "tenure_field": "tenure_days",
+  "renewal_field": "days_to_renewal",
+  "renewal_alert_days": 45,
+  "subtitle": "Customer Intelligence, Revenue Protection & Growth Automation",
+  "segments": [
+    "independent_agent",
+    "boutique_agency",
+    "regional_agency",
+    "national_network"
+  ],
+  "metric_glossary": {
+    "days_since_crm_login": "Days since last CRM login (public product: CRM / PRO Agent engagement).",
+    "listing_activity_pct": "Product: listing publish/activity coverage (fictitious).",
+    "open_tickets": "Open vendor support tickets.",
+    "lead_response_health": "Product proxy for lead SLA health (fictitious).",
+    "pipeline_setup_complete": "Whether seller pipeline stages/tasks are configured (public: CRM pipeline setup).",
+    "health_score": "Rules-based agency health from CRM login, listing activity, tickets, lead-response, pipeline setup.",
+    "risk_tier": "Red <45 · Amber <70 · Green ≥70 · Onboarding if tenure <21d.",
+    "workload_signal": "Team Lead: 3×Red + 2×Amber + Onboarding (demo heuristic).",
+    "mrr_at_risk": "Commercial: Red MRR owned by the CSM (simulated)."
+  },
+  "scoring_explanation": {
+    "model": "rules-based (not ML)",
+    "weights": {
+      "login": 25,
+      "adoption": 25,
+      "tickets": 20,
+      "nps": 20,
+      "onboarding": 10
+    },
+    "thresholds": {
+      "red": 45,
+      "amber": 70
+    },
+    "onboarding_grace_days": 21,
+    "at_risk_definition": "Red MRR only",
+    "limitations": [
+      "Not calibrated on real churn",
+      "SAMPLE/FICTITIOUS demo data",
+      "Slack remains NoOp (pending configuration)",
+      "No live CRM credentials in this package"
+    ]
+  }
+}

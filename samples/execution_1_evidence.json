@@ -1,0 +1,135 @@
+{
+  "id": "1",
+  "status": "success",
+  "mode": "manual",
+  "startedAt": "2026-11-09T12:46:44.894Z",
+  "stoppedAt": "2026-11-09T12:46:45.148Z",
+  "workflowId": "<redacted-local-instance-id>",
+  "finished": true,
+  "lastNodeExecuted": "Weekly Health Summary",
+  "nodeOutputItemCounts": {
+    "Manual Trigger": 1,
+    "Sample Accounts (Demo Data)": 10,
+    "Compute Health Score": 10,
+    "Split by Risk Tier": 10,
+    "Build Red Risk Alert": 4,
+    "Send to Slack (configure)": 4,
+    "Merge All Tiers": 5,
+    "Weekly Health Summary": 1,
+    "Build Amber Nurture Task": 1,
+    "Flag Green Expansion": 5
+  },
+  "weeklySummary": {
+    "report": "Weekly Customer Health Summary",
+    "generated_at": "2026-11-09T12:46:45.147Z",
+    "total_accounts": 5,
+    "red_count": 0,
+    "amber_count": 0,
+    "green_count": 5,
+    "red_accounts": [],
+    "amber_accounts": [],
+    "green_accounts": [
+      "Acme Retail EU",
+      "Iberia SaaS Labs",
+      "Commerce Pulse",
+      "FinServe Analytics",
+      "GreenSupply Chain"
+    ],
+    "at_risk_mrr": 0,
+    "notes": "Demo workflow – sample data only. Ready to wire to CRM + Slack."
+  },
+  "scores": [
+    {
+      "account": "Acme Retail EU",
+      "health_score": 83,
+      "risk_tier": "Green",
+      "mrr": 4200,
+      "reason": "healthy signals",
+      "csm": "Ana",
+      "playbook": "expansion candidate: upsell / referral ask"
+    },
+    {
+      "account": "Nordic Pricing Co",
+      "health_score": 40,
+      "risk_tier": "Red",
+      "mrr": 8900,
+      "reason": "low adoption; low NPS",
+      "csm": "Luis",
+      "playbook": "schedule QBR / re-onboarding"
+    },
+    {
+      "account": "Iberia SaaS Labs",
+      "health_score": 84,
+      "risk_tier": "Green",
+      "mrr": 3100,
+      "reason": "healthy signals",
+      "csm": "Ana",
+      "playbook": "expansion candidate: upsell / referral ask"
+    },
+    {
+      "account": "MedTech Hub",
+      "health_score": 6,
+      "risk_tier": "Red",
+      "mrr": 12500,
+      "reason": "inactive >30d; low adoption; many open tickets; low NPS; onboarding incomplete",
+      "csm": "Luis",
+      "playbook": "schedule QBR / re-onboarding"
+    },
+    {
+      "account": "Commerce Pulse",
+      "health_score": 91,
+      "risk_tier": "Green",
+      "mrr": 5600,
+      "reason": "healthy signals",
+      "csm": "Marta",
+      "playbook": "expansion candidate: upsell / referral ask"
+    },
+    {
+      "account": "Hotel Ops Pro",
+      "health_score": 63,
+      "risk_tier": "Amber",
+      "mrr": 7400,
+      "reason": "healthy signals",
+      "csm": "Marta",
+      "playbook": "nurture: check-in + feature adoption plan"
+    },
+    {
+      "account": "FinServe Analytics",
+      "health_score": 96,
+      "risk_tier": "Green",
+      "mrr": 9800,
+      "reason": "healthy signals",
+      "csm": "Ana",
+      "playbook": "expansion candidate: upsell / referral ask"
+    },
+    {
+      "account": "EduLearn Cloud",
+      "health_score": 20,
+      "risk_tier": "Red",
+      "mrr": 2200,
+      "reason": "low adoption; many open tickets; low NPS; onboarding incomplete",
+      "csm": "Luis",
+      "playbook": "schedule QBR / re-onboarding"
+    },
+    {
+      "account": "GreenSupply Chain",
+      "health_score": 75,
+      "risk_tier": "Green",
+      "mrr": 6100,
+      "reason": "healthy signals",
+      "csm": "Marta",
+      "playbook": "expansion candidate: upsell / referral ask"
+    },
+    {
+      "account": "TravelSync EMEA",
+      "health_score": 43,
+      "risk_tier": "Red",
+      "mrr": 15000,
+      "reason": "healthy signals",
+      "csm": "Ana",
+      "playbook": "schedule QBR / re-onboarding"
+    }
+  ],
+  "note": "SAMPLE DATA demo execution evidence. Scrubbed. Timestamps are UTC (Z); Europe/Madrid = UTC+1.",
+  "timezone_note": "Convert Z to Europe/Madrid by adding 1 hour on this date."
+}

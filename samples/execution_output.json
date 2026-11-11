@@ -1,0 +1,162 @@
+{
+  "_label": "SAMPLE DATA — reference execution #2 counts/scores from local n8n (2026-11-09). at_risk_mrr is simulated MRR at risk (sample data), Red-tier sum only. v1.1.0 improves TravelSync reason text (scores/tiers unchanged); see import_validation.json for post-fix reason.",
+  "_source": "Copied from archived local demo execution_output.json; timestamps in UTC (Z).",
+  "status": "success",
+  "finished": true,
+  "startedAt": "2026-11-09T12:47:53.860Z",
+  "stoppedAt": "2026-11-09T12:47:53.973Z",
+  "workflowId": "<redacted-local-instance-id>",
+  "executionId": "2",
+  "lastNodeExecuted": "Weekly Health Summary",
+  "nodes": {
+    "Manual Trigger": {
+      "itemCount": 1,
+      "error": null
+    },
+    "Sample Accounts (Demo Data)": {
+      "itemCount": 10,
+      "error": null
+    },
+    "Compute Health Score": {
+      "itemCount": 10,
+      "error": null
+    },
+    "Split by Risk Tier": {
+      "itemCount": 4,
+      "error": null
+    },
+    "Build Red Risk Alert": {
+      "itemCount": 4,
+      "error": null
+    },
+    "Send to Slack (configure)": {
+      "itemCount": 4,
+      "error": null
+    },
+    "Build Amber Nurture Task": {
+      "itemCount": 1,
+      "error": null
+    },
+    "Flag Green Expansion": {
+      "itemCount": 5,
+      "error": null
+    },
+    "Merge All Tiers": {
+      "itemCount": 10,
+      "error": null
+    },
+    "Weekly Health Summary": {
+      "itemCount": 1,
+      "error": null
+    }
+  },
+  "summary": {
+    "report": "Weekly Customer Health Summary",
+    "generated_at": "2026-11-09T12:47:53.972Z",
+    "total_accounts": 10,
+    "red_count": 4,
+    "amber_count": 1,
+    "green_count": 5,
+    "red_accounts": [
+      "Nordic Pricing Co",
+      "MedTech Hub",
+      "EduLearn Cloud",
+      "TravelSync EMEA"
+    ],
+    "amber_accounts": [
+      "Hotel Ops Pro"
+    ],
+    "green_accounts": [
+      "Acme Retail EU",
+      "Iberia SaaS Labs",
+      "Commerce Pulse",
+      "FinServe Analytics",
+      "GreenSupply Chain"
+    ],
+    "at_risk_mrr": 38600,
+    "notes": "SAMPLE DATA only — rules-based demo (not ML). Simulated MRR at risk; Slack NoOp pending configuration."
+  },
+  "scores": [
+    {
+      "account": "Acme Retail EU",
+      "health_score": 83,
+      "risk_tier": "Green",
+      "reason": "healthy signals",
+      "mrr": 4200,
+      "csm": "Ana"
+    },
+    {
+      "account": "Nordic Pricing Co",
+      "health_score": 40,
+      "risk_tier": "Red",
+      "reason": "low adoption; low NPS",
+      "mrr": 8900,
+      "csm": "Luis"
+    },
+    {
+      "account": "Iberia SaaS Labs",
+      "health_score": 84,
+      "risk_tier": "Green",
+      "reason": "healthy signals",
+      "mrr": 3100,
+      "csm": "Ana"
+    },
+    {
+      "account": "MedTech Hub",
+      "health_score": 6,
+      "risk_tier": "Red",
+      "reason": "inactive >30d; low adoption; many open tickets; low NPS; onboarding incomplete",
+      "mrr": 12500,
+      "csm": "Luis"
+    },
+    {
+      "account": "Commerce Pulse",
+      "health_score": 91,
+      "risk_tier": "Green",
+      "reason": "healthy signals",
+      "mrr": 5600,
+      "csm": "Marta"
+    },
+    {
+      "account": "Hotel Ops Pro",
+      "health_score": 63,
+      "risk_tier": "Amber",
+      "reason": "mixed mid-range signals",
+      "mrr": 7400,
+      "csm": "Marta"
+    },
+    {
+      "account": "FinServe Analytics",
+      "health_score": 96,
+      "risk_tier": "Green",
+      "reason": "healthy signals",
+      "mrr": 9800,
+      "csm": "Ana"
+    },
+    {
+      "account": "EduLearn Cloud",
+      "health_score": 20,
+      "risk_tier": "Red",
+      "reason": "low adoption; many open tickets; low NPS; onboarding incomplete",
+      "mrr": 2200,
+      "csm": "Luis"
+    },
+    {
+      "account": "GreenSupply Chain",
+      "health_score": 75,
+      "risk_tier": "Green",
+      "reason": "healthy signals",
+      "mrr": 6100,
+      "csm": "Marta"
+    },
+    {
+      "account": "TravelSync EMEA",
+      "health_score": 43,
+      "risk_tier": "Red",
+      "reason": "aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 3→7/20, login 22d→8/25, NPS 40→8/20, adoption 40%→10/25)",
+      "mrr": 15000,
+      "csm": "Ana",
+      "_note": "reason text updated in package v1.1.0; health_score/risk_tier unchanged from execution #2"
+    }
+  ]
+}

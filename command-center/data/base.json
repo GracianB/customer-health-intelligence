@@ -1,0 +1,955 @@
+{
+  "config": {
+    "profile_id": "base",
+    "profile_name": "Generic B2B SaaS — Customer Health (SAMPLE DATA)",
+    "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+    "subtitle": "Customer Intelligence, Revenue Protection & Growth Automation",
+    "industry": null,
+    "inspired_by_public_product": null,
+    "weights": {
+      "login": 25,
+      "adoption": 25,
+      "tickets": 20,
+      "nps": 20,
+      "onboarding": 10
+    },
+    "thresholds": {
+      "red": 45,
+      "amber": 70
+    },
+    "signal_glossary": null,
+    "metric_groups": null,
+    "product_value_chain": null,
+    "metric_glossary": {
+      "health_score": "Weighted 0–100 from login, adoption, tickets, NPS, onboarding (rules).",
+      "risk_tier": "Red <45 · Amber <70 · Green ≥70 · Onboarding = tenure gate.",
+      "at_risk_mrr": "Sum of MRR for Red accounts only (simulated SAMPLE data).",
+      "priority_score": "Internal rank key ≈ MRR × risk weight × renewal urgency (shown as #rank in UI)."
+    },
+    "scoring_explanation": {
+      "model": "rules-based (not ML)",
+      "weights": {
+        "login": 25,
+        "adoption": 25,
+        "tickets": 20,
+        "nps": 20,
+        "onboarding": 10
+      },
+      "thresholds": {
+        "red": 45,
+        "amber": 70
+      },
+      "onboarding_grace_days": 0,
+      "at_risk_definition": "Red MRR only",
+      "limitations": [
+        "Not calibrated on real churn",
+        "SAMPLE/FICTITIOUS demo data",
+        "Slack remains NoOp (pending configuration)",
+        "No live CRM credentials in this package"
+      ]
+    },
+    "demo_as_of": "2026-11-10"
+  },
+  "summary": {
+    "report": "Customer Health Summary",
+    "profile_id": "base",
+    "profile_name": "Generic B2B SaaS — Customer Health (SAMPLE DATA)",
+    "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+    "scoring_model": "rules-based (not ML)",
+    "generated_at": "2026-11-11T01:19:23.308Z",
+    "total_accounts": 10,
+    "red_count": 4,
+    "amber_count": 1,
+    "green_count": 5,
+    "onboarding_count": 0,
+    "healthy_count": 5,
+    "at_risk_count": 5,
+    "red_accounts": [
+      "Nordic Pricing Co",
+      "MedTech Hub",
+      "EduLearn Cloud",
+      "TravelSync EMEA"
+    ],
+    "amber_accounts": [
+      "Hotel Ops Pro"
+    ],
+    "green_accounts": [
+      "Acme Retail EU",
+      "Iberia SaaS Labs",
+      "Commerce Pulse",
+      "FinServe Analytics",
+      "GreenSupply Chain"
+    ],
+    "at_risk_mrr": 38600,
+    "revenue_lens": {
+      "by_tier": {
+        "Red": {
+          "accounts": 4,
+          "mrr": 38600
+        },
+        "Amber": {
+          "accounts": 1,
+          "mrr": 7400
+        },
+        "Green": {
+          "accounts": 5,
+          "mrr": 28800
+        },
+        "Onboarding": {
+          "accounts": 0,
+          "mrr": 0
+        }
+      },
+      "simulated_mrr_at_risk_sample_data": 38600,
+      "expansion_pipeline_green": {
+        "accounts": 5,
+        "mrr": 28800,
+        "note": "Green accounts flagged for upsell / referral (rules-based, SAMPLE/FICTITIOUS data)"
+      },
+      "upcoming_renewals": {
+        "window_days": 45,
+        "accounts": 0,
+        "mrr": 0
+      }
+    },
+    "action_queue": [
+      {
+        "account": "TravelSync EMEA",
+        "risk_tier": "Red",
+        "mrr": 15000,
+        "health_score": 43,
+        "owner": "Ana",
+        "next_action": "schedule QBR / re-onboarding",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 45000,
+        "top_drivers": [
+          {
+            "signal": "login",
+            "pts": 8,
+            "max": 25,
+            "utilization": 32
+          },
+          {
+            "signal": "tickets",
+            "pts": 7,
+            "max": 20,
+            "utilization": 35
+          },
+          {
+            "signal": "adoption",
+            "pts": 10,
+            "max": 25,
+            "utilization": 40
+          }
+        ],
+        "reason": "aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 3→7/20, login 22d→8/25, NPS 40→8/20, adoption 40%→10/25)",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      },
+      {
+        "account": "MedTech Hub",
+        "risk_tier": "Red",
+        "mrr": 12500,
+        "health_score": 6,
+        "owner": "Luis",
+        "next_action": "schedule QBR / re-onboarding",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 37500,
+        "top_drivers": [
+          {
+            "signal": "login",
+            "pts": 0,
+            "max": 25,
+            "utilization": 0
+          },
+          {
+            "signal": "tickets",
+            "pts": 0,
+            "max": 20,
+            "utilization": 0
+          },
+          {
+            "signal": "onboarding",
+            "pts": 0,
+            "max": 10,
+            "utilization": 0
+          }
+        ],
+        "reason": "inactive >30d; low adoption; many open tickets; low NPS; onboarding incomplete",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      },
+      {
+        "account": "Nordic Pricing Co",
+        "risk_tier": "Red",
+        "mrr": 8900,
+        "health_score": 40,
+        "owner": "Luis",
+        "next_action": "schedule QBR / re-onboarding",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 26700,
+        "top_drivers": [
+          {
+            "signal": "nps",
+            "pts": 6,
+            "max": 20,
+            "utilization": 30
+          },
+          {
+            "signal": "login",
+            "pts": 8,
+            "max": 25,
+            "utilization": 32
+          },
+          {
+            "signal": "tickets",
+            "pts": 7,
+            "max": 20,
+            "utilization": 35
+          }
+        ],
+        "reason": "low adoption; low NPS",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      },
+      {
+        "account": "Hotel Ops Pro",
+        "risk_tier": "Amber",
+        "mrr": 7400,
+        "health_score": 63,
+        "owner": "Marta",
+        "next_action": "nurture: check-in + feature adoption plan",
+        "due_date": "2026-11-13",
+        "sla_hours": 72,
+        "priority_score": 14800,
+        "top_drivers": [
+          {
+            "signal": "nps",
+            "pts": 9,
+            "max": 20,
+            "utilization": 45
+          },
+          {
+            "signal": "adoption",
+            "pts": 12,
+            "max": 25,
+            "utilization": 48
+          },
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          }
+        ],
+        "reason": "aggregate risk: score 63 below Amber threshold 70; several signals mid-range (NPS 45→9/20, onboarding done→10/10, adoption 48%→12/25, tickets 2→14/20)",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      },
+      {
+        "account": "FinServe Analytics",
+        "risk_tier": "Green",
+        "mrr": 9800,
+        "health_score": 96,
+        "owner": "Ana",
+        "next_action": "expansion candidate: upsell / referral ask",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 9800,
+        "top_drivers": [
+          {
+            "signal": "nps",
+            "pts": 18,
+            "max": 20,
+            "utilization": 90
+          },
+          {
+            "signal": "adoption",
+            "pts": 23,
+            "max": 25,
+            "utilization": 92
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      },
+      {
+        "account": "EduLearn Cloud",
+        "risk_tier": "Red",
+        "mrr": 2200,
+        "health_score": 20,
+        "owner": "Luis",
+        "next_action": "schedule QBR / re-onboarding",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 6600,
+        "top_drivers": [
+          {
+            "signal": "tickets",
+            "pts": 0,
+            "max": 20,
+            "utilization": 0
+          },
+          {
+            "signal": "onboarding",
+            "pts": 0,
+            "max": 10,
+            "utilization": 0
+          },
+          {
+            "signal": "adoption",
+            "pts": 6,
+            "max": 25,
+            "utilization": 24
+          }
+        ],
+        "reason": "low adoption; many open tickets; low NPS; onboarding incomplete",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      },
+      {
+        "account": "GreenSupply Chain",
+        "risk_tier": "Green",
+        "mrr": 6100,
+        "health_score": 75,
+        "owner": "Marta",
+        "next_action": "expansion candidate: upsell / referral ask",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 6100,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 14,
+            "max": 25,
+            "utilization": 56
+          },
+          {
+            "signal": "nps",
+            "pts": 12,
+            "max": 20,
+            "utilization": 60
+          },
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      },
+      {
+        "account": "Commerce Pulse",
+        "risk_tier": "Green",
+        "mrr": 5600,
+        "health_score": 91,
+        "owner": "Marta",
+        "next_action": "expansion candidate: upsell / referral ask",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 5600,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 20,
+            "max": 25,
+            "utilization": 80
+          },
+          {
+            "signal": "nps",
+            "pts": 16,
+            "max": 20,
+            "utilization": 80
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      },
+      {
+        "account": "Acme Retail EU",
+        "risk_tier": "Green",
+        "mrr": 4200,
+        "health_score": 83,
+        "owner": "Ana",
+        "next_action": "expansion candidate: upsell / referral ask",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 4200,
+        "top_drivers": [
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          },
+          {
+            "signal": "nps",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          },
+          {
+            "signal": "adoption",
+            "pts": 20,
+            "max": 25,
+            "utilization": 80
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      },
+      {
+        "account": "Iberia SaaS Labs",
+        "risk_tier": "Green",
+        "mrr": 3100,
+        "health_score": 84,
+        "owner": "Ana",
+        "next_action": "expansion candidate: upsell / referral ask",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 3100,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 16,
+            "max": 25,
+            "utilization": 64
+          },
+          {
+            "signal": "nps",
+            "pts": 13,
+            "max": 20,
+            "utilization": 65
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": null,
+        "segment": "unspecified"
+      }
+    ],
+    "portfolio_by_csm": [
+      {
+        "owner": "Ana",
+        "accounts": 4,
+        "red": 1,
+        "amber": 0,
+        "green": 3,
+        "onboarding": 0,
+        "mrr": 32100,
+        "mrr_at_risk": 15000
+      },
+      {
+        "owner": "Luis",
+        "accounts": 3,
+        "red": 3,
+        "amber": 0,
+        "green": 0,
+        "onboarding": 0,
+        "mrr": 23600,
+        "mrr_at_risk": 23600
+      },
+      {
+        "owner": "Marta",
+        "accounts": 3,
+        "red": 0,
+        "amber": 1,
+        "green": 2,
+        "onboarding": 0,
+        "mrr": 19100,
+        "mrr_at_risk": 0
+      }
+    ],
+    "notes": "SAMPLE DATA only — rules-based demo (not ML). Simulated MRR at risk; Slack NoOp pending configuration.",
+    "demo_as_of": "2026-11-10"
+  },
+  "accounts": [
+    {
+      "account": "Acme Retail EU",
+      "mrr": 4200,
+      "last_login_days": 2,
+      "active_users_pct": 78,
+      "open_tickets": 1,
+      "nps": 72,
+      "onboarding_completed": true,
+      "csm": "Ana",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 83,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion candidate: upsell / referral ask",
+      "recommended_action": "expansion candidate: upsell / referral ask",
+      "owner": "Ana",
+      "due_date": "2026-11-19",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        },
+        {
+          "signal": "nps",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        },
+        {
+          "signal": "adoption",
+          "pts": 20,
+          "max": 25,
+          "utilization": 80
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    },
+    {
+      "account": "Nordic Pricing Co",
+      "mrr": 8900,
+      "last_login_days": 18,
+      "active_users_pct": 35,
+      "open_tickets": 4,
+      "nps": 28,
+      "onboarding_completed": true,
+      "csm": "Luis",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 40,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "low adoption; low NPS",
+      "playbook": "schedule QBR / re-onboarding",
+      "recommended_action": "schedule QBR / re-onboarding",
+      "owner": "Luis",
+      "due_date": "2026-11-11",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 6,
+          "max": 20,
+          "utilization": 30
+        },
+        {
+          "signal": "login",
+          "pts": 8,
+          "max": 25,
+          "utilization": 32
+        },
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    },
+    {
+      "account": "Iberia SaaS Labs",
+      "mrr": 3100,
+      "last_login_days": 5,
+      "active_users_pct": 62,
+      "open_tickets": 0,
+      "nps": 65,
+      "onboarding_completed": true,
+      "csm": "Ana",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 84,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion candidate: upsell / referral ask",
+      "recommended_action": "expansion candidate: upsell / referral ask",
+      "owner": "Ana",
+      "due_date": "2026-11-19",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 16,
+          "max": 25,
+          "utilization": 64
+        },
+        {
+          "signal": "nps",
+          "pts": 13,
+          "max": 20,
+          "utilization": 65
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    },
+    {
+      "account": "MedTech Hub",
+      "mrr": 12500,
+      "last_login_days": 45,
+      "active_users_pct": 12,
+      "open_tickets": 7,
+      "nps": 15,
+      "onboarding_completed": false,
+      "csm": "Luis",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 6,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "inactive >30d; low adoption; many open tickets; low NPS; onboarding incomplete",
+      "playbook": "schedule QBR / re-onboarding",
+      "recommended_action": "schedule QBR / re-onboarding",
+      "owner": "Luis",
+      "due_date": "2026-11-11",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 0,
+          "max": 25,
+          "utilization": 0
+        },
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    },
+    {
+      "account": "Commerce Pulse",
+      "mrr": 5600,
+      "last_login_days": 3,
+      "active_users_pct": 81,
+      "open_tickets": 0,
+      "nps": 80,
+      "onboarding_completed": true,
+      "csm": "Marta",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 91,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion candidate: upsell / referral ask",
+      "recommended_action": "expansion candidate: upsell / referral ask",
+      "owner": "Marta",
+      "due_date": "2026-11-19",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 20,
+          "max": 25,
+          "utilization": 80
+        },
+        {
+          "signal": "nps",
+          "pts": 16,
+          "max": 20,
+          "utilization": 80
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    },
+    {
+      "account": "Hotel Ops Pro",
+      "mrr": 7400,
+      "last_login_days": 12,
+      "active_users_pct": 48,
+      "open_tickets": 2,
+      "nps": 45,
+      "onboarding_completed": true,
+      "csm": "Marta",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 63,
+      "risk_tier": "Amber",
+      "risk_level": "Amber",
+      "status": "Amber",
+      "reason": "aggregate risk: score 63 below Amber threshold 70; several signals mid-range (NPS 45→9/20, onboarding done→10/10, adoption 48%→12/25, tickets 2→14/20)",
+      "playbook": "nurture: check-in + feature adoption plan",
+      "recommended_action": "nurture: check-in + feature adoption plan",
+      "owner": "Marta",
+      "due_date": "2026-11-13",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 9,
+          "max": 20,
+          "utilization": 45
+        },
+        {
+          "signal": "adoption",
+          "pts": 12,
+          "max": 25,
+          "utilization": 48
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    },
+    {
+      "account": "FinServe Analytics",
+      "mrr": 9800,
+      "last_login_days": 1,
+      "active_users_pct": 90,
+      "open_tickets": 0,
+      "nps": 88,
+      "onboarding_completed": true,
+      "csm": "Ana",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 96,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion candidate: upsell / referral ask",
+      "recommended_action": "expansion candidate: upsell / referral ask",
+      "owner": "Ana",
+      "due_date": "2026-11-19",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 18,
+          "max": 20,
+          "utilization": 90
+        },
+        {
+          "signal": "adoption",
+          "pts": 23,
+          "max": 25,
+          "utilization": 92
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    },
+    {
+      "account": "EduLearn Cloud",
+      "mrr": 2200,
+      "last_login_days": 30,
+      "active_users_pct": 22,
+      "open_tickets": 5,
+      "nps": 30,
+      "onboarding_completed": false,
+      "csm": "Luis",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 20,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "low adoption; many open tickets; low NPS; onboarding incomplete",
+      "playbook": "schedule QBR / re-onboarding",
+      "recommended_action": "schedule QBR / re-onboarding",
+      "owner": "Luis",
+      "due_date": "2026-11-11",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        },
+        {
+          "signal": "adoption",
+          "pts": 6,
+          "max": 25,
+          "utilization": 24
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    },
+    {
+      "account": "GreenSupply Chain",
+      "mrr": 6100,
+      "last_login_days": 7,
+      "active_users_pct": 55,
+      "open_tickets": 1,
+      "nps": 58,
+      "onboarding_completed": true,
+      "csm": "Marta",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 75,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion candidate: upsell / referral ask",
+      "recommended_action": "expansion candidate: upsell / referral ask",
+      "owner": "Marta",
+      "due_date": "2026-11-19",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 14,
+          "max": 25,
+          "utilization": 56
+        },
+        {
+          "signal": "nps",
+          "pts": 12,
+          "max": 20,
+          "utilization": 60
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    },
+    {
+      "account": "TravelSync EMEA",
+      "mrr": 15000,
+      "last_login_days": 22,
+      "active_users_pct": 40,
+      "open_tickets": 3,
+      "nps": 40,
+      "onboarding_completed": true,
+      "csm": "Ana",
+      "data_source": "SAMPLE DATA – Customer Health demo",
+      "health_score": 43,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 3→7/20, login 22d→8/25, NPS 40→8/20, adoption 40%→10/25)",
+      "playbook": "schedule QBR / re-onboarding",
+      "recommended_action": "schedule QBR / re-onboarding",
+      "owner": "Ana",
+      "due_date": "2026-11-11",
+      "days_to_renewal": null,
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 8,
+          "max": 25,
+          "utilization": 32
+        },
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        },
+        {
+          "signal": "adoption",
+          "pts": 10,
+          "max": 25,
+          "utilization": 40
+        }
+      ],
+      "profile_id": "base",
+      "data_label": "SAMPLE DATA — synthetic demo accounts only. Not real customers.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false,
+      "segment": "unspecified"
+    }
+  ],
+  "weeks": null
+}

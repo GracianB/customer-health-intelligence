@@ -1,0 +1,359 @@
+{
+  "profile_id": "pricing_saas",
+  "data_label": "FICTITIOUS SAMPLE DATA — invented host/PMS portfolio accounts for portfolio demos. Not real customers. Not production data.",
+  "total_accounts": 14,
+  "red_count": 4,
+  "amber_count": 2,
+  "green_count": 6,
+  "onboarding_count": 2,
+  "at_risk_mrr": 61600,
+  "revenue_lens": {
+    "by_tier": {
+      "Red": {
+        "accounts": 4,
+        "mrr": 61600
+      },
+      "Amber": {
+        "accounts": 2,
+        "mrr": 28700
+      },
+      "Green": {
+        "accounts": 6,
+        "mrr": 52400
+      },
+      "Onboarding": {
+        "accounts": 2,
+        "mrr": 21500
+      }
+    },
+    "simulated_mrr_at_risk_sample_data": 61600,
+    "expansion_pipeline_green": {
+      "accounts": 6,
+      "mrr": 52400,
+      "note": "Green accounts flagged for upsell / referral (rules-based, SAMPLE/FICTITIOUS data)"
+    },
+    "upcoming_renewals": {
+      "window_days": 45,
+      "accounts": 6,
+      "mrr": 90300
+    }
+  },
+  "scores": [
+    {
+      "account": "Coastal Fiction Stays",
+      "health_score": 97,
+      "risk_tier": "Green",
+      "mrr": 14200,
+      "reason": "healthy signals",
+      "status": "Green"
+    },
+    {
+      "account": "Mountain Mock Cabins",
+      "health_score": 8,
+      "risk_tier": "Red",
+      "mrr": 19800,
+      "reason": "inactive >30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+      "status": "Red"
+    },
+    {
+      "account": "City Demo Lofts",
+      "health_score": 82,
+      "risk_tier": "Green",
+      "mrr": 8700,
+      "reason": "healthy signals",
+      "status": "Green"
+    },
+    {
+      "account": "Island Placeholder Rentals",
+      "health_score": 41,
+      "risk_tier": "Red",
+      "mrr": 15600,
+      "reason": "low autopush/sync coverage; low recommendation acceptance",
+      "status": "Red"
+    },
+    {
+      "account": "Lake Toy Houses",
+      "health_score": 96,
+      "risk_tier": "Green",
+      "mrr": 5200,
+      "reason": "healthy signals",
+      "status": "Green"
+    },
+    {
+      "account": "Desert Sample Villas",
+      "health_score": 68,
+      "risk_tier": "Amber",
+      "mrr": 11300,
+      "reason": "aggregate risk: score 68 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 55%→14/25, tickets 2→14/20)",
+      "status": "Amber"
+    },
+    {
+      "account": "Farmhouse Fiction Co",
+      "health_score": 21,
+      "risk_tier": "Red",
+      "mrr": 4100,
+      "reason": "low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+      "status": "Red"
+    },
+    {
+      "account": "Urban Sandbox Hosts",
+      "health_score": 92,
+      "risk_tier": "Green",
+      "mrr": 9900,
+      "reason": "healthy signals",
+      "status": "Green"
+    },
+    {
+      "account": "Ski Demo Chalets",
+      "health_score": 56,
+      "risk_tier": "Amber",
+      "mrr": 17400,
+      "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 44→9/20, onboarding done→10/10, adoption 48%→12/25)",
+      "status": "Amber"
+    },
+    {
+      "account": "Beach Placeholder Apt",
+      "health_score": 82,
+      "risk_tier": "Green",
+      "mrr": 6800,
+      "reason": "healthy signals",
+      "status": "Green"
+    },
+    {
+      "account": "Countryside Mock Stays",
+      "health_score": 4,
+      "risk_tier": "Red",
+      "mrr": 22100,
+      "reason": "inactive >30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+      "status": "Red"
+    },
+    {
+      "account": "Harbour Sample Homes",
+      "health_score": 94,
+      "risk_tier": "Green",
+      "mrr": 7600,
+      "reason": "healthy signals",
+      "status": "Green"
+    },
+    {
+      "account": "Riviera Onboard Villas",
+      "health_score": null,
+      "risk_tier": "Onboarding",
+      "mrr": 12400,
+      "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+      "status": "Onboarding – insufficient data"
+    },
+    {
+      "account": "Nordic Launch Cabins",
+      "health_score": null,
+      "risk_tier": "Onboarding",
+      "mrr": 9100,
+      "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+      "status": "Onboarding – insufficient data"
+    }
+  ],
+  "action_queue_top5": [
+    {
+      "account": "Countryside Mock Stays",
+      "risk_tier": "Red",
+      "mrr": 22100,
+      "health_score": 4,
+      "owner": "Ben",
+      "next_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "due_date": "T+1 business day",
+      "sla_hours": 24,
+      "priority_score": 265200,
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 0,
+          "max": 25,
+          "utilization": 0
+        },
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        }
+      ],
+      "reason": "inactive >30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+      "days_to_renewal": 9,
+      "segment": "pms_partner_portfolio"
+    },
+    {
+      "account": "Mountain Mock Cabins",
+      "risk_tier": "Red",
+      "mrr": 19800,
+      "health_score": 8,
+      "owner": "Ben",
+      "next_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "due_date": "T+1 business day",
+      "sla_hours": 24,
+      "priority_score": 178200,
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 0,
+          "max": 25,
+          "utilization": 0
+        },
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        }
+      ],
+      "reason": "inactive >30d; low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+      "days_to_renewal": 18,
+      "segment": "pms_partner_portfolio"
+    },
+    {
+      "account": "Ski Demo Chalets",
+      "risk_tier": "Amber",
+      "mrr": 17400,
+      "health_score": 56,
+      "owner": "Cara",
+      "next_action": "nurture: expand autopush coverage + review min/max guardrails",
+      "due_date": "T+3 business days",
+      "sla_hours": 72,
+      "priority_score": 104400,
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        },
+        {
+          "signal": "nps",
+          "pts": 9,
+          "max": 20,
+          "utilization": 45
+        },
+        {
+          "signal": "adoption",
+          "pts": 12,
+          "max": 25,
+          "utilization": 48
+        }
+      ],
+      "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 44→9/20, onboarding done→10/10, adoption 48%→12/25)",
+      "days_to_renewal": 15,
+      "segment": "seasonal_portfolio"
+    },
+    {
+      "account": "Island Placeholder Rentals",
+      "risk_tier": "Red",
+      "mrr": 15600,
+      "health_score": 41,
+      "owner": "Ben",
+      "next_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "due_date": "T+1 business day",
+      "sla_hours": 24,
+      "priority_score": 93600,
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 8,
+          "max": 25,
+          "utilization": 32
+        },
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        },
+        {
+          "signal": "nps",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        }
+      ],
+      "reason": "low autopush/sync coverage; low recommendation acceptance",
+      "days_to_renewal": 28,
+      "segment": "multi_property_host"
+    },
+    {
+      "account": "Farmhouse Fiction Co",
+      "risk_tier": "Red",
+      "mrr": 4100,
+      "health_score": 21,
+      "owner": "Ben",
+      "next_action": "rescue sync: fix PMS connection + re-enable autopush; QBR on base prices",
+      "due_date": "T+1 business day",
+      "sla_hours": 24,
+      "priority_score": 24600,
+      "top_drivers": [
+        {
+          "signal": "tickets",
+          "pts": 0,
+          "max": 20,
+          "utilization": 0
+        },
+        {
+          "signal": "onboarding",
+          "pts": 0,
+          "max": 10,
+          "utilization": 0
+        },
+        {
+          "signal": "adoption",
+          "pts": 7,
+          "max": 25,
+          "utilization": 28
+        }
+      ],
+      "reason": "low autopush/sync coverage; many open tickets; low recommendation acceptance; PMS integration unhealthy/incomplete",
+      "days_to_renewal": 22,
+      "segment": "boutique_host"
+    }
+  ],
+  "portfolio_by_csm": [
+    {
+      "owner": "Ava",
+      "accounts": 5,
+      "red": 0,
+      "amber": 0,
+      "green": 4,
+      "onboarding": 1,
+      "mrr": 52000,
+      "mrr_at_risk": 0
+    },
+    {
+      "owner": "Ben",
+      "accounts": 4,
+      "red": 4,
+      "amber": 0,
+      "green": 0,
+      "onboarding": 0,
+      "mrr": 61600,
+      "mrr_at_risk": 61600
+    },
+    {
+      "owner": "Cara",
+      "accounts": 5,
+      "red": 0,
+      "amber": 2,
+      "green": 2,
+      "onboarding": 1,
+      "mrr": 50600,
+      "mrr_at_risk": 0
+    }
+  ]
+}

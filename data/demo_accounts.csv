@@ -1,0 +1,11 @@
+account,mrr,last_login_days,active_users_pct,open_tickets,nps,onboarding_completed,csm,data_source
+Acme Retail EU,4200,2,78,1,72,True,Ana,SAMPLE DATA – Customer Health demo
+Nordic Pricing Co,8900,18,35,4,28,True,Luis,SAMPLE DATA – Customer Health demo
+Iberia SaaS Labs,3100,5,62,0,65,True,Ana,SAMPLE DATA – Customer Health demo
+MedTech Hub,12500,45,12,7,15,False,Luis,SAMPLE DATA – Customer Health demo
+Commerce Pulse,5600,3,81,0,80,True,Marta,SAMPLE DATA – Customer Health demo
+Hotel Ops Pro,7400,12,48,2,45,True,Marta,SAMPLE DATA – Customer Health demo
+FinServe Analytics,9800,1,90,0,88,True,Ana,SAMPLE DATA – Customer Health demo
+EduLearn Cloud,2200,30,22,5,30,False,Luis,SAMPLE DATA – Customer Health demo
+GreenSupply Chain,6100,7,55,1,58,True,Marta,SAMPLE DATA – Customer Health demo
+TravelSync EMEA,15000,22,40,3,40,True,Ana,SAMPLE DATA – Customer Health demo

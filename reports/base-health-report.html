@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Generic B2B SaaS — Customer Health (SAMPLE DATA) — Customer Health Report (DEMO)</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:24px;color:#122;background:#f7f8fa}
+.banner{background:#7c2d12;color:#fff;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-weight:600}
+h1{font-size:1.4rem;margin:0 0 8px}
+.meta{color:#445;margin-bottom:20px}
+.cards{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.card{background:#fff;border:1px solid #dde;border-radius:8px;padding:12px 16px;min-width:140px}
+.card b{display:block;font-size:1.4rem}
+table{border-collapse:collapse;width:100%;background:#fff;margin:12px 0 24px}
+th,td{border:1px solid #dde;padding:8px;text-align:left;font-size:0.9rem}
+th{background:#eef2f7}
+.tier-Red{background:#fef2f2}.tier-Amber{background:#fffbeb}.tier-Green{background:#f0fdf4}
+.small{font-size:0.85rem;color:#556}
+</style>
+</head>
+<body>
+<div class="banner">DEMO / SAMPLE DATA — fictitious accounts. Rules-based scoring (not ML). Simulated MRR at risk is not real protected revenue. Slack delivery is NoOp (pending configuration).</div>
+<h1>Generic B2B SaaS — Customer Health (SAMPLE DATA)</h1>
+<p class="meta">SAMPLE DATA — synthetic demo accounts only. Not real customers.<br/>Generated 2026-11-09T14:19:40.116Z · Scoring: rules-based (not ML)</p>
+<div class="cards">
+  <div class="card">Accounts<b>10</b></div>
+  <div class="card">Red / Amber / Green<b>4 / 1 / 5</b></div>
+  <div class="card">Simulated MRR at risk (sample)<b>38600</b></div>
+  <div class="card">Green expansion MRR (sample)<b>28800</b></div>
+</div>
+<h2>Prioritised action queue (MRR × risk weight)</h2>
+<table><thead><tr><th>Priority</th><th>Account</th><th>Tier</th><th>MRR</th><th>Owner</th><th>Next action</th><th>SLA</th></tr></thead><tbody>
+<tr><td>45000</td><td>TravelSync EMEA</td><td>Red</td><td>15000</td><td>Ana</td><td>schedule QBR / re-onboarding</td><td>24h</td></tr>
+<tr><td>37500</td><td>MedTech Hub</td><td>Red</td><td>12500</td><td>Luis</td><td>schedule QBR / re-onboarding</td><td>24h</td></tr>
+<tr><td>26700</td><td>Nordic Pricing Co</td><td>Red</td><td>8900</td><td>Luis</td><td>schedule QBR / re-onboarding</td><td>24h</td></tr>
+<tr><td>14800</td><td>Hotel Ops Pro</td><td>Amber</td><td>7400</td><td>Marta</td><td>nurture: check-in + feature adoption plan</td><td>72h</td></tr>
+<tr><td>9800</td><td>FinServe Analytics</td><td>Green</td><td>9800</td><td>Ana</td><td>expansion candidate: upsell / referral ask</td><td>168h</td></tr>
+<tr><td>6600</td><td>EduLearn Cloud</td><td>Red</td><td>2200</td><td>Luis</td><td>schedule QBR / re-onboarding</td><td>24h</td></tr>
+<tr><td>6100</td><td>GreenSupply Chain</td><td>Green</td><td>6100</td><td>Marta</td><td>expansion candidate: upsell / referral ask</td><td>168h</td></tr>
+<tr><td>5600</td><td>Commerce Pulse</td><td>Green</td><td>5600</td><td>Marta</td><td>expansion candidate: upsell / referral ask</td><td>168h</td></tr>
+<tr><td>4200</td><td>Acme Retail EU</td><td>Green</td><td>4200</td><td>Ana</td><td>expansion candidate: upsell / referral ask</td><td>168h</td></tr>
+<tr><td>3100</td><td>Iberia SaaS Labs</td><td>Green</td><td>3100</td><td>Ana</td><td>expansion candidate: upsell / referral ask</td><td>168h</td></tr>
+</tbody></table>
+<h2>All accounts</h2>
+<table><thead><tr><th>Account</th><th>Score</th><th>Tier</th><th>MRR</th><th>CSM</th><th>Reason</th></tr></thead><tbody>
+<tr class="tier-Green"><td>Acme Retail EU</td><td>83</td><td>Green</td><td>4200</td><td>Ana</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Nordic Pricing Co</td><td>40</td><td>Red</td><td>8900</td><td>Luis</td><td>low adoption; low NPS</td></tr>
+<tr class="tier-Green"><td>Iberia SaaS Labs</td><td>84</td><td>Green</td><td>3100</td><td>Ana</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>MedTech Hub</td><td>6</td><td>Red</td><td>12500</td><td>Luis</td><td>inactive &gt;30d; low adoption; many open tickets; low NPS; onboarding incomplete</td></tr>
+<tr class="tier-Green"><td>Commerce Pulse</td><td>91</td><td>Green</td><td>5600</td><td>Marta</td><td>healthy signals</td></tr>
+<tr class="tier-Amber"><td>Hotel Ops Pro</td><td>63</td><td>Amber</td><td>7400</td><td>Marta</td><td>aggregate risk: score 63 below Amber threshold 70; several signals mid-range (NPS 45→9/20, onboarding done→10/10, adoption 48%→12/25, tickets 2→14/20)</td></tr>
+<tr class="tier-Green"><td>FinServe Analytics</td><td>96</td><td>Green</td><td>9800</td><td>Ana</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>EduLearn Cloud</td><td>20</td><td>Red</td><td>2200</td><td>Luis</td><td>low adoption; many open tickets; low NPS; onboarding incomplete</td></tr>
+<tr class="tier-Green"><td>GreenSupply Chain</td><td>75</td><td>Green</td><td>6100</td><td>Marta</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>TravelSync EMEA</td><td>43</td><td>Red</td><td>15000</td><td>Ana</td><td>aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 3→7/20, login 22d→8/25, NPS 40→8/20, adoption 40%→10/25)</td></tr>
+</tbody></table>
+<p class="small">Customer Health Intelligence v1.2.0 · Public MIT demo · Industry signals inspired by public product docs only.</p>
+</body></html>

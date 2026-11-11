@@ -1,0 +1,3026 @@
+{
+  "profile_id": "realestate_brokerage",
+  "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+  "scoring_model": "rules-based (not ML)",
+  "weeks": [
+    {
+      "week_index": 0,
+      "week_label": "W1",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+      "summary": {
+        "total_accounts": 13,
+        "red_count": 0,
+        "amber_count": 4,
+        "green_count": 6,
+        "onboarding_count": 3,
+        "at_risk_mrr": 0,
+        "expansion_mrr": 48400
+      },
+      "scored": [
+        {
+          "account": "Alpine Fiction Realty",
+          "health_score": 93,
+          "risk_tier": "Green",
+          "mrr": 12500,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 80,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 20,
+              "max": 25,
+              "utilization": 80
+            },
+            {
+              "signal": "nps",
+              "pts": 18,
+              "max": 20,
+              "utilization": 90
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lake Placeholder Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 16800,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "Onboarding – insufficient data (tenure 14d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 200,
+          "top_drivers": []
+        },
+        {
+          "account": "Geneva Demo Estates",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 9400,
+          "owner": "Noah",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 35,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "adoption",
+              "pts": 18,
+              "max": 25,
+              "utilization": 72
+            },
+            {
+              "signal": "nps",
+              "pts": 15,
+              "max": 20,
+              "utilization": 75
+            }
+          ]
+        },
+        {
+          "account": "Zurich Mock Brokers",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 21000,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 48→10/20, onboarding done→10/10, adoption 44%→11/25)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 20,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 11,
+              "max": 25,
+              "utilization": 44
+            },
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            }
+          ]
+        },
+        {
+          "account": "Lausanne Sample Agency",
+          "health_score": 98,
+          "risk_tier": "Green",
+          "mrr": 5600,
+          "owner": "Lea",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 100,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 19,
+              "max": 20,
+              "utilization": 95
+            },
+            {
+              "signal": "adoption",
+              "pts": 24,
+              "max": 25,
+              "utilization": 96
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Bern Toy Partners",
+          "health_score": 67,
+          "risk_tier": "Amber",
+          "mrr": 7800,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "aggregate risk: score 67 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 52%→13/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 50,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 13,
+              "max": 25,
+              "utilization": 52
+            },
+            {
+              "signal": "nps",
+              "pts": 12,
+              "max": 20,
+              "utilization": 60
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Ticino Fiction Group",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 4300,
+          "owner": "Mia",
+          "segment": "independent_agent",
+          "reason": "Onboarding – insufficient data (tenure 18d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 300,
+          "top_drivers": []
+        },
+        {
+          "account": "Basel Sandbox Realty",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 11200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 70,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 20,
+              "max": 25,
+              "utilization": 80
+            },
+            {
+              "signal": "nps",
+              "pts": 17,
+              "max": 20,
+              "utilization": 85
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Valais Demo Mandates",
+          "health_score": 46,
+          "risk_tier": "Amber",
+          "mrr": 14900,
+          "owner": "Lea",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 46 below Amber threshold 70; several signals mid-range (tickets 4→7/20, login 16d→8/25, NPS 41→8/20, onboarding done→10/10)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 12,
+          "top_drivers": [
+            {
+              "signal": "login",
+              "pts": 8,
+              "max": 25,
+              "utilization": 32
+            },
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "nps",
+              "pts": 8,
+              "max": 20,
+              "utilization": 40
+            }
+          ]
+        },
+        {
+          "account": "Neuchâtel Placeholder Co",
+          "health_score": 79,
+          "risk_tier": "Green",
+          "mrr": 3600,
+          "owner": "Noah",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 60,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 16,
+              "max": 25,
+              "utilization": 64
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "nps",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Fribourg Mock Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 8700,
+          "owner": "Mia",
+          "segment": "boutique_agency",
+          "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 400,
+          "top_drivers": []
+        },
+        {
+          "account": "Winterthur Sample Desk",
+          "health_score": 90,
+          "risk_tier": "Green",
+          "mrr": 6100,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 90,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 19,
+              "max": 25,
+              "utilization": 76
+            },
+            {
+              "signal": "nps",
+              "pts": 16,
+              "max": 20,
+              "utilization": 80
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lucerne Fiction Brokers",
+          "health_score": 66,
+          "risk_tier": "Amber",
+          "mrr": 10200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 66 below Amber threshold 70; several signals mid-range (NPS 50→10/20, onboarding done→10/10, adoption 55%→14/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 40,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            },
+            {
+              "signal": "adoption",
+              "pts": 14,
+              "max": 25,
+              "utilization": 56
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week_index": 1,
+      "week_label": "W2",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+      "summary": {
+        "total_accounts": 13,
+        "red_count": 0,
+        "amber_count": 4,
+        "green_count": 6,
+        "onboarding_count": 3,
+        "at_risk_mrr": 0,
+        "expansion_mrr": 48400
+      },
+      "scored": [
+        {
+          "account": "Alpine Fiction Realty",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 12500,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 80,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 21,
+              "max": 25,
+              "utilization": 84
+            },
+            {
+              "signal": "nps",
+              "pts": 18,
+              "max": 20,
+              "utilization": 90
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lake Placeholder Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 16800,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "Onboarding – insufficient data (tenure 14d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 200,
+          "top_drivers": []
+        },
+        {
+          "account": "Geneva Demo Estates",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 9400,
+          "owner": "Noah",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 35,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "adoption",
+              "pts": 18,
+              "max": 25,
+              "utilization": 72
+            },
+            {
+              "signal": "nps",
+              "pts": 15,
+              "max": 20,
+              "utilization": 75
+            }
+          ]
+        },
+        {
+          "account": "Zurich Mock Brokers",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 21000,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 48→10/20, onboarding done→10/10, adoption 44%→11/25)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 20,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 11,
+              "max": 25,
+              "utilization": 44
+            },
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            }
+          ]
+        },
+        {
+          "account": "Lausanne Sample Agency",
+          "health_score": 98,
+          "risk_tier": "Green",
+          "mrr": 5600,
+          "owner": "Lea",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 100,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 19,
+              "max": 20,
+              "utilization": 95
+            },
+            {
+              "signal": "adoption",
+              "pts": 24,
+              "max": 25,
+              "utilization": 96
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Bern Toy Partners",
+          "health_score": 67,
+          "risk_tier": "Amber",
+          "mrr": 7800,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "aggregate risk: score 67 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 52%→13/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 50,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 13,
+              "max": 25,
+              "utilization": 52
+            },
+            {
+              "signal": "nps",
+              "pts": 12,
+              "max": 20,
+              "utilization": 60
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Ticino Fiction Group",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 4300,
+          "owner": "Mia",
+          "segment": "independent_agent",
+          "reason": "Onboarding – insufficient data (tenure 18d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 300,
+          "top_drivers": []
+        },
+        {
+          "account": "Basel Sandbox Realty",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 11200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 70,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 20,
+              "max": 25,
+              "utilization": 80
+            },
+            {
+              "signal": "nps",
+              "pts": 17,
+              "max": 20,
+              "utilization": 85
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Valais Demo Mandates",
+          "health_score": 46,
+          "risk_tier": "Amber",
+          "mrr": 14900,
+          "owner": "Lea",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 46 below Amber threshold 70; several signals mid-range (tickets 4→7/20, login 16d→8/25, NPS 41→8/20, onboarding done→10/10)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 12,
+          "top_drivers": [
+            {
+              "signal": "login",
+              "pts": 8,
+              "max": 25,
+              "utilization": 32
+            },
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "nps",
+              "pts": 8,
+              "max": 20,
+              "utilization": 40
+            }
+          ]
+        },
+        {
+          "account": "Neuchâtel Placeholder Co",
+          "health_score": 79,
+          "risk_tier": "Green",
+          "mrr": 3600,
+          "owner": "Noah",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 60,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 16,
+              "max": 25,
+              "utilization": 64
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "nps",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Fribourg Mock Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 8700,
+          "owner": "Mia",
+          "segment": "boutique_agency",
+          "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 400,
+          "top_drivers": []
+        },
+        {
+          "account": "Winterthur Sample Desk",
+          "health_score": 90,
+          "risk_tier": "Green",
+          "mrr": 6100,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 90,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 19,
+              "max": 25,
+              "utilization": 76
+            },
+            {
+              "signal": "nps",
+              "pts": 16,
+              "max": 20,
+              "utilization": 80
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lucerne Fiction Brokers",
+          "health_score": 66,
+          "risk_tier": "Amber",
+          "mrr": 10200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 66 below Amber threshold 70; several signals mid-range (NPS 50→10/20, onboarding done→10/10, adoption 55%→14/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 40,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            },
+            {
+              "signal": "adoption",
+              "pts": 14,
+              "max": 25,
+              "utilization": 56
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week_index": 2,
+      "week_label": "W3",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+      "summary": {
+        "total_accounts": 13,
+        "red_count": 0,
+        "amber_count": 4,
+        "green_count": 6,
+        "onboarding_count": 3,
+        "at_risk_mrr": 0,
+        "expansion_mrr": 48400
+      },
+      "scored": [
+        {
+          "account": "Alpine Fiction Realty",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 12500,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 80,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 21,
+              "max": 25,
+              "utilization": 84
+            },
+            {
+              "signal": "nps",
+              "pts": 18,
+              "max": 20,
+              "utilization": 90
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lake Placeholder Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 16800,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "Onboarding – insufficient data (tenure 14d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 200,
+          "top_drivers": []
+        },
+        {
+          "account": "Geneva Demo Estates",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 9400,
+          "owner": "Noah",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 35,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "adoption",
+              "pts": 18,
+              "max": 25,
+              "utilization": 72
+            },
+            {
+              "signal": "nps",
+              "pts": 15,
+              "max": 20,
+              "utilization": 75
+            }
+          ]
+        },
+        {
+          "account": "Zurich Mock Brokers",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 21000,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 48→10/20, onboarding done→10/10, adoption 44%→11/25)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 20,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 11,
+              "max": 25,
+              "utilization": 44
+            },
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            }
+          ]
+        },
+        {
+          "account": "Lausanne Sample Agency",
+          "health_score": 98,
+          "risk_tier": "Green",
+          "mrr": 5600,
+          "owner": "Lea",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 100,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 19,
+              "max": 20,
+              "utilization": 95
+            },
+            {
+              "signal": "adoption",
+              "pts": 24,
+              "max": 25,
+              "utilization": 96
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Bern Toy Partners",
+          "health_score": 67,
+          "risk_tier": "Amber",
+          "mrr": 7800,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "aggregate risk: score 67 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 52%→13/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 50,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 13,
+              "max": 25,
+              "utilization": 52
+            },
+            {
+              "signal": "nps",
+              "pts": 12,
+              "max": 20,
+              "utilization": 60
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Ticino Fiction Group",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 4300,
+          "owner": "Mia",
+          "segment": "independent_agent",
+          "reason": "Onboarding – insufficient data (tenure 18d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 300,
+          "top_drivers": []
+        },
+        {
+          "account": "Basel Sandbox Realty",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 11200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 70,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 20,
+              "max": 25,
+              "utilization": 80
+            },
+            {
+              "signal": "nps",
+              "pts": 17,
+              "max": 20,
+              "utilization": 85
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Valais Demo Mandates",
+          "health_score": 45,
+          "risk_tier": "Amber",
+          "mrr": 14900,
+          "owner": "Lea",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 45 below Amber threshold 70; several signals mid-range (tickets 4→7/20, login 16d→8/25, NPS 41→8/20, onboarding done→10/10)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 12,
+          "top_drivers": [
+            {
+              "signal": "login",
+              "pts": 8,
+              "max": 25,
+              "utilization": 32
+            },
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "nps",
+              "pts": 8,
+              "max": 20,
+              "utilization": 40
+            }
+          ]
+        },
+        {
+          "account": "Neuchâtel Placeholder Co",
+          "health_score": 79,
+          "risk_tier": "Green",
+          "mrr": 3600,
+          "owner": "Noah",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 60,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 16,
+              "max": 25,
+              "utilization": 64
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "nps",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Fribourg Mock Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 8700,
+          "owner": "Mia",
+          "segment": "boutique_agency",
+          "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 400,
+          "top_drivers": []
+        },
+        {
+          "account": "Winterthur Sample Desk",
+          "health_score": 90,
+          "risk_tier": "Green",
+          "mrr": 6100,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 90,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 19,
+              "max": 25,
+              "utilization": 76
+            },
+            {
+              "signal": "nps",
+              "pts": 16,
+              "max": 20,
+              "utilization": 80
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lucerne Fiction Brokers",
+          "health_score": 66,
+          "risk_tier": "Amber",
+          "mrr": 10200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 66 below Amber threshold 70; several signals mid-range (NPS 50→10/20, onboarding done→10/10, adoption 55%→14/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 40,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            },
+            {
+              "signal": "adoption",
+              "pts": 14,
+              "max": 25,
+              "utilization": 56
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week_index": 3,
+      "week_label": "W4",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+      "summary": {
+        "total_accounts": 13,
+        "red_count": 0,
+        "amber_count": 4,
+        "green_count": 6,
+        "onboarding_count": 3,
+        "at_risk_mrr": 0,
+        "expansion_mrr": 48400
+      },
+      "scored": [
+        {
+          "account": "Alpine Fiction Realty",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 12500,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 80,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 21,
+              "max": 25,
+              "utilization": 84
+            },
+            {
+              "signal": "nps",
+              "pts": 18,
+              "max": 20,
+              "utilization": 90
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lake Placeholder Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 16800,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "Onboarding – insufficient data (tenure 14d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 200,
+          "top_drivers": []
+        },
+        {
+          "account": "Geneva Demo Estates",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 9400,
+          "owner": "Noah",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 35,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "adoption",
+              "pts": 18,
+              "max": 25,
+              "utilization": 72
+            },
+            {
+              "signal": "nps",
+              "pts": 15,
+              "max": 20,
+              "utilization": 75
+            }
+          ]
+        },
+        {
+          "account": "Zurich Mock Brokers",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 21000,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 48→10/20, onboarding done→10/10, adoption 44%→11/25)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 20,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 11,
+              "max": 25,
+              "utilization": 44
+            },
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            }
+          ]
+        },
+        {
+          "account": "Lausanne Sample Agency",
+          "health_score": 98,
+          "risk_tier": "Green",
+          "mrr": 5600,
+          "owner": "Lea",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 100,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 19,
+              "max": 20,
+              "utilization": 95
+            },
+            {
+              "signal": "adoption",
+              "pts": 24,
+              "max": 25,
+              "utilization": 96
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Bern Toy Partners",
+          "health_score": 67,
+          "risk_tier": "Amber",
+          "mrr": 7800,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "aggregate risk: score 67 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 52%→13/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 50,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 13,
+              "max": 25,
+              "utilization": 52
+            },
+            {
+              "signal": "nps",
+              "pts": 12,
+              "max": 20,
+              "utilization": 60
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Ticino Fiction Group",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 4300,
+          "owner": "Mia",
+          "segment": "independent_agent",
+          "reason": "Onboarding – insufficient data (tenure 18d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 300,
+          "top_drivers": []
+        },
+        {
+          "account": "Basel Sandbox Realty",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 11200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 70,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 20,
+              "max": 25,
+              "utilization": 80
+            },
+            {
+              "signal": "nps",
+              "pts": 17,
+              "max": 20,
+              "utilization": 85
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Valais Demo Mandates",
+          "health_score": 45,
+          "risk_tier": "Amber",
+          "mrr": 14900,
+          "owner": "Lea",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 45 below Amber threshold 70; several signals mid-range (tickets 4→7/20, login 16d→8/25, NPS 41→8/20, onboarding done→10/10)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 12,
+          "top_drivers": [
+            {
+              "signal": "login",
+              "pts": 8,
+              "max": 25,
+              "utilization": 32
+            },
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "nps",
+              "pts": 8,
+              "max": 20,
+              "utilization": 40
+            }
+          ]
+        },
+        {
+          "account": "Neuchâtel Placeholder Co",
+          "health_score": 79,
+          "risk_tier": "Green",
+          "mrr": 3600,
+          "owner": "Noah",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 60,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 16,
+              "max": 25,
+              "utilization": 64
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "nps",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Fribourg Mock Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 8700,
+          "owner": "Mia",
+          "segment": "boutique_agency",
+          "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 400,
+          "top_drivers": []
+        },
+        {
+          "account": "Winterthur Sample Desk",
+          "health_score": 90,
+          "risk_tier": "Green",
+          "mrr": 6100,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 90,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 19,
+              "max": 25,
+              "utilization": 76
+            },
+            {
+              "signal": "nps",
+              "pts": 16,
+              "max": 20,
+              "utilization": 80
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lucerne Fiction Brokers",
+          "health_score": 66,
+          "risk_tier": "Amber",
+          "mrr": 10200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 66 below Amber threshold 70; several signals mid-range (NPS 50→10/20, onboarding done→10/10, adoption 55%→14/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 40,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            },
+            {
+              "signal": "adoption",
+              "pts": 14,
+              "max": 25,
+              "utilization": 56
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week_index": 4,
+      "week_label": "W5",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+      "summary": {
+        "total_accounts": 13,
+        "red_count": 1,
+        "amber_count": 3,
+        "green_count": 6,
+        "onboarding_count": 3,
+        "at_risk_mrr": 14900,
+        "expansion_mrr": 48400
+      },
+      "scored": [
+        {
+          "account": "Alpine Fiction Realty",
+          "health_score": 94,
+          "risk_tier": "Green",
+          "mrr": 12500,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 80,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 21,
+              "max": 25,
+              "utilization": 84
+            },
+            {
+              "signal": "nps",
+              "pts": 18,
+              "max": 20,
+              "utilization": 90
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lake Placeholder Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 16800,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "Onboarding – insufficient data (tenure 14d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 200,
+          "top_drivers": []
+        },
+        {
+          "account": "Geneva Demo Estates",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 9400,
+          "owner": "Noah",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 35,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "adoption",
+              "pts": 18,
+              "max": 25,
+              "utilization": 72
+            },
+            {
+              "signal": "nps",
+              "pts": 15,
+              "max": 20,
+              "utilization": 75
+            }
+          ]
+        },
+        {
+          "account": "Zurich Mock Brokers",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 21000,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 48→10/20, onboarding done→10/10, adoption 44%→11/25)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 20,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 11,
+              "max": 25,
+              "utilization": 44
+            },
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            }
+          ]
+        },
+        {
+          "account": "Lausanne Sample Agency",
+          "health_score": 98,
+          "risk_tier": "Green",
+          "mrr": 5600,
+          "owner": "Lea",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 100,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 19,
+              "max": 20,
+              "utilization": 95
+            },
+            {
+              "signal": "adoption",
+              "pts": 24,
+              "max": 25,
+              "utilization": 96
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Bern Toy Partners",
+          "health_score": 67,
+          "risk_tier": "Amber",
+          "mrr": 7800,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "aggregate risk: score 67 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 52%→13/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 50,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 13,
+              "max": 25,
+              "utilization": 52
+            },
+            {
+              "signal": "nps",
+              "pts": 12,
+              "max": 20,
+              "utilization": 60
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Ticino Fiction Group",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 4300,
+          "owner": "Mia",
+          "segment": "independent_agent",
+          "reason": "Onboarding – insufficient data (tenure 18d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 300,
+          "top_drivers": []
+        },
+        {
+          "account": "Basel Sandbox Realty",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 11200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 70,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 20,
+              "max": 25,
+              "utilization": 80
+            },
+            {
+              "signal": "nps",
+              "pts": 17,
+              "max": 20,
+              "utilization": 85
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Valais Demo Mandates",
+          "health_score": 44,
+          "risk_tier": "Red",
+          "mrr": 14900,
+          "owner": "Lea",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 44 below Red threshold 45; several signals mid-range (tickets 4→7/20, login 17d→8/25, NPS 41→8/20, onboarding done→10/10)",
+          "recommended_action": "agency QBR: reactivate CRM logins + lead SLAs; rescue open mandates",
+          "days_to_renewal": 12,
+          "top_drivers": [
+            {
+              "signal": "login",
+              "pts": 8,
+              "max": 25,
+              "utilization": 32
+            },
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "nps",
+              "pts": 8,
+              "max": 20,
+              "utilization": 40
+            }
+          ]
+        },
+        {
+          "account": "Neuchâtel Placeholder Co",
+          "health_score": 79,
+          "risk_tier": "Green",
+          "mrr": 3600,
+          "owner": "Noah",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 60,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 16,
+              "max": 25,
+              "utilization": 64
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "nps",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Fribourg Mock Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 8700,
+          "owner": "Mia",
+          "segment": "boutique_agency",
+          "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 400,
+          "top_drivers": []
+        },
+        {
+          "account": "Winterthur Sample Desk",
+          "health_score": 90,
+          "risk_tier": "Green",
+          "mrr": 6100,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 90,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 19,
+              "max": 25,
+              "utilization": 76
+            },
+            {
+              "signal": "nps",
+              "pts": 16,
+              "max": 20,
+              "utilization": 80
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lucerne Fiction Brokers",
+          "health_score": 66,
+          "risk_tier": "Amber",
+          "mrr": 10200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 66 below Amber threshold 70; several signals mid-range (NPS 50→10/20, onboarding done→10/10, adoption 55%→14/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 40,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            },
+            {
+              "signal": "adoption",
+              "pts": 14,
+              "max": 25,
+              "utilization": 56
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week_index": 5,
+      "week_label": "W6",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+      "summary": {
+        "total_accounts": 13,
+        "red_count": 1,
+        "amber_count": 3,
+        "green_count": 6,
+        "onboarding_count": 3,
+        "at_risk_mrr": 14900,
+        "expansion_mrr": 48400
+      },
+      "scored": [
+        {
+          "account": "Alpine Fiction Realty",
+          "health_score": 95,
+          "risk_tier": "Green",
+          "mrr": 12500,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 80,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 22,
+              "max": 25,
+              "utilization": 88
+            },
+            {
+              "signal": "nps",
+              "pts": 18,
+              "max": 20,
+              "utilization": 90
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lake Placeholder Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 16800,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "Onboarding – insufficient data (tenure 14d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 200,
+          "top_drivers": []
+        },
+        {
+          "account": "Geneva Demo Estates",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 9400,
+          "owner": "Noah",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 35,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "adoption",
+              "pts": 18,
+              "max": 25,
+              "utilization": 72
+            },
+            {
+              "signal": "nps",
+              "pts": 15,
+              "max": 20,
+              "utilization": 75
+            }
+          ]
+        },
+        {
+          "account": "Zurich Mock Brokers",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 21000,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 48→10/20, onboarding done→10/10, adoption 44%→11/25)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 20,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 11,
+              "max": 25,
+              "utilization": 44
+            },
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            }
+          ]
+        },
+        {
+          "account": "Lausanne Sample Agency",
+          "health_score": 98,
+          "risk_tier": "Green",
+          "mrr": 5600,
+          "owner": "Lea",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 100,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 19,
+              "max": 20,
+              "utilization": 95
+            },
+            {
+              "signal": "adoption",
+              "pts": 24,
+              "max": 25,
+              "utilization": 96
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Bern Toy Partners",
+          "health_score": 67,
+          "risk_tier": "Amber",
+          "mrr": 7800,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "aggregate risk: score 67 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 52%→13/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 50,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 13,
+              "max": 25,
+              "utilization": 52
+            },
+            {
+              "signal": "nps",
+              "pts": 12,
+              "max": 20,
+              "utilization": 60
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Ticino Fiction Group",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 4300,
+          "owner": "Mia",
+          "segment": "independent_agent",
+          "reason": "Onboarding – insufficient data (tenure 18d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 300,
+          "top_drivers": []
+        },
+        {
+          "account": "Basel Sandbox Realty",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 11200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 70,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 20,
+              "max": 25,
+              "utilization": 80
+            },
+            {
+              "signal": "nps",
+              "pts": 17,
+              "max": 20,
+              "utilization": 85
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Valais Demo Mandates",
+          "health_score": 44,
+          "risk_tier": "Red",
+          "mrr": 14900,
+          "owner": "Lea",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 44 below Red threshold 45; several signals mid-range (tickets 4→7/20, login 18d→8/25, NPS 41→8/20, onboarding done→10/10)",
+          "recommended_action": "agency QBR: reactivate CRM logins + lead SLAs; rescue open mandates",
+          "days_to_renewal": 12,
+          "top_drivers": [
+            {
+              "signal": "login",
+              "pts": 8,
+              "max": 25,
+              "utilization": 32
+            },
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "nps",
+              "pts": 8,
+              "max": 20,
+              "utilization": 40
+            }
+          ]
+        },
+        {
+          "account": "Neuchâtel Placeholder Co",
+          "health_score": 79,
+          "risk_tier": "Green",
+          "mrr": 3600,
+          "owner": "Noah",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 60,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 16,
+              "max": 25,
+              "utilization": 64
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "nps",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Fribourg Mock Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 8700,
+          "owner": "Mia",
+          "segment": "boutique_agency",
+          "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 400,
+          "top_drivers": []
+        },
+        {
+          "account": "Winterthur Sample Desk",
+          "health_score": 90,
+          "risk_tier": "Green",
+          "mrr": 6100,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 90,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 19,
+              "max": 25,
+              "utilization": 76
+            },
+            {
+              "signal": "nps",
+              "pts": 16,
+              "max": 20,
+              "utilization": 80
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lucerne Fiction Brokers",
+          "health_score": 66,
+          "risk_tier": "Amber",
+          "mrr": 10200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 66 below Amber threshold 70; several signals mid-range (NPS 50→10/20, onboarding done→10/10, adoption 55%→14/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 40,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            },
+            {
+              "signal": "adoption",
+              "pts": 14,
+              "max": 25,
+              "utilization": 56
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week_index": 6,
+      "week_label": "W7",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+      "summary": {
+        "total_accounts": 13,
+        "red_count": 1,
+        "amber_count": 3,
+        "green_count": 6,
+        "onboarding_count": 3,
+        "at_risk_mrr": 14900,
+        "expansion_mrr": 48400
+      },
+      "scored": [
+        {
+          "account": "Alpine Fiction Realty",
+          "health_score": 95,
+          "risk_tier": "Green",
+          "mrr": 12500,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 80,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 22,
+              "max": 25,
+              "utilization": 88
+            },
+            {
+              "signal": "nps",
+              "pts": 18,
+              "max": 20,
+              "utilization": 90
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lake Placeholder Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 16800,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "Onboarding – insufficient data (tenure 14d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 200,
+          "top_drivers": []
+        },
+        {
+          "account": "Geneva Demo Estates",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 9400,
+          "owner": "Noah",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 35,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "adoption",
+              "pts": 18,
+              "max": 25,
+              "utilization": 72
+            },
+            {
+              "signal": "nps",
+              "pts": 15,
+              "max": 20,
+              "utilization": 75
+            }
+          ]
+        },
+        {
+          "account": "Zurich Mock Brokers",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 21000,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 48→10/20, onboarding done→10/10, adoption 44%→11/25)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 20,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 11,
+              "max": 25,
+              "utilization": 44
+            },
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            }
+          ]
+        },
+        {
+          "account": "Lausanne Sample Agency",
+          "health_score": 98,
+          "risk_tier": "Green",
+          "mrr": 5600,
+          "owner": "Lea",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 100,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 19,
+              "max": 20,
+              "utilization": 95
+            },
+            {
+              "signal": "adoption",
+              "pts": 24,
+              "max": 25,
+              "utilization": 96
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Bern Toy Partners",
+          "health_score": 67,
+          "risk_tier": "Amber",
+          "mrr": 7800,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "aggregate risk: score 67 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 52%→13/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 50,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 13,
+              "max": 25,
+              "utilization": 52
+            },
+            {
+              "signal": "nps",
+              "pts": 12,
+              "max": 20,
+              "utilization": 60
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Ticino Fiction Group",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 4300,
+          "owner": "Mia",
+          "segment": "independent_agent",
+          "reason": "Onboarding – insufficient data (tenure 18d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 300,
+          "top_drivers": []
+        },
+        {
+          "account": "Basel Sandbox Realty",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 11200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 70,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 20,
+              "max": 25,
+              "utilization": 80
+            },
+            {
+              "signal": "nps",
+              "pts": 17,
+              "max": 20,
+              "utilization": 85
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Valais Demo Mandates",
+          "health_score": 43,
+          "risk_tier": "Red",
+          "mrr": 14900,
+          "owner": "Lea",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 4→7/20, login 19d→8/25, NPS 41→8/20, adoption 41%→10/25)",
+          "recommended_action": "agency QBR: reactivate CRM logins + lead SLAs; rescue open mandates",
+          "days_to_renewal": 12,
+          "top_drivers": [
+            {
+              "signal": "login",
+              "pts": 8,
+              "max": 25,
+              "utilization": 32
+            },
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 10,
+              "max": 25,
+              "utilization": 40
+            }
+          ]
+        },
+        {
+          "account": "Neuchâtel Placeholder Co",
+          "health_score": 79,
+          "risk_tier": "Green",
+          "mrr": 3600,
+          "owner": "Noah",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 60,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 16,
+              "max": 25,
+              "utilization": 64
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "nps",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Fribourg Mock Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 8700,
+          "owner": "Mia",
+          "segment": "boutique_agency",
+          "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 400,
+          "top_drivers": []
+        },
+        {
+          "account": "Winterthur Sample Desk",
+          "health_score": 90,
+          "risk_tier": "Green",
+          "mrr": 6100,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 90,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 19,
+              "max": 25,
+              "utilization": 76
+            },
+            {
+              "signal": "nps",
+              "pts": 16,
+              "max": 20,
+              "utilization": 80
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lucerne Fiction Brokers",
+          "health_score": 66,
+          "risk_tier": "Amber",
+          "mrr": 10200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 66 below Amber threshold 70; several signals mid-range (NPS 50→10/20, onboarding done→10/10, adoption 55%→14/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 40,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            },
+            {
+              "signal": "adoption",
+              "pts": 14,
+              "max": 25,
+              "utilization": 56
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week_index": 7,
+      "week_label": "W8",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented agency/agent accounts for portfolio demos. Not real customers. Not production data.",
+      "summary": {
+        "total_accounts": 13,
+        "red_count": 1,
+        "amber_count": 3,
+        "green_count": 6,
+        "onboarding_count": 3,
+        "at_risk_mrr": 14900,
+        "expansion_mrr": 48400
+      },
+      "scored": [
+        {
+          "account": "Alpine Fiction Realty",
+          "health_score": 95,
+          "risk_tier": "Green",
+          "mrr": 12500,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 80,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 22,
+              "max": 25,
+              "utilization": 88
+            },
+            {
+              "signal": "nps",
+              "pts": 18,
+              "max": 20,
+              "utilization": 90
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lake Placeholder Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 16800,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "Onboarding – insufficient data (tenure 14d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 200,
+          "top_drivers": []
+        },
+        {
+          "account": "Geneva Demo Estates",
+          "health_score": 82,
+          "risk_tier": "Green",
+          "mrr": 9400,
+          "owner": "Noah",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 35,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "adoption",
+              "pts": 18,
+              "max": 25,
+              "utilization": 72
+            },
+            {
+              "signal": "nps",
+              "pts": 15,
+              "max": 20,
+              "utilization": 75
+            }
+          ]
+        },
+        {
+          "account": "Zurich Mock Brokers",
+          "health_score": 56,
+          "risk_tier": "Amber",
+          "mrr": 21000,
+          "owner": "Mia",
+          "segment": "national_network",
+          "reason": "aggregate risk: score 56 below Amber threshold 70; several signals mid-range (tickets 3→7/20, NPS 48→10/20, onboarding done→10/10, adoption 44%→11/25)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 20,
+          "top_drivers": [
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 11,
+              "max": 25,
+              "utilization": 44
+            },
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            }
+          ]
+        },
+        {
+          "account": "Lausanne Sample Agency",
+          "health_score": 98,
+          "risk_tier": "Green",
+          "mrr": 5600,
+          "owner": "Lea",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 100,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 19,
+              "max": 20,
+              "utilization": 95
+            },
+            {
+              "signal": "adoption",
+              "pts": 24,
+              "max": 25,
+              "utilization": 96
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Bern Toy Partners",
+          "health_score": 67,
+          "risk_tier": "Amber",
+          "mrr": 7800,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "aggregate risk: score 67 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 58→12/20, adoption 52%→13/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 50,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 13,
+              "max": 25,
+              "utilization": 52
+            },
+            {
+              "signal": "nps",
+              "pts": 12,
+              "max": 20,
+              "utilization": 60
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Ticino Fiction Group",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 4300,
+          "owner": "Mia",
+          "segment": "independent_agent",
+          "reason": "Onboarding – insufficient data (tenure 18d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 300,
+          "top_drivers": []
+        },
+        {
+          "account": "Basel Sandbox Realty",
+          "health_score": 92,
+          "risk_tier": "Green",
+          "mrr": 11200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 70,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 20,
+              "max": 25,
+              "utilization": 80
+            },
+            {
+              "signal": "nps",
+              "pts": 17,
+              "max": 20,
+              "utilization": 85
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Valais Demo Mandates",
+          "health_score": 43,
+          "risk_tier": "Red",
+          "mrr": 14900,
+          "owner": "Lea",
+          "segment": "regional_agency",
+          "reason": "low listing activity",
+          "recommended_action": "agency QBR: reactivate CRM logins + lead SLAs; rescue open mandates",
+          "days_to_renewal": 12,
+          "top_drivers": [
+            {
+              "signal": "login",
+              "pts": 8,
+              "max": 25,
+              "utilization": 32
+            },
+            {
+              "signal": "tickets",
+              "pts": 7,
+              "max": 20,
+              "utilization": 35
+            },
+            {
+              "signal": "adoption",
+              "pts": 10,
+              "max": 25,
+              "utilization": 40
+            }
+          ]
+        },
+        {
+          "account": "Neuchâtel Placeholder Co",
+          "health_score": 79,
+          "risk_tier": "Green",
+          "mrr": 3600,
+          "owner": "Noah",
+          "segment": "independent_agent",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 60,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 16,
+              "max": 25,
+              "utilization": 64
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            },
+            {
+              "signal": "nps",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        },
+        {
+          "account": "Fribourg Mock Homes",
+          "health_score": null,
+          "risk_tier": "Onboarding",
+          "mrr": 8700,
+          "owner": "Mia",
+          "segment": "boutique_agency",
+          "reason": "Onboarding – insufficient data (tenure 8d < 21d); score withheld",
+          "recommended_action": "activation: CRM pipeline setup + first lead SLA training",
+          "days_to_renewal": 400,
+          "top_drivers": []
+        },
+        {
+          "account": "Winterthur Sample Desk",
+          "health_score": 90,
+          "risk_tier": "Green",
+          "mrr": 6100,
+          "owner": "Lea",
+          "segment": "boutique_agency",
+          "reason": "healthy signals",
+          "recommended_action": "expansion: more seats / multi-team / premium visibility modules",
+          "days_to_renewal": 90,
+          "top_drivers": [
+            {
+              "signal": "adoption",
+              "pts": 19,
+              "max": 25,
+              "utilization": 76
+            },
+            {
+              "signal": "nps",
+              "pts": 16,
+              "max": 20,
+              "utilization": 80
+            },
+            {
+              "signal": "login",
+              "pts": 25,
+              "max": 25,
+              "utilization": 100
+            }
+          ]
+        },
+        {
+          "account": "Lucerne Fiction Brokers",
+          "health_score": 66,
+          "risk_tier": "Amber",
+          "mrr": 10200,
+          "owner": "Noah",
+          "segment": "regional_agency",
+          "reason": "aggregate risk: score 66 below Amber threshold 70; several signals mid-range (NPS 50→10/20, onboarding done→10/10, adoption 55%→14/25, tickets 2→14/20)",
+          "recommended_action": "nurture: task cadences + listing publish checklist",
+          "days_to_renewal": 40,
+          "top_drivers": [
+            {
+              "signal": "nps",
+              "pts": 10,
+              "max": 20,
+              "utilization": 50
+            },
+            {
+              "signal": "adoption",
+              "pts": 14,
+              "max": 25,
+              "utilization": 56
+            },
+            {
+              "signal": "tickets",
+              "pts": 14,
+              "max": 20,
+              "utilization": 70
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "week_over_week_latest": {
+    "drop_threshold": 10,
+    "deteriorated": [],
+    "all_changes": [
+      {
+        "account": "Alpine Fiction Realty",
+        "prev_score": 95,
+        "curr_score": 95,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Green",
+        "curr_tier": "Green"
+      },
+      {
+        "account": "Geneva Demo Estates",
+        "prev_score": 82,
+        "curr_score": 82,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Green",
+        "curr_tier": "Green"
+      },
+      {
+        "account": "Zurich Mock Brokers",
+        "prev_score": 56,
+        "curr_score": 56,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Amber",
+        "curr_tier": "Amber"
+      },
+      {
+        "account": "Lausanne Sample Agency",
+        "prev_score": 98,
+        "curr_score": 98,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Green",
+        "curr_tier": "Green"
+      },
+      {
+        "account": "Bern Toy Partners",
+        "prev_score": 67,
+        "curr_score": 67,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Amber",
+        "curr_tier": "Amber"
+      },
+      {
+        "account": "Basel Sandbox Realty",
+        "prev_score": 92,
+        "curr_score": 92,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Green",
+        "curr_tier": "Green"
+      },
+      {
+        "account": "Valais Demo Mandates",
+        "prev_score": 43,
+        "curr_score": 43,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Red",
+        "curr_tier": "Red"
+      },
+      {
+        "account": "Neuchâtel Placeholder Co",
+        "prev_score": 79,
+        "curr_score": 79,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Green",
+        "curr_tier": "Green"
+      },
+      {
+        "account": "Winterthur Sample Desk",
+        "prev_score": 90,
+        "curr_score": 90,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Green",
+        "curr_tier": "Green"
+      },
+      {
+        "account": "Lucerne Fiction Brokers",
+        "prev_score": 66,
+        "curr_score": 66,
+        "delta": 0,
+        "deteriorated": false,
+        "prev_tier": "Amber",
+        "curr_tier": "Amber"
+      }
+    ]
+  },
+  "interventions_simulated": [
+    {
+      "account": "Zurich Mock Brokers",
+      "week": "W5",
+      "action": "nurture: task cadences + listing publish checklist",
+      "owner": "Mia",
+      "outcome": "SIMULATED: lead-response health +6 by W7",
+      "label": "SIMULATED intervention outcome — not real"
+    },
+    {
+      "account": "Lake Placeholder Homes",
+      "week": "W6",
+      "action": "agency QBR: reactivate CRM logins + lead SLAs",
+      "owner": "Mia",
+      "outcome": "SIMULATED: still Red; seating underused",
+      "label": "SIMULATED intervention outcome — not real"
+    },
+    {
+      "account": "Bern Toy Partners",
+      "week": "W4",
+      "action": "nurture: task cadences + listing publish checklist",
+      "owner": "Lea",
+      "outcome": "SIMULATED: Amber stable; monitoring renewal",
+      "label": "SIMULATED intervention outcome — not real"
+    }
+  ],
+  "note": "All weeks and interventions are FICTITIOUS / SIMULATED demo data."
+}

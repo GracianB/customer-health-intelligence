@@ -1,0 +1,23 @@
+# Local n8n for importing the SAMPLE DATA workflow. No credentials bundled.
+# Pinned to n8n 2.46.7 (same version as the author's validated local demo).
+# Image tag verified on Docker Hub: n8nio/n8n:2.46.7 (HTTP 200, 2026-11-09).
+# Usage: docker compose up -d
+# Then open http://127.0.0.1:5678 and import workflows/customer-health-intelligence.json
+services:
+  n8n:
+    image: n8nio/n8n:2.46.7
+    ports:
+      - "127.0.0.1:5678:5678"
+    environment:
+      - N8N_HOST=127.0.0.1
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE:-Europe/Madrid}
+      - TZ=${GENERIC_TIMEZONE:-Europe/Madrid}
+      - N8N_SECURE_COOKIE=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+    restart: unless-stopped
+
+volumes:
+  n8n_data:

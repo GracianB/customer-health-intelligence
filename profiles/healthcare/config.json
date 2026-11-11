@@ -1,0 +1,135 @@
+{
+  "profile_id": "healthcare_marketplace",
+  "profile_name": "Healthcare scheduling SaaS — FICTITIOUS SAMPLE",
+  "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+  "version": "1.2.0",
+  "industry": "healthcare_scheduling_saas",
+  "inspired_by_public_product": {
+    "archetype": "Healthcare scheduling marketplace (generic sector archetype)",
+    "note": "Signal names reflect common public capabilities of healthcare booking platforms (online booking, reminders/no-shows, profile, reviews, support). No company-specific data or inside knowledge."
+  },
+  "weights": {
+    "login": 25,
+    "adoption": 25,
+    "tickets": 20,
+    "nps": 20,
+    "onboarding": 10
+  },
+  "thresholds": {
+    "red": 45,
+    "amber": 70
+  },
+  "signalFields": {
+    "login_days": "last_login_days",
+    "adoption": "online_booking_adoption_pct",
+    "tickets": "open_tickets",
+    "nps": "patient_review_score",
+    "onboarding": "profile_calendar_complete"
+  },
+  "signal_glossary": {
+    "last_login_days": "Days since clinic staff last logged into the scheduling product (proxy for engagement).",
+    "online_booking_adoption_pct": "Share of appointments booked online vs total (public product emphasis: 24/7 online booking).",
+    "open_tickets": "Open support tickets with the vendor CSM/support team.",
+    "patient_review_score": "0–100 proxy for review/reputation activity health (public product: patient reviews).",
+    "profile_calendar_complete": "Whether public profile + online calendar setup is complete (public product: profile + agenda)."
+  },
+  "bands": {
+    "login": [
+      {
+        "maxDays": 7,
+        "pts": 25
+      },
+      {
+        "maxDays": 14,
+        "pts": 18
+      },
+      {
+        "maxDays": 30,
+        "pts": 8,
+        "elsePts": 0,
+        "elseFlag": "inactive >30d"
+      }
+    ],
+    "tickets": [
+      {
+        "max": 0,
+        "pts": 20
+      },
+      {
+        "max": 2,
+        "pts": 14
+      },
+      {
+        "max": 4,
+        "pts": 7
+      },
+      {
+        "max": 9999,
+        "pts": 0,
+        "flag": true
+      }
+    ]
+  },
+  "flags": {
+    "adoption_below": 40,
+    "nps_below": 40
+  },
+  "flagLabels": {
+    "adoption": "low online-booking adoption",
+    "tickets": "many open tickets",
+    "nps": "weak review/reputation signal",
+    "onboarding": "profile/calendar setup incomplete"
+  },
+  "playbooks": {
+    "red": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+    "amber": "nurture: enable reminders/waitlist + complete profile gaps",
+    "green": "expansion: add specialists / multi-location / premium modules",
+    "onboarding": "activation: finish profile + calendar; enable online booking; CSM kickoff"
+  },
+  "summary_notes": "FICTITIOUS SAMPLE — Healthcare marketplace / clinic scheduling. Rules-based (not ML). Simulated MRR at risk. Slack NoOp pending configuration.",
+  "min_tenure_days": 21,
+  "default_tenure_days": 365,
+  "tenure_field": "tenure_days",
+  "renewal_field": "days_to_renewal",
+  "renewal_alert_days": 60,
+  "subtitle": "Customer Intelligence, Revenue Protection & Growth Automation",
+  "segments": [
+    "individual_doctor",
+    "clinic",
+    "polyclinic",
+    "hospital_group"
+  ],
+  "metric_glossary": {
+    "last_login_days": "Days since clinic staff last logged into the scheduling product (proxy for engagement).",
+    "online_booking_adoption_pct": "Product: % of appointments via online booking (fictitious).",
+    "open_tickets": "Open support tickets with the vendor CSM/support team.",
+    "patient_review_score": "Product proxy 0–100 for reputation (fictitious).",
+    "profile_calendar_complete": "Whether public profile + online calendar setup is complete (public product: profile + agenda).",
+    "health_score": "Rules-based clinic health from login, online-booking adoption, tickets, review score, profile completeness.",
+    "risk_tier": "Red <45 · Amber <70 · Green ≥70 · Onboarding if tenure <21d.",
+    "simulated_mrr_at_risk": "Red MRR only — SAMPLE/FICTITIOUS, not real protected revenue.",
+    "days_to_renewal": "Commercial: days until contract renewal in the demo dataset."
+  },
+  "scoring_explanation": {
+    "model": "rules-based (not ML)",
+    "weights": {
+      "login": 25,
+      "adoption": 25,
+      "tickets": 20,
+      "nps": 20,
+      "onboarding": 10
+    },
+    "thresholds": {
+      "red": 45,
+      "amber": 70
+    },
+    "onboarding_grace_days": 21,
+    "at_risk_definition": "Red MRR only",
+    "limitations": [
+      "Not calibrated on real churn",
+      "SAMPLE/FICTITIOUS demo data",
+      "Slack remains NoOp (pending configuration)",
+      "No live CRM credentials in this package"
+    ]
+  }
+}

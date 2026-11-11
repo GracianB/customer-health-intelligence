@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Healthcare scheduling SaaS — FICTITIOUS SAMPLE — Customer Health Report (DEMO)</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:24px;color:#122;background:#f7f8fa}
+.banner{background:#7c2d12;color:#fff;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-weight:600}
+h1{font-size:1.4rem;margin:0 0 8px}
+.meta{color:#445;margin-bottom:20px}
+.cards{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.card{background:#fff;border:1px solid #dde;border-radius:8px;padding:12px 16px;min-width:140px}
+.card b{display:block;font-size:1.4rem}
+table{border-collapse:collapse;width:100%;background:#fff;margin:12px 0 24px}
+th,td{border:1px solid #dde;padding:8px;text-align:left;font-size:0.9rem}
+th{background:#eef2f7}
+.tier-Red{background:#fef2f2}.tier-Amber{background:#fffbeb}.tier-Green{background:#f0fdf4}
+.small{font-size:0.85rem;color:#556}
+</style>
+</head>
+<body>
+<div class="banner">DEMO / SAMPLE DATA — fictitious accounts. Rules-based scoring (not ML). Simulated MRR at risk is not real protected revenue. Slack delivery is NoOp (pending configuration).</div>
+<h1>Healthcare scheduling SaaS — FICTITIOUS SAMPLE</h1>
+<p class="meta">FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.<br/>Generated 2026-11-09T14:19:40.152Z · Scoring: rules-based (not ML)</p>
+<div class="cards">
+  <div class="card">Accounts<b>14</b></div>
+  <div class="card">Red / Amber / Green<b>5 / 2 / 7</b></div>
+  <div class="card">Simulated MRR at risk (sample)<b>59700</b></div>
+  <div class="card">Green expansion MRR (sample)<b>39400</b></div>
+</div>
+<h2>Prioritised action queue (MRR × risk weight)</h2>
+<table><thead><tr><th>Priority</th><th>Account</th><th>Tier</th><th>MRR</th><th>Owner</th><th>Next action</th><th>SLA</th></tr></thead><tbody>
+<tr><td>56700</td><td>Fertility Fake Clinic</td><td>Red</td><td>18900</td><td>Elena</td><td>clinic QBR: reactivate online booking + reminders; reduce no-shows</td><td>24h</td></tr>
+<tr><td>46200</td><td>Centro Médico Lorem Ipsum</td><td>Red</td><td>15400</td><td>Marc</td><td>clinic QBR: reactivate online booking + reminders; reduce no-shows</td><td>24h</td></tr>
+<tr><td>39600</td><td>ORL Placeholder Group</td><td>Red</td><td>13200</td><td>Marc</td><td>clinic QBR: reactivate online booking + reminders; reduce no-shows</td><td>24h</td></tr>
+<tr><td>29400</td><td>Derma Placeholder SA</td><td>Red</td><td>9800</td><td>Marc</td><td>clinic QBR: reactivate online booking + reminders; reduce no-shows</td><td>24h</td></tr>
+<tr><td>22400</td><td>Pediatría Sample Hub</td><td>Amber</td><td>11200</td><td>Sofía</td><td>nurture: enable reminders/waitlist + complete profile gaps</td><td>72h</td></tr>
+<tr><td>18200</td><td>Trauma Fiction Unit</td><td>Amber</td><td>9100</td><td>Sofía</td><td>nurture: enable reminders/waitlist + complete profile gaps</td><td>72h</td></tr>
+<tr><td>8200</td><td>Clinic Aurora Demo SL</td><td>Green</td><td>8200</td><td>Elena</td><td>expansion: add specialists / multi-location / premium modules</td><td>168h</td></tr>
+<tr><td>7400</td><td>Mental Health Sandbox Co</td><td>Green</td><td>7400</td><td>Sofía</td><td>expansion: add specialists / multi-location / premium modules</td><td>168h</td></tr>
+<tr><td>7200</td><td>Óptica Demo Norte</td><td>Red</td><td>2400</td><td>Marc</td><td>clinic QBR: reactivate online booking + reminders; reduce no-shows</td><td>24h</td></tr>
+<tr><td>6700</td><td>Gine Demo Care</td><td>Green</td><td>6700</td><td>Elena</td><td>expansion: add specialists / multi-location / premium modules</td><td>168h</td></tr>
+</tbody></table>
+<h2>All accounts</h2>
+<table><thead><tr><th>Account</th><th>Score</th><th>Tier</th><th>MRR</th><th>CSM</th><th>Reason</th></tr></thead><tbody>
+<tr class="tier-Green"><td>Clinic Aurora Demo SL</td><td>92</td><td>Green</td><td>8200</td><td>Elena</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Centro Médico Lorem Ipsum</td><td>9</td><td>Red</td><td>15400</td><td>Marc</td><td>inactive &gt;30d; low online-booking adoption; many open tickets; weak review/reputation signal; profile/calendar setup incomplete</td></tr>
+<tr class="tier-Green"><td>Dental Fiction Lab</td><td>80</td><td>Green</td><td>5600</td><td>Elena</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Derma Placeholder SA</td><td>42</td><td>Red</td><td>9800</td><td>Marc</td><td>low online-booking adoption; weak review/reputation signal</td></tr>
+<tr class="tier-Green"><td>Physio Mock Studio</td><td>96</td><td>Green</td><td>3100</td><td>Elena</td><td>healthy signals</td></tr>
+<tr class="tier-Amber"><td>Pediatría Sample Hub</td><td>65</td><td>Amber</td><td>11200</td><td>Sofía</td><td>aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)</td></tr>
+<tr class="tier-Red"><td>Óptica Demo Norte</td><td>20</td><td>Red</td><td>2400</td><td>Marc</td><td>low online-booking adoption; many open tickets; weak review/reputation signal; profile/calendar setup incomplete</td></tr>
+<tr class="tier-Green"><td>Mental Health Sandbox Co</td><td>89</td><td>Green</td><td>7400</td><td>Sofía</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>Fertility Fake Clinic</td><td>43</td><td>Red</td><td>18900</td><td>Elena</td><td>aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 4→7/20, login 21d→8/25, NPS 42→8/20, adoption 41%→10/25)</td></tr>
+<tr class="tier-Green"><td>Cardio Toy Practice</td><td>76</td><td>Green</td><td>4500</td><td>Sofía</td><td>healthy signals</td></tr>
+<tr class="tier-Red"><td>ORL Placeholder Group</td><td>6</td><td>Red</td><td>13200</td><td>Marc</td><td>inactive &gt;30d; low online-booking adoption; many open tickets; weak review/reputation signal; profile/calendar setup incomplete</td></tr>
+<tr class="tier-Green"><td>Gine Demo Care</td><td>91</td><td>Green</td><td>6700</td><td>Elena</td><td>healthy signals</td></tr>
+<tr class="tier-Amber"><td>Trauma Fiction Unit</td><td>65</td><td>Amber</td><td>9100</td><td>Sofía</td><td>aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)</td></tr>
+<tr class="tier-Green"><td>Allergy Mock Network</td><td>71</td><td>Green</td><td>3900</td><td>Marc</td><td>healthy signals</td></tr>
+</tbody></table>
+<p class="small">Customer Health Intelligence v1.2.0 · Public MIT demo · Industry signals inspired by public product docs only.</p>
+</body></html>

@@ -1,0 +1,29 @@
+TAP version 13
+# Subtest: command-center visual (headless)
+ok 1 - command-center visual (headless) # SKIP No Chromium/Chrome binary found (set CHROME_PATH or install Chrome / npx playwright install chromium) — visual/file:// tests skipped
+  ---
+  duration_ms: 0.4
+  type: 'suite'
+  ...
+# Subtest: profile base
+    # Subtest: is labelled fictitious/sample data
+    ok 1 - is labelled fictitious/sample data
+      ---
+      duration_ms: 0.2
+      type: 'test'
+      ...
+    1..1
+ok 2 - profile base
+  ---
+  duration_ms: 1.0
+  type: 'suite'
+  ...
+1..2
+# tests 66
+# suites 20
+# pass 66
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 120.0

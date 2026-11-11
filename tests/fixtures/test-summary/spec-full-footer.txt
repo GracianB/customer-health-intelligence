@@ -1,0 +1,12 @@
+﹣ command-center visual (headless) (0.363892ms) # No Chromium/Chrome binary found — visual/file:// tests skipped
+▶ profile base
+  ✔ is labelled fictitious/sample data (0.2ms)
+✔ profile base (1.0ms)
+ℹ tests 66
+ℹ suites 20
+ℹ pass 66
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120.0

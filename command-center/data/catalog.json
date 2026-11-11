@@ -1,0 +1,25 @@
+{
+  "version": "1.2.2",
+  "subtitle": "Customer Intelligence, Revenue Protection & Growth Automation",
+  "demo_badge": "Demo data – fictitious",
+  "demo_as_of": "2026-11-10",
+  "profiles": [
+    {
+      "id": "base",
+      "label": "Generic B2B SaaS (SAMPLE)"
+    },
+    {
+      "id": "healthcare",
+      "label": "Healthcare marketplace (FICTITIOUS)"
+    },
+    {
+      "id": "realestate",
+      "label": "Real-estate brokerage (FICTITIOUS)"
+    },
+    {
+      "id": "pricing-saas",
+      "label": "Dynamic pricing SaaS (FICTITIOUS)"
+    }
+  ],
+  "note": "Generic sector archetypes with fictitious accounts. Not based on any real company."
+}

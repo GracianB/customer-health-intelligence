@@ -1,0 +1,27 @@
+CUSTOMER HEALTH INTELLIGENCE · v1.2.2 (FROZEN)
+==============================================
+
+Cómo abrir la demo en Windows (sin instalación)
+-----------------------------------------------
+1. Descomprime el ZIP en cualquier carpeta.
+2. Haz doble clic en START-HERE.html
+   (o en command-center\index.html si el navegador no redirige).
+3. No hace falta servidor, Docker, Node ni Internet.
+   Los datos van embebidos en JavaScript (file:// compatible).
+
+Qué verás
+---------
+- Selector de perfil: Healthcare / Real estate / Pricing SaaS / Generic base
+- Overview, Portfolio, Revenue, Action Center, Account 360
+- Real estate → vista CS Team Lead
+- Pricing SaaS → Adoption → Value → Retention (producto vs comercial)
+- Score & glossary → cómo se calcula el Health Score y glosario de métricas
+
+Importante
+----------
+- Todos los datos son FICTICIOS / SAMPLE.
+- Los perfiles sectoriales son arquetipos genéricos (no empresas reales).
+- Scoring basado en REGLAS (no machine learning).
+- Slack está en NoOp (configuración pendiente).
+- Cifras de dinero = simuladas.
+

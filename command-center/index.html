@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <title>Customer Health Intelligence — Command Center (DEMO)</title>
+  <link rel="stylesheet" href="css/app.css"/>
+  <style>.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}</style>
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+  <header class="app-header">
+    <div class="brand">
+      <h1 id="profileTitle">Customer Health Intelligence</h1>
+      <div class="sub" id="profileSub">Customer Intelligence, Revenue Protection &amp; Growth Automation</div>
+    </div>
+    <div class="controls">
+      <span class="badge" id="demoBadge" role="status">Demo data – fictitious</span>
+      <label class="muted" for="profileSelect">Profile</label>
+      <select id="profileSelect" aria-label="Select industry profile"></select>
+    </div>
+  </header>
+  <div class="layout">
+    <nav aria-label="Primary">
+      <button type="button" class="navbtn" data-view="overview" aria-current="page">Executive Overview</button>
+      <button type="button" class="navbtn" data-view="portfolio">Customer Portfolio</button>
+      <button type="button" class="navbtn" data-view="revenue">Revenue Intelligence</button>
+      <button type="button" class="navbtn" data-view="actions">CSM Action Center</button>
+      <button type="button" class="navbtn" data-view="account">Account 360</button>
+      <button type="button" class="navbtn" data-view="teamlead" id="navTeamLead" style="display:none">CS Team Lead</button>
+      <button type="button" class="navbtn" data-view="adoption" id="navAdoption" style="display:none">Adoption → Value → Retention</button>
+      <button type="button" class="navbtn" data-view="glossary" id="navGlossary">Score &amp; glossary</button>
+    </nav>
+    <main id="view" tabindex="-1"></main>
+  </div>
+  <footer class="footer">
+    Rules-based scoring (not ML). Sector profiles are generic, conceptual archetypes with
+    <strong>fictitious</strong> accounts — not real companies. Slack remains NoOp (pending configuration).
+    MIT public demo · <strong>v1.2.2</strong> · Money figures are <strong>simulated</strong>.
+    Works offline via embedded data (file:// safe).
+  </footer>
+  <script src="js/embedded-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

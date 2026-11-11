@@ -1,0 +1,13 @@
+▶ mix
+  ✔ pass (0.599799ms)
+  ﹣ skip me (0.102584ms) # No Chrome binary
+  ﹣ another skip (0.080687ms) # Playwright missing
+✔ mix (1.749101ms)
+ℹ tests 3
+ℹ suites 1
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 2
+ℹ todo 0
+ℹ duration_ms 46.838672

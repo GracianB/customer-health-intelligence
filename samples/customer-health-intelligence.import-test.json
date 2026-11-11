@@ -1,0 +1,330 @@
+{
+  "name": "Customer Health Intelligence — Rules-based Risk Detection (v1.2) (import test)",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "weeksInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule Trigger (Weekly)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// SAMPLE DATA – demo accounts for Customer Health Score workflow\n// (not production customer data)\nconst accounts = [\n  { account: 'Acme Retail EU', mrr: 4200, last_login_days: 2, active_users_pct: 78, open_tickets: 1, nps: 72, onboarding_completed: true, csm: 'Ana' },\n  { account: 'Nordic Pricing Co', mrr: 8900, last_login_days: 18, active_users_pct: 35, open_tickets: 4, nps: 28, onboarding_completed: true, csm: 'Luis' },\n  { account: 'Iberia SaaS Labs', mrr: 3100, last_login_days: 5, active_users_pct: 62, open_tickets: 0, nps: 65, onboarding_completed: true, csm: 'Ana' },\n  { account: 'MedTech Hub', mrr: 12500, last_login_days: 45, active_users_pct: 12, open_tickets: 7, nps: 15, onboarding_completed: false, csm: 'Luis' },\n  { account: 'Commerce Pulse', mrr: 5600, last_login_days: 3, active_users_pct: 81, open_tickets: 0, nps: 80, onboarding_completed: true, csm: 'Marta' },\n  { account: 'Hotel Ops Pro', mrr: 7400, last_login_days: 12, active_users_pct: 48, open_tickets: 2, nps: 45, onboarding_completed: true, csm: 'Marta' },\n  { account: 'FinServe Analytics', mrr: 9800, last_login_days: 1, active_users_pct: 90, open_tickets: 0, nps: 88, onboarding_completed: true, csm: 'Ana' },\n  { account: 'EduLearn Cloud', mrr: 2200, last_login_days: 30, active_users_pct: 22, open_tickets: 5, nps: 30, onboarding_completed: false, csm: 'Luis' },\n  { account: 'GreenSupply Chain', mrr: 6100, last_login_days: 7, active_users_pct: 55, open_tickets: 1, nps: 58, onboarding_completed: true, csm: 'Marta' },\n  { account: 'TravelSync EMEA', mrr: 15000, last_login_days: 22, active_users_pct: 40, open_tickets: 3, nps: 40, onboarding_completed: true, csm: 'Ana' }\n];\nreturn accounts.map(a => ({ json: { ...a, data_source: 'SAMPLE DATA – Customer Health demo' } }));\n"
+      },
+      "id": "sample-data",
+      "name": "Sample Accounts (Demo Data)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Rules-based score using Profile Config (NOT machine learning)\nconst cfg = $('Profile Config').first().json;\nconst a = $input.item.json;\nconst w = cfg.weights;\nconst f = cfg.signalFields;\nconst reasons = [];\nconst drivers = [];\n\nfunction clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }\n\n// Login\nlet loginPts = 0; let loginFlag = null;\nconst days = a[f.login_days];\nif (days <= 7) loginPts = 25;\nelse if (days <= 14) loginPts = 18;\nelse if (days <= 30) loginPts = 8;\nelse { loginPts = 0; loginFlag = 'inactive >30d'; }\ndrivers.push({ signal: 'login', pts: loginPts, max: w.login, raw: days });\nif (loginFlag) reasons.push(loginFlag);\n\n// Adoption\nconst adoptVal = a[f.adoption];\nconst adoptPts = Math.round(clamp(adoptVal, 0, 100) / 100 * w.adoption);\ndrivers.push({ signal: 'adoption', pts: adoptPts, max: w.adoption, raw: adoptVal });\nif (adoptVal < cfg.flags.adoption_below) reasons.push(cfg.flagLabels.adoption);\n\n// Tickets\nconst t = a[f.tickets];\nlet ticketPts = 20;\nif (t === 0) ticketPts = 20;\nelse if (t <= 2) ticketPts = 14;\nelse if (t <= 4) ticketPts = 7;\nelse { ticketPts = 0; reasons.push(cfg.flagLabels.tickets); }\ndrivers.push({ signal: 'tickets', pts: ticketPts, max: w.tickets, raw: t });\n\n// NPS-like\nconst npsVal = a[f.nps];\nconst npsPts = Math.round(clamp(npsVal, 0, 100) / 100 * w.nps);\ndrivers.push({ signal: 'nps', pts: npsPts, max: w.nps, raw: npsVal });\nif (npsVal < cfg.flags.nps_below) reasons.push(cfg.flagLabels.nps);\n\n// Onboarding-like\nconst onboardVal = a[f.onboarding];\nconst onboardingPts = onboardVal ? w.onboarding : 0;\ndrivers.push({ signal: 'onboarding', pts: onboardingPts, max: w.onboarding, raw: onboardVal });\nif (!onboardVal) reasons.push(cfg.flagLabels.onboarding);\n\nlet score = clamp(loginPts + adoptPts + ticketPts + npsPts + onboardingPts, 0, 100);\nconst redMax = cfg.thresholds.red;\nconst amberMax = cfg.thresholds.amber;\nlet risk_tier, playbook;\nif (score < redMax) { risk_tier = 'Red'; playbook = cfg.playbooks.red; }\nelse if (score < amberMax) { risk_tier = 'Amber'; playbook = cfg.playbooks.amber; }\nelse { risk_tier = 'Green'; playbook = cfg.playbooks.green; }\n\nif (reasons.length === 0) {\n  if (score >= amberMax) reasons.push('healthy signals');\n  else {\n    const threshold = score < redMax ? redMax : amberMax;\n    const sorted = [...drivers].sort((x, y) => x.pts - y.pts || (y.max - y.pts) - (x.max - x.pts));\n    const weakest = sorted.slice(0, 4).map(d => {\n      if (d.signal === 'login') return `login ${days}d→${d.pts}/${d.max}`;\n      if (d.signal === 'adoption') return `adoption ${adoptVal}%→${d.pts}/${d.max}`;\n      if (d.signal === 'tickets') return `tickets ${t}→${d.pts}/${d.max}`;\n      if (d.signal === 'nps') return `NPS ${npsVal}→${d.pts}/${d.max}`;\n      return `onboarding ${onboardVal ? 'done' : 'incomplete'}→${d.pts}/${d.max}`;\n    }).join(', ');\n    reasons.push(`aggregate risk: score ${score} below ${risk_tier} threshold ${threshold}; several signals mid-range (${weakest})`);\n  }\n}\n\nconst top_drivers = [...drivers].sort((a,b) => a.pts/a.max - b.pts/b.max).slice(0,3)\n  .map(d => ({ signal: d.signal, pts: d.pts, max: d.max, utilization: Math.round((d.pts/d.max)*100) }));\n\nreturn { json: { ...a, health_score: score, risk_tier, reason: reasons.join('; '), playbook, top_drivers, profile_id: cfg.profile_id, scored_at: new Date().toISOString() } };\n"
+      },
+      "id": "score-node",
+      "name": "Compute Health Score",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        520,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.risk_tier }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "Red",
+              "output": 0
+            },
+            {
+              "value2": "Amber",
+              "output": 1
+            },
+            {
+              "value2": "Green",
+              "output": 2
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "switch-tier",
+      "name": "Split by Risk Tier",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        780,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const a = $input.item.json;\nreturn {\n  json: {\n    alert_type: 'RED_RISK',\n    priority: 'P1',\n    account: a.account,\n    mrr: a.mrr,\n    health_score: a.health_score,\n    reason: a.reason,\n    assigned_csm: a.csm,\n    playbook_action: a.playbook || 'schedule QBR / re-onboarding',\n    channel: 'Slack #cs-risk (configure)',\n    message: `🔴 RED RISK: ${a.account} (score ${a.health_score}). CSM ${a.csm}: ${a.playbook}. Reasons: ${a.reason}`\n  }\n};\n"
+      },
+      "id": "red-alert",
+      "name": "Build Red Risk Alert",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const a = $input.item.json;\nreturn {\n  json: {\n    alert_type: 'AMBER_NURTURE',\n    priority: 'P2',\n    account: a.account,\n    mrr: a.mrr,\n    health_score: a.health_score,\n    reason: a.reason,\n    assigned_csm: a.csm,\n    playbook_action: a.playbook || 'nurture: check-in + feature adoption plan',\n    task: `Create nurture task for ${a.account}: adoption plan + 15-min check-in`,\n    message: `🟠 AMBER: ${a.account} (score ${a.health_score}). CSM ${a.csm}: nurture task.`\n  }\n};\n"
+      },
+      "id": "amber-task",
+      "name": "Build Amber Nurture Task",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const a = $input.item.json;\nreturn {\n  json: {\n    alert_type: 'GREEN_EXPANSION',\n    priority: 'P3',\n    account: a.account,\n    mrr: a.mrr,\n    health_score: a.health_score,\n    reason: a.reason,\n    assigned_csm: a.csm,\n    playbook_action: a.playbook || 'expansion candidate: upsell / referral ask',\n    opportunity: `Flag ${a.account} as expansion candidate (MRR €${a.mrr})`,\n    message: `🟢 GREEN: ${a.account} (score ${a.health_score}). Expansion candidate.`\n  }\n};\n"
+      },
+      "id": "green-exp",
+      "name": "Flag Green Expansion",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "id": "noop-slack",
+      "name": "Send to Slack (configure)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        40
+      ],
+      "notes": "PLACEHOLDER — pending configuration (NoOp). Nothing is delivered. Replace with Slack/Email in a private instance using your own credentials. Public MIT demo keeps delivery unconfigured on purpose.",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Robust summary + revenue lens (reads builders by name — Merge-independent)\nfunction itemsFrom(nodeName) {\n  try { return $(nodeName).all().map(i => i.json); } catch (e) { return []; }\n}\nconst cfg = (() => { try { return $('Profile Config').first().json; } catch (e) { return { profile_id: 'base', data_label: 'SAMPLE DATA' }; } })();\nconst red = itemsFrom('Build Red Risk Alert');\nconst amber = itemsFrom('Build Amber Nurture Task');\nconst green = itemsFrom('Flag Green Expansion');\nconst items = [...red, ...amber, ...green];\nconst sumMrr = arr => arr.reduce((s,a)=>s+(a.mrr||0),0);\nconst action_queue = items.map(a => {\n  const riskWeight = a.alert_type === 'RED_RISK' ? 3 : a.alert_type === 'AMBER_NURTURE' ? 2 : 1;\n  return {\n    account: a.account,\n    risk_tier: a.alert_type === 'RED_RISK' ? 'Red' : a.alert_type === 'AMBER_NURTURE' ? 'Amber' : 'Green',\n    mrr: a.mrr,\n    health_score: a.health_score,\n    owner: a.assigned_csm,\n    next_action: a.playbook_action,\n    sla_hours: a.alert_type === 'RED_RISK' ? 24 : a.alert_type === 'AMBER_NURTURE' ? 72 : 168,\n    priority_score: (a.mrr||0) * riskWeight,\n    reason: a.reason,\n  };\n}).sort((a,b) => b.priority_score - a.priority_score);\n\nconst summary = {\n  report: 'Weekly Customer Health Summary',\n  profile_id: cfg.profile_id,\n  data_label: cfg.data_label,\n  scoring_model: 'rules-based (not ML)',\n  generated_at: new Date().toISOString(),\n  total_accounts: items.length,\n  red_count: red.length,\n  amber_count: amber.length,\n  green_count: green.length,\n  red_accounts: red.map(a => a.account),\n  amber_accounts: amber.map(a => a.account),\n  green_accounts: green.map(a => a.account),\n  at_risk_mrr: sumMrr(red),\n  revenue_lens: {\n    by_tier: {\n      Red: { accounts: red.length, mrr: sumMrr(red) },\n      Amber: { accounts: amber.length, mrr: sumMrr(amber) },\n      Green: { accounts: green.length, mrr: sumMrr(green) },\n    },\n    simulated_mrr_at_risk_sample_data: sumMrr(red),\n    expansion_pipeline_green: {\n      accounts: green.length,\n      mrr: sumMrr(green),\n      note: 'Green accounts flagged for upsell / referral (rules-based, SAMPLE DATA)',\n    },\n  },\n  action_queue,\n  notes: cfg.summary_notes || 'SAMPLE DATA only — rules-based demo (not ML). Simulated MRR at risk; Slack NoOp pending configuration.',\n};\nreturn [{ json: summary }];\n"
+      },
+      "id": "weekly-summary",
+      "name": "Weekly Health Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1560,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "append",
+        "numberInputs": 3
+      },
+      "id": "merge-all",
+      "name": "Merge All Tiers",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1300,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// AUTO-BUILT from config/base.profile.json — do not hand-edit; run scripts/build-n8n-from-engine.js\n// Rules-based config (NOT ML). SAMPLE DATA profile.\nconst config = {\n  \"profile_id\": \"base\",\n  \"profile_name\": \"Generic B2B SaaS — Customer Health (SAMPLE DATA)\",\n  \"data_label\": \"SAMPLE DATA — synthetic demo accounts only. Not real customers.\",\n  \"version\": \"1.2.0\",\n  \"weights\": {\n    \"login\": 25,\n    \"adoption\": 25,\n    \"tickets\": 20,\n    \"nps\": 20,\n    \"onboarding\": 10\n  },\n  \"thresholds\": {\n    \"red\": 45,\n    \"amber\": 70\n  },\n  \"signalFields\": {\n    \"login_days\": \"last_login_days\",\n    \"adoption\": \"active_users_pct\",\n    \"tickets\": \"open_tickets\",\n    \"nps\": \"nps\",\n    \"onboarding\": \"onboarding_completed\"\n  },\n  \"bands\": {\n    \"login\": [\n      {\n        \"maxDays\": 7,\n        \"pts\": 25\n      },\n      {\n        \"maxDays\": 14,\n        \"pts\": 18\n      },\n      {\n        \"maxDays\": 30,\n        \"pts\": 8,\n        \"elsePts\": 0,\n        \"elseFlag\": \"inactive >30d\"\n      }\n    ],\n    \"tickets\": [\n      {\n        \"max\": 0,\n        \"pts\": 20\n      },\n      {\n        \"max\": 2,\n        \"pts\": 14\n      },\n      {\n        \"max\": 4,\n        \"pts\": 7\n      },\n      {\n        \"max\": 9999,\n        \"pts\": 0,\n        \"flag\": true\n      }\n    ]\n  },\n  \"flags\": {\n    \"adoption_below\": 40,\n    \"nps_below\": 40\n  },\n  \"flagLabels\": {\n    \"adoption\": \"low adoption\",\n    \"tickets\": \"many open tickets\",\n    \"nps\": \"low NPS\",\n    \"onboarding\": \"onboarding incomplete\"\n  },\n  \"playbooks\": {\n    \"red\": \"schedule QBR / re-onboarding\",\n    \"amber\": \"nurture: check-in + feature adoption plan\",\n    \"green\": \"expansion candidate: upsell / referral ask\",\n    \"onboarding\": \"complete onboarding checklist; schedule activation review\"\n  },\n  \"summary_notes\": \"SAMPLE DATA only — rules-based demo (not ML). Simulated MRR at risk; Slack NoOp pending configuration.\",\n  \"min_tenure_days\": 0,\n  \"default_tenure_days\": 365,\n  \"tenure_field\": \"tenure_days\",\n  \"renewal_field\": \"days_to_renewal\",\n  \"renewal_alert_days\": 45\n};\nreturn [{ json: config }];\n"
+      },
+      "id": "profile-config",
+      "name": "Profile Config",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        40
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Profile Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger (Weekly)": {
+      "main": [
+        [
+          {
+            "node": "Profile Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sample Accounts (Demo Data)": {
+      "main": [
+        [
+          {
+            "node": "Compute Health Score",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute Health Score": {
+      "main": [
+        [
+          {
+            "node": "Split by Risk Tier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split by Risk Tier": {
+      "main": [
+        [
+          {
+            "node": "Build Red Risk Alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Build Amber Nurture Task",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Flag Green Expansion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Red Risk Alert": {
+      "main": [
+        [
+          {
+            "node": "Send to Slack (configure)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge All Tiers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Amber Nurture Task": {
+      "main": [
+        [
+          {
+            "node": "Merge All Tiers",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Flag Green Expansion": {
+      "main": [
+        [
+          {
+            "node": "Merge All Tiers",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge All Tiers": {
+      "main": [
+        [
+          {
+            "node": "Weekly Health Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Profile Config": {
+      "main": [
+        [
+          {
+            "node": "Sample Accounts (Demo Data)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "description": "Customer Intelligence, Revenue Protection & Growth Automation. SAMPLE DATA. Rules-based (not ML). Slack NoOp pending configuration."
+}

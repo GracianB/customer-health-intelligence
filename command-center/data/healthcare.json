@@ -1,0 +1,4455 @@
+{
+  "config": {
+    "profile_id": "healthcare_marketplace",
+    "profile_name": "Healthcare scheduling SaaS — FICTITIOUS SAMPLE",
+    "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+    "subtitle": "Customer Intelligence, Revenue Protection & Growth Automation",
+    "industry": "healthcare_scheduling_saas",
+    "inspired_by_public_product": {
+      "archetype": "Healthcare scheduling marketplace (generic sector archetype)",
+      "note": "Signal names reflect common public capabilities of healthcare booking platforms (online booking, reminders/no-shows, profile, reviews, support). No company-specific data or inside knowledge."
+    },
+    "weights": {
+      "login": 25,
+      "adoption": 25,
+      "tickets": 20,
+      "nps": 20,
+      "onboarding": 10
+    },
+    "thresholds": {
+      "red": 45,
+      "amber": 70
+    },
+    "signal_glossary": {
+      "last_login_days": "Days since clinic staff last logged into the scheduling product (proxy for engagement).",
+      "online_booking_adoption_pct": "Share of appointments booked online vs total (public product emphasis: 24/7 online booking).",
+      "open_tickets": "Open support tickets with the vendor CSM/support team.",
+      "patient_review_score": "0–100 proxy for review/reputation activity health (public product: patient reviews).",
+      "profile_calendar_complete": "Whether public profile + online calendar setup is complete (public product: profile + agenda)."
+    },
+    "metric_groups": null,
+    "product_value_chain": null,
+    "metric_glossary": {
+      "last_login_days": "Days since clinic staff last logged into the scheduling product (proxy for engagement).",
+      "online_booking_adoption_pct": "Product: % of appointments via online booking (fictitious).",
+      "open_tickets": "Open support tickets with the vendor CSM/support team.",
+      "patient_review_score": "Product proxy 0–100 for reputation (fictitious).",
+      "profile_calendar_complete": "Whether public profile + online calendar setup is complete (public product: profile + agenda).",
+      "health_score": "Rules-based clinic health from login, online-booking adoption, tickets, review score, profile completeness.",
+      "risk_tier": "Red <45 · Amber <70 · Green ≥70 · Onboarding if tenure <21d.",
+      "simulated_mrr_at_risk": "Red MRR only — SAMPLE/FICTITIOUS, not real protected revenue.",
+      "days_to_renewal": "Commercial: days until contract renewal in the demo dataset."
+    },
+    "scoring_explanation": {
+      "model": "rules-based (not ML)",
+      "weights": {
+        "login": 25,
+        "adoption": 25,
+        "tickets": 20,
+        "nps": 20,
+        "onboarding": 10
+      },
+      "thresholds": {
+        "red": 45,
+        "amber": 70
+      },
+      "onboarding_grace_days": 21,
+      "at_risk_definition": "Red MRR only",
+      "limitations": [
+        "Not calibrated on real churn",
+        "SAMPLE/FICTITIOUS demo data",
+        "Slack remains NoOp (pending configuration)",
+        "No live CRM credentials in this package"
+      ]
+    },
+    "demo_as_of": "2026-11-10"
+  },
+  "summary": {
+    "report": "Customer Health Summary",
+    "profile_id": "healthcare_marketplace",
+    "profile_name": "Healthcare scheduling SaaS — FICTITIOUS SAMPLE",
+    "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+    "scoring_model": "rules-based (not ML)",
+    "generated_at": "2026-11-11T01:19:23.309Z",
+    "total_accounts": 14,
+    "red_count": 2,
+    "amber_count": 2,
+    "green_count": 7,
+    "onboarding_count": 3,
+    "healthy_count": 7,
+    "at_risk_count": 4,
+    "red_accounts": [
+      "Derma Placeholder SA",
+      "Fertility Fake Clinic"
+    ],
+    "amber_accounts": [
+      "Pediatría Sample Hub",
+      "Trauma Fiction Unit"
+    ],
+    "green_accounts": [
+      "Clinic Aurora Demo SL",
+      "Dental Fiction Lab",
+      "Physio Mock Studio",
+      "Mental Health Sandbox Co",
+      "Cardio Toy Practice",
+      "Gine Demo Care",
+      "Allergy Mock Network"
+    ],
+    "at_risk_mrr": 28700,
+    "revenue_lens": {
+      "by_tier": {
+        "Red": {
+          "accounts": 2,
+          "mrr": 28700
+        },
+        "Amber": {
+          "accounts": 2,
+          "mrr": 20300
+        },
+        "Green": {
+          "accounts": 7,
+          "mrr": 39400
+        },
+        "Onboarding": {
+          "accounts": 3,
+          "mrr": 31000
+        }
+      },
+      "simulated_mrr_at_risk_sample_data": 28700,
+      "expansion_pipeline_green": {
+        "accounts": 7,
+        "mrr": 39400,
+        "note": "Green accounts flagged for upsell / referral (rules-based, SAMPLE/FICTITIOUS data)"
+      },
+      "upcoming_renewals": {
+        "window_days": 60,
+        "accounts": 6,
+        "mrr": 58500
+      }
+    },
+    "action_queue": [
+      {
+        "account": "Fertility Fake Clinic",
+        "risk_tier": "Red",
+        "mrr": 18900,
+        "health_score": 43,
+        "owner": "Elena",
+        "next_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 226800,
+        "top_drivers": [
+          {
+            "signal": "login",
+            "pts": 8,
+            "max": 25,
+            "utilization": 32
+          },
+          {
+            "signal": "tickets",
+            "pts": 7,
+            "max": 20,
+            "utilization": 35
+          },
+          {
+            "signal": "adoption",
+            "pts": 10,
+            "max": 25,
+            "utilization": 40
+          }
+        ],
+        "reason": "aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 4→7/20, login 21d→8/25, NPS 42→8/20, adoption 41%→10/25)",
+        "days_to_renewal": 18,
+        "segment": "hospital_group"
+      },
+      {
+        "account": "Derma Placeholder SA",
+        "risk_tier": "Red",
+        "mrr": 9800,
+        "health_score": 42,
+        "owner": "Marc",
+        "next_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+        "due_date": "2026-11-11",
+        "sla_hours": 24,
+        "priority_score": 117600,
+        "top_drivers": [
+          {
+            "signal": "login",
+            "pts": 8,
+            "max": 25,
+            "utilization": 32
+          },
+          {
+            "signal": "tickets",
+            "pts": 7,
+            "max": 20,
+            "utilization": 35
+          },
+          {
+            "signal": "adoption",
+            "pts": 9,
+            "max": 25,
+            "utilization": 36
+          }
+        ],
+        "reason": "low online-booking adoption; weak review/reputation signal",
+        "days_to_renewal": 25,
+        "segment": "clinic"
+      },
+      {
+        "account": "Trauma Fiction Unit",
+        "risk_tier": "Amber",
+        "mrr": 9100,
+        "health_score": 65,
+        "owner": "Sofía",
+        "next_action": "nurture: enable reminders/waitlist + complete profile gaps",
+        "due_date": "2026-11-13",
+        "sla_hours": 72,
+        "priority_score": 54600,
+        "top_drivers": [
+          {
+            "signal": "nps",
+            "pts": 10,
+            "max": 20,
+            "utilization": 50
+          },
+          {
+            "signal": "adoption",
+            "pts": 13,
+            "max": 25,
+            "utilization": 52
+          },
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          }
+        ],
+        "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+        "days_to_renewal": 35,
+        "segment": "polyclinic"
+      },
+      {
+        "account": "Pediatría Sample Hub",
+        "risk_tier": "Amber",
+        "mrr": 11200,
+        "health_score": 65,
+        "owner": "Sofía",
+        "next_action": "nurture: enable reminders/waitlist + complete profile gaps",
+        "due_date": "2026-11-13",
+        "sla_hours": 72,
+        "priority_score": 22400,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 12,
+            "max": 25,
+            "utilization": 48
+          },
+          {
+            "signal": "nps",
+            "pts": 11,
+            "max": 20,
+            "utilization": 55
+          },
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          }
+        ],
+        "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+        "days_to_renewal": 55,
+        "segment": "clinic"
+      },
+      {
+        "account": "Dental Fiction Lab",
+        "risk_tier": "Green",
+        "mrr": 5600,
+        "health_score": 80,
+        "owner": "Elena",
+        "next_action": "expansion: add specialists / multi-location / premium modules",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 11200,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 17,
+            "max": 25,
+            "utilization": 68
+          },
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          },
+          {
+            "signal": "nps",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 40,
+        "segment": "individual_doctor"
+      },
+      {
+        "account": "Clinic Aurora Demo SL",
+        "risk_tier": "Green",
+        "mrr": 8200,
+        "health_score": 92,
+        "owner": "Elena",
+        "next_action": "expansion: add specialists / multi-location / premium modules",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 8200,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 20,
+            "max": 25,
+            "utilization": 80
+          },
+          {
+            "signal": "nps",
+            "pts": 17,
+            "max": 20,
+            "utilization": 85
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 90,
+        "segment": "clinic"
+      },
+      {
+        "account": "Mental Health Sandbox Co",
+        "risk_tier": "Green",
+        "mrr": 7400,
+        "health_score": 89,
+        "owner": "Sofía",
+        "next_action": "expansion: add specialists / multi-location / premium modules",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 7400,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 18,
+            "max": 25,
+            "utilization": 72
+          },
+          {
+            "signal": "nps",
+            "pts": 16,
+            "max": 20,
+            "utilization": 80
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 80,
+        "segment": "clinic"
+      },
+      {
+        "account": "Gine Demo Care",
+        "risk_tier": "Green",
+        "mrr": 6700,
+        "health_score": 91,
+        "owner": "Elena",
+        "next_action": "expansion: add specialists / multi-location / premium modules",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 6700,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 20,
+            "max": 25,
+            "utilization": 80
+          },
+          {
+            "signal": "nps",
+            "pts": 16,
+            "max": 20,
+            "utilization": 80
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 100,
+        "segment": "clinic"
+      },
+      {
+        "account": "Cardio Toy Practice",
+        "risk_tier": "Green",
+        "mrr": 4500,
+        "health_score": 76,
+        "owner": "Sofía",
+        "next_action": "expansion: add specialists / multi-location / premium modules",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 4500,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 14,
+            "max": 25,
+            "utilization": 56
+          },
+          {
+            "signal": "nps",
+            "pts": 13,
+            "max": 20,
+            "utilization": 65
+          },
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 70,
+        "segment": "individual_doctor"
+      },
+      {
+        "account": "Allergy Mock Network",
+        "risk_tier": "Green",
+        "mrr": 3900,
+        "health_score": 71,
+        "owner": "Marc",
+        "next_action": "expansion: add specialists / multi-location / premium modules",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 3900,
+        "top_drivers": [
+          {
+            "signal": "adoption",
+            "pts": 15,
+            "max": 25,
+            "utilization": 60
+          },
+          {
+            "signal": "tickets",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          },
+          {
+            "signal": "nps",
+            "pts": 14,
+            "max": 20,
+            "utilization": 70
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 50,
+        "segment": "clinic"
+      },
+      {
+        "account": "Physio Mock Studio",
+        "risk_tier": "Green",
+        "mrr": 3100,
+        "health_score": 96,
+        "owner": "Elena",
+        "next_action": "expansion: add specialists / multi-location / premium modules",
+        "due_date": "2026-11-19",
+        "sla_hours": 168,
+        "priority_score": 3100,
+        "top_drivers": [
+          {
+            "signal": "nps",
+            "pts": 18,
+            "max": 20,
+            "utilization": 90
+          },
+          {
+            "signal": "adoption",
+            "pts": 23,
+            "max": 25,
+            "utilization": 92
+          },
+          {
+            "signal": "login",
+            "pts": 25,
+            "max": 25,
+            "utilization": 100
+          }
+        ],
+        "reason": "healthy signals",
+        "days_to_renewal": 120,
+        "segment": "individual_doctor"
+      }
+    ],
+    "portfolio_by_csm": [
+      {
+        "owner": "Elena",
+        "accounts": 5,
+        "red": 1,
+        "amber": 0,
+        "green": 4,
+        "onboarding": 0,
+        "mrr": 42500,
+        "mrr_at_risk": 18900
+      },
+      {
+        "owner": "Marc",
+        "accounts": 5,
+        "red": 1,
+        "amber": 0,
+        "green": 1,
+        "onboarding": 3,
+        "mrr": 44700,
+        "mrr_at_risk": 9800
+      },
+      {
+        "owner": "Sofía",
+        "accounts": 4,
+        "red": 0,
+        "amber": 2,
+        "green": 2,
+        "onboarding": 0,
+        "mrr": 32200,
+        "mrr_at_risk": 0
+      }
+    ],
+    "notes": "FICTITIOUS SAMPLE — Healthcare marketplace / clinic scheduling. Rules-based (not ML). Simulated MRR at risk. Slack NoOp pending configuration.",
+    "demo_as_of": "2026-11-10"
+  },
+  "accounts": [
+    {
+      "account": "Clinic Aurora Demo SL",
+      "mrr": 8200,
+      "last_login_days": 2,
+      "online_booking_adoption_pct": 81,
+      "open_tickets": 0,
+      "patient_review_score": 84,
+      "profile_calendar_complete": true,
+      "csm": "Elena",
+      "plan_tier": "Clinic Pro",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 400,
+      "days_to_renewal": 90,
+      "client_type": "clinic",
+      "segment": "clinic",
+      "health_score": 92,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: add specialists / multi-location / premium modules",
+      "recommended_action": "expansion: add specialists / multi-location / premium modules",
+      "owner": "Elena",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 20,
+          "max": 25,
+          "utilization": 80
+        },
+        {
+          "signal": "nps",
+          "pts": 17,
+          "max": 20,
+          "utilization": 85
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Centro Médico Lorem Ipsum",
+      "mrr": 15400,
+      "last_login_days": 40,
+      "online_booking_adoption_pct": 18,
+      "open_tickets": 6,
+      "patient_review_score": 22,
+      "profile_calendar_complete": false,
+      "csm": "Marc",
+      "plan_tier": "Clinic Pro",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 12,
+      "days_to_renewal": 200,
+      "client_type": "polyclinic",
+      "segment": "polyclinic",
+      "health_score": null,
+      "risk_tier": "Onboarding",
+      "risk_level": "Onboarding",
+      "status": "Onboarding – insufficient data",
+      "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+      "playbook": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+      "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+      "owner": "Marc",
+      "due_date": "2026-11-17",
+      "top_drivers": [],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": true
+    },
+    {
+      "account": "Dental Fiction Lab",
+      "mrr": 5600,
+      "last_login_days": 5,
+      "online_booking_adoption_pct": 66,
+      "open_tickets": 1,
+      "patient_review_score": 71,
+      "profile_calendar_complete": true,
+      "csm": "Elena",
+      "plan_tier": "Solo+",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 300,
+      "days_to_renewal": 40,
+      "client_type": "individual_doctor",
+      "segment": "individual_doctor",
+      "health_score": 80,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: add specialists / multi-location / premium modules",
+      "recommended_action": "expansion: add specialists / multi-location / premium modules",
+      "owner": "Elena",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 17,
+          "max": 25,
+          "utilization": 68
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        },
+        {
+          "signal": "nps",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Derma Placeholder SA",
+      "mrr": 9800,
+      "last_login_days": 16,
+      "online_booking_adoption_pct": 34,
+      "open_tickets": 3,
+      "patient_review_score": 38,
+      "profile_calendar_complete": true,
+      "csm": "Marc",
+      "plan_tier": "Clinic Pro",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 180,
+      "days_to_renewal": 25,
+      "client_type": "clinic",
+      "segment": "clinic",
+      "health_score": 42,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "low online-booking adoption; weak review/reputation signal",
+      "playbook": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+      "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+      "owner": "Marc",
+      "due_date": "2026-11-11",
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 8,
+          "max": 25,
+          "utilization": 32
+        },
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        },
+        {
+          "signal": "adoption",
+          "pts": 9,
+          "max": 25,
+          "utilization": 36
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Physio Mock Studio",
+      "mrr": 3100,
+      "last_login_days": 1,
+      "online_booking_adoption_pct": 92,
+      "open_tickets": 0,
+      "patient_review_score": 90,
+      "profile_calendar_complete": true,
+      "csm": "Elena",
+      "plan_tier": "Solo+",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 500,
+      "days_to_renewal": 120,
+      "client_type": "individual_doctor",
+      "segment": "individual_doctor",
+      "health_score": 96,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: add specialists / multi-location / premium modules",
+      "recommended_action": "expansion: add specialists / multi-location / premium modules",
+      "owner": "Elena",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 18,
+          "max": 20,
+          "utilization": 90
+        },
+        {
+          "signal": "adoption",
+          "pts": 23,
+          "max": 25,
+          "utilization": 92
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Pediatría Sample Hub",
+      "mrr": 11200,
+      "last_login_days": 9,
+      "online_booking_adoption_pct": 48,
+      "open_tickets": 2,
+      "patient_review_score": 55,
+      "profile_calendar_complete": true,
+      "csm": "Sofía",
+      "plan_tier": "Clinic Pro",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 220,
+      "days_to_renewal": 55,
+      "client_type": "clinic",
+      "segment": "clinic",
+      "health_score": 65,
+      "risk_tier": "Amber",
+      "risk_level": "Amber",
+      "status": "Amber",
+      "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+      "playbook": "nurture: enable reminders/waitlist + complete profile gaps",
+      "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+      "owner": "Sofía",
+      "due_date": "2026-11-13",
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 12,
+          "max": 25,
+          "utilization": 48
+        },
+        {
+          "signal": "nps",
+          "pts": 11,
+          "max": 20,
+          "utilization": 55
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Óptica Demo Norte",
+      "mrr": 2400,
+      "last_login_days": 28,
+      "online_booking_adoption_pct": 25,
+      "open_tickets": 5,
+      "patient_review_score": 30,
+      "profile_calendar_complete": false,
+      "csm": "Marc",
+      "plan_tier": "Solo",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 15,
+      "days_to_renewal": 300,
+      "client_type": "individual_doctor",
+      "segment": "individual_doctor",
+      "health_score": null,
+      "risk_tier": "Onboarding",
+      "risk_level": "Onboarding",
+      "status": "Onboarding – insufficient data",
+      "reason": "Onboarding – insufficient data (tenure 15d < 21d); score withheld",
+      "playbook": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+      "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+      "owner": "Marc",
+      "due_date": "2026-11-17",
+      "top_drivers": [],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": true
+    },
+    {
+      "account": "Mental Health Sandbox Co",
+      "mrr": 7400,
+      "last_login_days": 4,
+      "online_booking_adoption_pct": 73,
+      "open_tickets": 0,
+      "patient_review_score": 78,
+      "profile_calendar_complete": true,
+      "csm": "Sofía",
+      "plan_tier": "Clinic Pro",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 350,
+      "days_to_renewal": 80,
+      "client_type": "clinic",
+      "segment": "clinic",
+      "health_score": 89,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: add specialists / multi-location / premium modules",
+      "recommended_action": "expansion: add specialists / multi-location / premium modules",
+      "owner": "Sofía",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 18,
+          "max": 25,
+          "utilization": 72
+        },
+        {
+          "signal": "nps",
+          "pts": 16,
+          "max": 20,
+          "utilization": 80
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Fertility Fake Clinic",
+      "mrr": 18900,
+      "last_login_days": 21,
+      "online_booking_adoption_pct": 41,
+      "open_tickets": 4,
+      "patient_review_score": 42,
+      "profile_calendar_complete": true,
+      "csm": "Elena",
+      "plan_tier": "Enterprise Demo",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 600,
+      "days_to_renewal": 18,
+      "client_type": "hospital_group",
+      "segment": "hospital_group",
+      "health_score": 43,
+      "risk_tier": "Red",
+      "risk_level": "Red",
+      "status": "Red",
+      "reason": "aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 4→7/20, login 21d→8/25, NPS 42→8/20, adoption 41%→10/25)",
+      "playbook": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+      "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+      "owner": "Elena",
+      "due_date": "2026-11-11",
+      "top_drivers": [
+        {
+          "signal": "login",
+          "pts": 8,
+          "max": 25,
+          "utilization": 32
+        },
+        {
+          "signal": "tickets",
+          "pts": 7,
+          "max": 20,
+          "utilization": 35
+        },
+        {
+          "signal": "adoption",
+          "pts": 10,
+          "max": 25,
+          "utilization": 40
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Cardio Toy Practice",
+      "mrr": 4500,
+      "last_login_days": 6,
+      "online_booking_adoption_pct": 58,
+      "open_tickets": 1,
+      "patient_review_score": 63,
+      "profile_calendar_complete": true,
+      "csm": "Sofía",
+      "plan_tier": "Solo+",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 90,
+      "days_to_renewal": 70,
+      "client_type": "individual_doctor",
+      "segment": "individual_doctor",
+      "health_score": 76,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: add specialists / multi-location / premium modules",
+      "recommended_action": "expansion: add specialists / multi-location / premium modules",
+      "owner": "Sofía",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 14,
+          "max": 25,
+          "utilization": 56
+        },
+        {
+          "signal": "nps",
+          "pts": 13,
+          "max": 20,
+          "utilization": 65
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "ORL Placeholder Group",
+      "mrr": 13200,
+      "last_login_days": 45,
+      "online_booking_adoption_pct": 12,
+      "open_tickets": 8,
+      "patient_review_score": 15,
+      "profile_calendar_complete": false,
+      "csm": "Marc",
+      "plan_tier": "Clinic Pro",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 10,
+      "days_to_renewal": 400,
+      "client_type": "clinic",
+      "segment": "clinic",
+      "health_score": null,
+      "risk_tier": "Onboarding",
+      "risk_level": "Onboarding",
+      "status": "Onboarding – insufficient data",
+      "reason": "Onboarding – insufficient data (tenure 10d < 21d); score withheld",
+      "playbook": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+      "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+      "owner": "Marc",
+      "due_date": "2026-11-17",
+      "top_drivers": [],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": true
+    },
+    {
+      "account": "Gine Demo Care",
+      "mrr": 6700,
+      "last_login_days": 3,
+      "online_booking_adoption_pct": 79,
+      "open_tickets": 0,
+      "patient_review_score": 82,
+      "profile_calendar_complete": true,
+      "csm": "Elena",
+      "plan_tier": "Clinic Pro",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 280,
+      "days_to_renewal": 100,
+      "client_type": "clinic",
+      "segment": "clinic",
+      "health_score": 91,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: add specialists / multi-location / premium modules",
+      "recommended_action": "expansion: add specialists / multi-location / premium modules",
+      "owner": "Elena",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 20,
+          "max": 25,
+          "utilization": 80
+        },
+        {
+          "signal": "nps",
+          "pts": 16,
+          "max": 20,
+          "utilization": 80
+        },
+        {
+          "signal": "login",
+          "pts": 25,
+          "max": 25,
+          "utilization": 100
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Trauma Fiction Unit",
+      "mrr": 9100,
+      "last_login_days": 12,
+      "online_booking_adoption_pct": 51,
+      "open_tickets": 2,
+      "patient_review_score": 49,
+      "profile_calendar_complete": true,
+      "csm": "Sofía",
+      "plan_tier": "Clinic Pro",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 150,
+      "days_to_renewal": 35,
+      "client_type": "polyclinic",
+      "segment": "polyclinic",
+      "health_score": 65,
+      "risk_tier": "Amber",
+      "risk_level": "Amber",
+      "status": "Amber",
+      "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+      "playbook": "nurture: enable reminders/waitlist + complete profile gaps",
+      "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+      "owner": "Sofía",
+      "due_date": "2026-11-13",
+      "top_drivers": [
+        {
+          "signal": "nps",
+          "pts": 10,
+          "max": 20,
+          "utilization": 50
+        },
+        {
+          "signal": "adoption",
+          "pts": 13,
+          "max": 25,
+          "utilization": 52
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    },
+    {
+      "account": "Allergy Mock Network",
+      "mrr": 3900,
+      "last_login_days": 8,
+      "online_booking_adoption_pct": 61,
+      "open_tickets": 1,
+      "patient_review_score": 68,
+      "profile_calendar_complete": true,
+      "csm": "Marc",
+      "plan_tier": "Solo+",
+      "data_source": "FICTITIOUS SAMPLE DATA — invented clinic names for portfolio demos only. NOT real customers.",
+      "tenure_days": 200,
+      "days_to_renewal": 50,
+      "client_type": "clinic",
+      "segment": "clinic",
+      "health_score": 71,
+      "risk_tier": "Green",
+      "risk_level": "Green",
+      "status": "Green",
+      "reason": "healthy signals",
+      "playbook": "expansion: add specialists / multi-location / premium modules",
+      "recommended_action": "expansion: add specialists / multi-location / premium modules",
+      "owner": "Marc",
+      "due_date": "2026-11-19",
+      "top_drivers": [
+        {
+          "signal": "adoption",
+          "pts": 15,
+          "max": 25,
+          "utilization": 60
+        },
+        {
+          "signal": "tickets",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        },
+        {
+          "signal": "nps",
+          "pts": 14,
+          "max": 20,
+          "utilization": 70
+        }
+      ],
+      "profile_id": "healthcare_marketplace",
+      "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+      "scoring_model": "rules-based (not ML)",
+      "insufficient_history": false
+    }
+  ],
+  "weeks": {
+    "profile_id": "healthcare_marketplace",
+    "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+    "scoring_model": "rules-based (not ML)",
+    "weeks": [
+      {
+        "week_index": 0,
+        "week_label": "W1",
+        "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 1,
+          "amber_count": 3,
+          "green_count": 7,
+          "onboarding_count": 3,
+          "at_risk_mrr": 9800,
+          "expansion_mrr": 39400
+        },
+        "scored": [
+          {
+            "account": "Clinic Aurora Demo SL",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 8200,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 90,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "nps",
+                "pts": 17,
+                "max": 20,
+                "utilization": 85
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Centro Médico Lorem Ipsum",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 15400,
+            "owner": "Marc",
+            "segment": "polyclinic",
+            "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 200,
+            "top_drivers": []
+          },
+          {
+            "account": "Dental Fiction Lab",
+            "health_score": 80,
+            "risk_tier": "Green",
+            "mrr": 5600,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 40,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Derma Placeholder SA",
+            "health_score": 42,
+            "risk_tier": "Red",
+            "mrr": 9800,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "low online-booking adoption; weak review/reputation signal",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 25,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "adoption",
+                "pts": 9,
+                "max": 25,
+                "utilization": 36
+              }
+            ]
+          },
+          {
+            "account": "Physio Mock Studio",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 3100,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 120,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 18,
+                "max": 20,
+                "utilization": 90
+              },
+              {
+                "signal": "adoption",
+                "pts": 23,
+                "max": 25,
+                "utilization": 92
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Pediatría Sample Hub",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 11200,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 55,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 12,
+                "max": 25,
+                "utilization": 48
+              },
+              {
+                "signal": "nps",
+                "pts": 11,
+                "max": 20,
+                "utilization": 55
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Óptica Demo Norte",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 2400,
+            "owner": "Marc",
+            "segment": "individual_doctor",
+            "reason": "Onboarding – insufficient data (tenure 15d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 300,
+            "top_drivers": []
+          },
+          {
+            "account": "Mental Health Sandbox Co",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 7400,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 80,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Fertility Fake Clinic",
+            "health_score": 49,
+            "risk_tier": "Amber",
+            "mrr": 18900,
+            "owner": "Elena",
+            "segment": "hospital_group",
+            "reason": "aggregate risk: score 49 below Amber threshold 70; several signals mid-range (tickets 3→7/20, login 16d→8/25, NPS 42→8/20, onboarding done→10/10)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 18,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "nps",
+                "pts": 8,
+                "max": 20,
+                "utilization": 40
+              }
+            ]
+          },
+          {
+            "account": "Cardio Toy Practice",
+            "health_score": 76,
+            "risk_tier": "Green",
+            "mrr": 4500,
+            "owner": "Sofía",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 70,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 14,
+                "max": 25,
+                "utilization": 56
+              },
+              {
+                "signal": "nps",
+                "pts": 13,
+                "max": 20,
+                "utilization": 65
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "ORL Placeholder Group",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 13200,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "Onboarding – insufficient data (tenure 10d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 400,
+            "top_drivers": []
+          },
+          {
+            "account": "Gine Demo Care",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 6700,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 100,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Trauma Fiction Unit",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 9100,
+            "owner": "Sofía",
+            "segment": "polyclinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 35,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 10,
+                "max": 20,
+                "utilization": 50
+              },
+              {
+                "signal": "adoption",
+                "pts": 13,
+                "max": 25,
+                "utilization": 52
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Allergy Mock Network",
+            "health_score": 71,
+            "risk_tier": "Green",
+            "mrr": 3900,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 50,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 15,
+                "max": 25,
+                "utilization": 60
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week_index": 1,
+        "week_label": "W2",
+        "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 1,
+          "amber_count": 3,
+          "green_count": 7,
+          "onboarding_count": 3,
+          "at_risk_mrr": 9800,
+          "expansion_mrr": 39400
+        },
+        "scored": [
+          {
+            "account": "Clinic Aurora Demo SL",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 8200,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 90,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "nps",
+                "pts": 17,
+                "max": 20,
+                "utilization": 85
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Centro Médico Lorem Ipsum",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 15400,
+            "owner": "Marc",
+            "segment": "polyclinic",
+            "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 200,
+            "top_drivers": []
+          },
+          {
+            "account": "Dental Fiction Lab",
+            "health_score": 80,
+            "risk_tier": "Green",
+            "mrr": 5600,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 40,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Derma Placeholder SA",
+            "health_score": 42,
+            "risk_tier": "Red",
+            "mrr": 9800,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "low online-booking adoption; weak review/reputation signal",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 25,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "adoption",
+                "pts": 9,
+                "max": 25,
+                "utilization": 36
+              }
+            ]
+          },
+          {
+            "account": "Physio Mock Studio",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 3100,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 120,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 18,
+                "max": 20,
+                "utilization": 90
+              },
+              {
+                "signal": "adoption",
+                "pts": 23,
+                "max": 25,
+                "utilization": 92
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Pediatría Sample Hub",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 11200,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 55,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 12,
+                "max": 25,
+                "utilization": 48
+              },
+              {
+                "signal": "nps",
+                "pts": 11,
+                "max": 20,
+                "utilization": 55
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Óptica Demo Norte",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 2400,
+            "owner": "Marc",
+            "segment": "individual_doctor",
+            "reason": "Onboarding – insufficient data (tenure 15d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 300,
+            "top_drivers": []
+          },
+          {
+            "account": "Mental Health Sandbox Co",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 7400,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 80,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Fertility Fake Clinic",
+            "health_score": 48,
+            "risk_tier": "Amber",
+            "mrr": 18900,
+            "owner": "Elena",
+            "segment": "hospital_group",
+            "reason": "aggregate risk: score 48 below Amber threshold 70; several signals mid-range (tickets 3→7/20, login 16d→8/25, NPS 42→8/20, onboarding done→10/10)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 18,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "nps",
+                "pts": 8,
+                "max": 20,
+                "utilization": 40
+              }
+            ]
+          },
+          {
+            "account": "Cardio Toy Practice",
+            "health_score": 76,
+            "risk_tier": "Green",
+            "mrr": 4500,
+            "owner": "Sofía",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 70,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 14,
+                "max": 25,
+                "utilization": 56
+              },
+              {
+                "signal": "nps",
+                "pts": 13,
+                "max": 20,
+                "utilization": 65
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "ORL Placeholder Group",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 13200,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "Onboarding – insufficient data (tenure 10d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 400,
+            "top_drivers": []
+          },
+          {
+            "account": "Gine Demo Care",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 6700,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 100,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Trauma Fiction Unit",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 9100,
+            "owner": "Sofía",
+            "segment": "polyclinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 35,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 10,
+                "max": 20,
+                "utilization": 50
+              },
+              {
+                "signal": "adoption",
+                "pts": 13,
+                "max": 25,
+                "utilization": 52
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Allergy Mock Network",
+            "health_score": 71,
+            "risk_tier": "Green",
+            "mrr": 3900,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 50,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 15,
+                "max": 25,
+                "utilization": 60
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week_index": 2,
+        "week_label": "W3",
+        "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 1,
+          "amber_count": 3,
+          "green_count": 7,
+          "onboarding_count": 3,
+          "at_risk_mrr": 9800,
+          "expansion_mrr": 39400
+        },
+        "scored": [
+          {
+            "account": "Clinic Aurora Demo SL",
+            "health_score": 90,
+            "risk_tier": "Green",
+            "mrr": 8200,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 90,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 17,
+                "max": 20,
+                "utilization": 85
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Centro Médico Lorem Ipsum",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 15400,
+            "owner": "Marc",
+            "segment": "polyclinic",
+            "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 200,
+            "top_drivers": []
+          },
+          {
+            "account": "Dental Fiction Lab",
+            "health_score": 80,
+            "risk_tier": "Green",
+            "mrr": 5600,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 40,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Derma Placeholder SA",
+            "health_score": 42,
+            "risk_tier": "Red",
+            "mrr": 9800,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "low online-booking adoption; weak review/reputation signal",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 25,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "adoption",
+                "pts": 9,
+                "max": 25,
+                "utilization": 36
+              }
+            ]
+          },
+          {
+            "account": "Physio Mock Studio",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 3100,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 120,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 18,
+                "max": 20,
+                "utilization": 90
+              },
+              {
+                "signal": "adoption",
+                "pts": 23,
+                "max": 25,
+                "utilization": 92
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Pediatría Sample Hub",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 11200,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 55,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 12,
+                "max": 25,
+                "utilization": 48
+              },
+              {
+                "signal": "nps",
+                "pts": 11,
+                "max": 20,
+                "utilization": 55
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Óptica Demo Norte",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 2400,
+            "owner": "Marc",
+            "segment": "individual_doctor",
+            "reason": "Onboarding – insufficient data (tenure 15d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 300,
+            "top_drivers": []
+          },
+          {
+            "account": "Mental Health Sandbox Co",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 7400,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 80,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Fertility Fake Clinic",
+            "health_score": 47,
+            "risk_tier": "Amber",
+            "mrr": 18900,
+            "owner": "Elena",
+            "segment": "hospital_group",
+            "reason": "aggregate risk: score 47 below Amber threshold 70; several signals mid-range (tickets 3→7/20, login 16d→8/25, NPS 42→8/20, onboarding done→10/10)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 18,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "nps",
+                "pts": 8,
+                "max": 20,
+                "utilization": 40
+              }
+            ]
+          },
+          {
+            "account": "Cardio Toy Practice",
+            "health_score": 76,
+            "risk_tier": "Green",
+            "mrr": 4500,
+            "owner": "Sofía",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 70,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 14,
+                "max": 25,
+                "utilization": 56
+              },
+              {
+                "signal": "nps",
+                "pts": 13,
+                "max": 20,
+                "utilization": 65
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "ORL Placeholder Group",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 13200,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "Onboarding – insufficient data (tenure 10d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 400,
+            "top_drivers": []
+          },
+          {
+            "account": "Gine Demo Care",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 6700,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 100,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Trauma Fiction Unit",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 9100,
+            "owner": "Sofía",
+            "segment": "polyclinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 35,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 10,
+                "max": 20,
+                "utilization": 50
+              },
+              {
+                "signal": "adoption",
+                "pts": 13,
+                "max": 25,
+                "utilization": 52
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Allergy Mock Network",
+            "health_score": 71,
+            "risk_tier": "Green",
+            "mrr": 3900,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 50,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 15,
+                "max": 25,
+                "utilization": 60
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week_index": 3,
+        "week_label": "W4",
+        "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 1,
+          "amber_count": 3,
+          "green_count": 7,
+          "onboarding_count": 3,
+          "at_risk_mrr": 9800,
+          "expansion_mrr": 39400
+        },
+        "scored": [
+          {
+            "account": "Clinic Aurora Demo SL",
+            "health_score": 90,
+            "risk_tier": "Green",
+            "mrr": 8200,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 90,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 17,
+                "max": 20,
+                "utilization": 85
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Centro Médico Lorem Ipsum",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 15400,
+            "owner": "Marc",
+            "segment": "polyclinic",
+            "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 200,
+            "top_drivers": []
+          },
+          {
+            "account": "Dental Fiction Lab",
+            "health_score": 80,
+            "risk_tier": "Green",
+            "mrr": 5600,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 40,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Derma Placeholder SA",
+            "health_score": 42,
+            "risk_tier": "Red",
+            "mrr": 9800,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "low online-booking adoption; weak review/reputation signal",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 25,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "adoption",
+                "pts": 9,
+                "max": 25,
+                "utilization": 36
+              }
+            ]
+          },
+          {
+            "account": "Physio Mock Studio",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 3100,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 120,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 18,
+                "max": 20,
+                "utilization": 90
+              },
+              {
+                "signal": "adoption",
+                "pts": 23,
+                "max": 25,
+                "utilization": 92
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Pediatría Sample Hub",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 11200,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 55,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 12,
+                "max": 25,
+                "utilization": 48
+              },
+              {
+                "signal": "nps",
+                "pts": 11,
+                "max": 20,
+                "utilization": 55
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Óptica Demo Norte",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 2400,
+            "owner": "Marc",
+            "segment": "individual_doctor",
+            "reason": "Onboarding – insufficient data (tenure 15d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 300,
+            "top_drivers": []
+          },
+          {
+            "account": "Mental Health Sandbox Co",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 7400,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 80,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Fertility Fake Clinic",
+            "health_score": 46,
+            "risk_tier": "Amber",
+            "mrr": 18900,
+            "owner": "Elena",
+            "segment": "hospital_group",
+            "reason": "aggregate risk: score 46 below Amber threshold 70; several signals mid-range (tickets 3→7/20, login 17d→8/25, NPS 42→8/20, onboarding done→10/10)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 18,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "nps",
+                "pts": 8,
+                "max": 20,
+                "utilization": 40
+              }
+            ]
+          },
+          {
+            "account": "Cardio Toy Practice",
+            "health_score": 76,
+            "risk_tier": "Green",
+            "mrr": 4500,
+            "owner": "Sofía",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 70,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 14,
+                "max": 25,
+                "utilization": 56
+              },
+              {
+                "signal": "nps",
+                "pts": 13,
+                "max": 20,
+                "utilization": 65
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "ORL Placeholder Group",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 13200,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "Onboarding – insufficient data (tenure 10d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 400,
+            "top_drivers": []
+          },
+          {
+            "account": "Gine Demo Care",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 6700,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 100,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Trauma Fiction Unit",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 9100,
+            "owner": "Sofía",
+            "segment": "polyclinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 35,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 10,
+                "max": 20,
+                "utilization": 50
+              },
+              {
+                "signal": "adoption",
+                "pts": 13,
+                "max": 25,
+                "utilization": 52
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Allergy Mock Network",
+            "health_score": 71,
+            "risk_tier": "Green",
+            "mrr": 3900,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 50,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 15,
+                "max": 25,
+                "utilization": 60
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week_index": 4,
+        "week_label": "W5",
+        "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 1,
+          "amber_count": 3,
+          "green_count": 7,
+          "onboarding_count": 3,
+          "at_risk_mrr": 9800,
+          "expansion_mrr": 39400
+        },
+        "scored": [
+          {
+            "account": "Clinic Aurora Demo SL",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 8200,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 90,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 19,
+                "max": 25,
+                "utilization": 76
+              },
+              {
+                "signal": "nps",
+                "pts": 17,
+                "max": 20,
+                "utilization": 85
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Centro Médico Lorem Ipsum",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 15400,
+            "owner": "Marc",
+            "segment": "polyclinic",
+            "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 200,
+            "top_drivers": []
+          },
+          {
+            "account": "Dental Fiction Lab",
+            "health_score": 80,
+            "risk_tier": "Green",
+            "mrr": 5600,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 40,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Derma Placeholder SA",
+            "health_score": 42,
+            "risk_tier": "Red",
+            "mrr": 9800,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "low online-booking adoption; weak review/reputation signal",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 25,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "adoption",
+                "pts": 9,
+                "max": 25,
+                "utilization": 36
+              }
+            ]
+          },
+          {
+            "account": "Physio Mock Studio",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 3100,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 120,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 18,
+                "max": 20,
+                "utilization": 90
+              },
+              {
+                "signal": "adoption",
+                "pts": 23,
+                "max": 25,
+                "utilization": 92
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Pediatría Sample Hub",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 11200,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 55,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 12,
+                "max": 25,
+                "utilization": 48
+              },
+              {
+                "signal": "nps",
+                "pts": 11,
+                "max": 20,
+                "utilization": 55
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Óptica Demo Norte",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 2400,
+            "owner": "Marc",
+            "segment": "individual_doctor",
+            "reason": "Onboarding – insufficient data (tenure 15d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 300,
+            "top_drivers": []
+          },
+          {
+            "account": "Mental Health Sandbox Co",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 7400,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 80,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Fertility Fake Clinic",
+            "health_score": 46,
+            "risk_tier": "Amber",
+            "mrr": 18900,
+            "owner": "Elena",
+            "segment": "hospital_group",
+            "reason": "aggregate risk: score 46 below Amber threshold 70; several signals mid-range (tickets 4→7/20, login 18d→8/25, NPS 42→8/20, onboarding done→10/10)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 18,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "nps",
+                "pts": 8,
+                "max": 20,
+                "utilization": 40
+              }
+            ]
+          },
+          {
+            "account": "Cardio Toy Practice",
+            "health_score": 76,
+            "risk_tier": "Green",
+            "mrr": 4500,
+            "owner": "Sofía",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 70,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 14,
+                "max": 25,
+                "utilization": 56
+              },
+              {
+                "signal": "nps",
+                "pts": 13,
+                "max": 20,
+                "utilization": 65
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "ORL Placeholder Group",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 13200,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "Onboarding – insufficient data (tenure 10d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 400,
+            "top_drivers": []
+          },
+          {
+            "account": "Gine Demo Care",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 6700,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 100,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Trauma Fiction Unit",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 9100,
+            "owner": "Sofía",
+            "segment": "polyclinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 35,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 10,
+                "max": 20,
+                "utilization": 50
+              },
+              {
+                "signal": "adoption",
+                "pts": 13,
+                "max": 25,
+                "utilization": 52
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Allergy Mock Network",
+            "health_score": 71,
+            "risk_tier": "Green",
+            "mrr": 3900,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 50,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 15,
+                "max": 25,
+                "utilization": 60
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week_index": 5,
+        "week_label": "W6",
+        "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 1,
+          "amber_count": 3,
+          "green_count": 7,
+          "onboarding_count": 3,
+          "at_risk_mrr": 9800,
+          "expansion_mrr": 39400
+        },
+        "scored": [
+          {
+            "account": "Clinic Aurora Demo SL",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 8200,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 90,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 19,
+                "max": 25,
+                "utilization": 76
+              },
+              {
+                "signal": "nps",
+                "pts": 17,
+                "max": 20,
+                "utilization": 85
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Centro Médico Lorem Ipsum",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 15400,
+            "owner": "Marc",
+            "segment": "polyclinic",
+            "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 200,
+            "top_drivers": []
+          },
+          {
+            "account": "Dental Fiction Lab",
+            "health_score": 80,
+            "risk_tier": "Green",
+            "mrr": 5600,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 40,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Derma Placeholder SA",
+            "health_score": 42,
+            "risk_tier": "Red",
+            "mrr": 9800,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "low online-booking adoption; weak review/reputation signal",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 25,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "adoption",
+                "pts": 9,
+                "max": 25,
+                "utilization": 36
+              }
+            ]
+          },
+          {
+            "account": "Physio Mock Studio",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 3100,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 120,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 18,
+                "max": 20,
+                "utilization": 90
+              },
+              {
+                "signal": "adoption",
+                "pts": 23,
+                "max": 25,
+                "utilization": 92
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Pediatría Sample Hub",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 11200,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 55,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 12,
+                "max": 25,
+                "utilization": 48
+              },
+              {
+                "signal": "nps",
+                "pts": 11,
+                "max": 20,
+                "utilization": 55
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Óptica Demo Norte",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 2400,
+            "owner": "Marc",
+            "segment": "individual_doctor",
+            "reason": "Onboarding – insufficient data (tenure 15d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 300,
+            "top_drivers": []
+          },
+          {
+            "account": "Mental Health Sandbox Co",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 7400,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 80,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Fertility Fake Clinic",
+            "health_score": 45,
+            "risk_tier": "Amber",
+            "mrr": 18900,
+            "owner": "Elena",
+            "segment": "hospital_group",
+            "reason": "aggregate risk: score 45 below Amber threshold 70; several signals mid-range (tickets 4→7/20, login 19d→8/25, NPS 42→8/20, onboarding done→10/10)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 18,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "nps",
+                "pts": 8,
+                "max": 20,
+                "utilization": 40
+              }
+            ]
+          },
+          {
+            "account": "Cardio Toy Practice",
+            "health_score": 76,
+            "risk_tier": "Green",
+            "mrr": 4500,
+            "owner": "Sofía",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 70,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 14,
+                "max": 25,
+                "utilization": 56
+              },
+              {
+                "signal": "nps",
+                "pts": 13,
+                "max": 20,
+                "utilization": 65
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "ORL Placeholder Group",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 13200,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "Onboarding – insufficient data (tenure 10d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 400,
+            "top_drivers": []
+          },
+          {
+            "account": "Gine Demo Care",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 6700,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 100,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Trauma Fiction Unit",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 9100,
+            "owner": "Sofía",
+            "segment": "polyclinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 35,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 10,
+                "max": 20,
+                "utilization": 50
+              },
+              {
+                "signal": "adoption",
+                "pts": 13,
+                "max": 25,
+                "utilization": 52
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Allergy Mock Network",
+            "health_score": 71,
+            "risk_tier": "Green",
+            "mrr": 3900,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 50,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 15,
+                "max": 25,
+                "utilization": 60
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week_index": 6,
+        "week_label": "W7",
+        "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 2,
+          "amber_count": 2,
+          "green_count": 7,
+          "onboarding_count": 3,
+          "at_risk_mrr": 28700,
+          "expansion_mrr": 39400
+        },
+        "scored": [
+          {
+            "account": "Clinic Aurora Demo SL",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 8200,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 90,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 17,
+                "max": 20,
+                "utilization": 85
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Centro Médico Lorem Ipsum",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 15400,
+            "owner": "Marc",
+            "segment": "polyclinic",
+            "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 200,
+            "top_drivers": []
+          },
+          {
+            "account": "Dental Fiction Lab",
+            "health_score": 80,
+            "risk_tier": "Green",
+            "mrr": 5600,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 40,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Derma Placeholder SA",
+            "health_score": 42,
+            "risk_tier": "Red",
+            "mrr": 9800,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "low online-booking adoption; weak review/reputation signal",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 25,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "adoption",
+                "pts": 9,
+                "max": 25,
+                "utilization": 36
+              }
+            ]
+          },
+          {
+            "account": "Physio Mock Studio",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 3100,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 120,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 18,
+                "max": 20,
+                "utilization": 90
+              },
+              {
+                "signal": "adoption",
+                "pts": 23,
+                "max": 25,
+                "utilization": 92
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Pediatría Sample Hub",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 11200,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 55,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 12,
+                "max": 25,
+                "utilization": 48
+              },
+              {
+                "signal": "nps",
+                "pts": 11,
+                "max": 20,
+                "utilization": 55
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Óptica Demo Norte",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 2400,
+            "owner": "Marc",
+            "segment": "individual_doctor",
+            "reason": "Onboarding – insufficient data (tenure 15d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 300,
+            "top_drivers": []
+          },
+          {
+            "account": "Mental Health Sandbox Co",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 7400,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 80,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Fertility Fake Clinic",
+            "health_score": 44,
+            "risk_tier": "Red",
+            "mrr": 18900,
+            "owner": "Elena",
+            "segment": "hospital_group",
+            "reason": "aggregate risk: score 44 below Red threshold 45; several signals mid-range (tickets 4→7/20, login 20d→8/25, NPS 42→8/20, onboarding done→10/10)",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 18,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "nps",
+                "pts": 8,
+                "max": 20,
+                "utilization": 40
+              }
+            ]
+          },
+          {
+            "account": "Cardio Toy Practice",
+            "health_score": 76,
+            "risk_tier": "Green",
+            "mrr": 4500,
+            "owner": "Sofía",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 70,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 14,
+                "max": 25,
+                "utilization": 56
+              },
+              {
+                "signal": "nps",
+                "pts": 13,
+                "max": 20,
+                "utilization": 65
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "ORL Placeholder Group",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 13200,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "Onboarding – insufficient data (tenure 10d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 400,
+            "top_drivers": []
+          },
+          {
+            "account": "Gine Demo Care",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 6700,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 100,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Trauma Fiction Unit",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 9100,
+            "owner": "Sofía",
+            "segment": "polyclinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 35,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 10,
+                "max": 20,
+                "utilization": 50
+              },
+              {
+                "signal": "adoption",
+                "pts": 13,
+                "max": 25,
+                "utilization": 52
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Allergy Mock Network",
+            "health_score": 71,
+            "risk_tier": "Green",
+            "mrr": 3900,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 50,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 15,
+                "max": 25,
+                "utilization": 60
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week_index": 7,
+        "week_label": "W8",
+        "data_label": "FICTITIOUS SAMPLE DATA — invented clinic/doctor accounts for portfolio demos. Not real customers. Not production data.",
+        "summary": {
+          "total_accounts": 14,
+          "red_count": 2,
+          "amber_count": 2,
+          "green_count": 7,
+          "onboarding_count": 3,
+          "at_risk_mrr": 28700,
+          "expansion_mrr": 39400
+        },
+        "scored": [
+          {
+            "account": "Clinic Aurora Demo SL",
+            "health_score": 92,
+            "risk_tier": "Green",
+            "mrr": 8200,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 90,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 17,
+                "max": 20,
+                "utilization": 85
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Centro Médico Lorem Ipsum",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 15400,
+            "owner": "Marc",
+            "segment": "polyclinic",
+            "reason": "Onboarding – insufficient data (tenure 12d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 200,
+            "top_drivers": []
+          },
+          {
+            "account": "Dental Fiction Lab",
+            "health_score": 80,
+            "risk_tier": "Green",
+            "mrr": 5600,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 40,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 17,
+                "max": 25,
+                "utilization": 68
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Derma Placeholder SA",
+            "health_score": 42,
+            "risk_tier": "Red",
+            "mrr": 9800,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "low online-booking adoption; weak review/reputation signal",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 25,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "adoption",
+                "pts": 9,
+                "max": 25,
+                "utilization": 36
+              }
+            ]
+          },
+          {
+            "account": "Physio Mock Studio",
+            "health_score": 96,
+            "risk_tier": "Green",
+            "mrr": 3100,
+            "owner": "Elena",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 120,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 18,
+                "max": 20,
+                "utilization": 90
+              },
+              {
+                "signal": "adoption",
+                "pts": 23,
+                "max": 25,
+                "utilization": 92
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Pediatría Sample Hub",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 11200,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (onboarding done→10/10, NPS 55→11/20, adoption 48%→12/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 55,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 12,
+                "max": 25,
+                "utilization": 48
+              },
+              {
+                "signal": "nps",
+                "pts": 11,
+                "max": 20,
+                "utilization": 55
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Óptica Demo Norte",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 2400,
+            "owner": "Marc",
+            "segment": "individual_doctor",
+            "reason": "Onboarding – insufficient data (tenure 15d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 300,
+            "top_drivers": []
+          },
+          {
+            "account": "Mental Health Sandbox Co",
+            "health_score": 89,
+            "risk_tier": "Green",
+            "mrr": 7400,
+            "owner": "Sofía",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 80,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 18,
+                "max": 25,
+                "utilization": 72
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Fertility Fake Clinic",
+            "health_score": 43,
+            "risk_tier": "Red",
+            "mrr": 18900,
+            "owner": "Elena",
+            "segment": "hospital_group",
+            "reason": "aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 4→7/20, login 21d→8/25, NPS 42→8/20, adoption 41%→10/25)",
+            "recommended_action": "clinic QBR: reactivate online booking + reminders; reduce no-shows",
+            "days_to_renewal": 18,
+            "top_drivers": [
+              {
+                "signal": "login",
+                "pts": 8,
+                "max": 25,
+                "utilization": 32
+              },
+              {
+                "signal": "tickets",
+                "pts": 7,
+                "max": 20,
+                "utilization": 35
+              },
+              {
+                "signal": "adoption",
+                "pts": 10,
+                "max": 25,
+                "utilization": 40
+              }
+            ]
+          },
+          {
+            "account": "Cardio Toy Practice",
+            "health_score": 76,
+            "risk_tier": "Green",
+            "mrr": 4500,
+            "owner": "Sofía",
+            "segment": "individual_doctor",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 70,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 14,
+                "max": 25,
+                "utilization": 56
+              },
+              {
+                "signal": "nps",
+                "pts": 13,
+                "max": 20,
+                "utilization": 65
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "ORL Placeholder Group",
+            "health_score": null,
+            "risk_tier": "Onboarding",
+            "mrr": 13200,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "Onboarding – insufficient data (tenure 10d < 21d); score withheld",
+            "recommended_action": "activation: finish profile + calendar; enable online booking; CSM kickoff",
+            "days_to_renewal": 400,
+            "top_drivers": []
+          },
+          {
+            "account": "Gine Demo Care",
+            "health_score": 91,
+            "risk_tier": "Green",
+            "mrr": 6700,
+            "owner": "Elena",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 100,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 20,
+                "max": 25,
+                "utilization": 80
+              },
+              {
+                "signal": "nps",
+                "pts": 16,
+                "max": 20,
+                "utilization": 80
+              },
+              {
+                "signal": "login",
+                "pts": 25,
+                "max": 25,
+                "utilization": 100
+              }
+            ]
+          },
+          {
+            "account": "Trauma Fiction Unit",
+            "health_score": 65,
+            "risk_tier": "Amber",
+            "mrr": 9100,
+            "owner": "Sofía",
+            "segment": "polyclinic",
+            "reason": "aggregate risk: score 65 below Amber threshold 70; several signals mid-range (NPS 49→10/20, onboarding done→10/10, adoption 51%→13/25, tickets 2→14/20)",
+            "recommended_action": "nurture: enable reminders/waitlist + complete profile gaps",
+            "days_to_renewal": 35,
+            "top_drivers": [
+              {
+                "signal": "nps",
+                "pts": 10,
+                "max": 20,
+                "utilization": 50
+              },
+              {
+                "signal": "adoption",
+                "pts": 13,
+                "max": 25,
+                "utilization": 52
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          },
+          {
+            "account": "Allergy Mock Network",
+            "health_score": 71,
+            "risk_tier": "Green",
+            "mrr": 3900,
+            "owner": "Marc",
+            "segment": "clinic",
+            "reason": "healthy signals",
+            "recommended_action": "expansion: add specialists / multi-location / premium modules",
+            "days_to_renewal": 50,
+            "top_drivers": [
+              {
+                "signal": "adoption",
+                "pts": 15,
+                "max": 25,
+                "utilization": 60
+              },
+              {
+                "signal": "tickets",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              },
+              {
+                "signal": "nps",
+                "pts": 14,
+                "max": 20,
+                "utilization": 70
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "week_over_week_latest": {
+      "drop_threshold": 10,
+      "deteriorated": [],
+      "all_changes": [
+        {
+          "account": "Clinic Aurora Demo SL",
+          "prev_score": 92,
+          "curr_score": 92,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Green",
+          "curr_tier": "Green"
+        },
+        {
+          "account": "Dental Fiction Lab",
+          "prev_score": 80,
+          "curr_score": 80,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Green",
+          "curr_tier": "Green"
+        },
+        {
+          "account": "Derma Placeholder SA",
+          "prev_score": 42,
+          "curr_score": 42,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Red",
+          "curr_tier": "Red"
+        },
+        {
+          "account": "Physio Mock Studio",
+          "prev_score": 96,
+          "curr_score": 96,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Green",
+          "curr_tier": "Green"
+        },
+        {
+          "account": "Pediatría Sample Hub",
+          "prev_score": 65,
+          "curr_score": 65,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Amber",
+          "curr_tier": "Amber"
+        },
+        {
+          "account": "Mental Health Sandbox Co",
+          "prev_score": 89,
+          "curr_score": 89,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Green",
+          "curr_tier": "Green"
+        },
+        {
+          "account": "Fertility Fake Clinic",
+          "prev_score": 44,
+          "curr_score": 43,
+          "delta": -1,
+          "deteriorated": false,
+          "prev_tier": "Red",
+          "curr_tier": "Red"
+        },
+        {
+          "account": "Cardio Toy Practice",
+          "prev_score": 76,
+          "curr_score": 76,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Green",
+          "curr_tier": "Green"
+        },
+        {
+          "account": "Gine Demo Care",
+          "prev_score": 91,
+          "curr_score": 91,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Green",
+          "curr_tier": "Green"
+        },
+        {
+          "account": "Trauma Fiction Unit",
+          "prev_score": 65,
+          "curr_score": 65,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Amber",
+          "curr_tier": "Amber"
+        },
+        {
+          "account": "Allergy Mock Network",
+          "prev_score": 71,
+          "curr_score": 71,
+          "delta": 0,
+          "deteriorated": false,
+          "prev_tier": "Green",
+          "curr_tier": "Green"
+        }
+      ]
+    },
+    "interventions_simulated": [
+      {
+        "account": "Derma Placeholder SA",
+        "week": "W5",
+        "action": "nurture: enable reminders/waitlist + complete profile gaps",
+        "owner": "Marc",
+        "outcome": "SIMULATED: booking adoption +8pp by W7",
+        "label": "SIMULATED intervention outcome — not real"
+      },
+      {
+        "account": "Centro Médico Lorem Ipsum",
+        "week": "W6",
+        "action": "clinic QBR: reactivate online booking + reminders",
+        "owner": "Marc",
+        "outcome": "SIMULATED: still Red; sync issues unresolved",
+        "label": "SIMULATED intervention outcome — not real"
+      },
+      {
+        "account": "Pediatría Sample Hub",
+        "week": "W4",
+        "action": "nurture: enable reminders/waitlist + complete profile gaps",
+        "owner": "Sofía",
+        "outcome": "SIMULATED: moved Amber→ borderline; monitoring",
+        "label": "SIMULATED intervention outcome — not real"
+      }
+    ],
+    "note": "All weeks and interventions are FICTITIOUS / SIMULATED demo data."
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "version": "1.1.0",
+  "original_workflow_id": "<redacted-local-instance-id>",
+  "original_pre": {
+    "name": "Customer Health Score – Risk Alerts",
+    "active": false,
+    "updatedAt": "2026-11-09T12:47:53.791Z"
+  },
+  "risk_mitigation": "create NEW workflow only; never PATCH original",
+  "test_workflow_id": "<redacted-local-instance-id>",
+  "test_name": "Customer Health Intelligence — Rules-based Risk Detection (import test)",
+  "executionId": "4",
+  "comparison": {
+    "status": "success",
+    "summary": {
+      "total_accounts": 10,
+      "red_count": 4,
+      "amber_count": 1,
+      "green_count": 5,
+      "at_risk_mrr": 38600,
+      "red_accounts": [
+        "Nordic Pricing Co",
+        "MedTech Hub",
+        "EduLearn Cloud",
+        "TravelSync EMEA"
+      ],
+      "amber_accounts": [
+        "Hotel Ops Pro"
+      ],
+      "green_accounts": [
+        "Acme Retail EU",
+        "Iberia SaaS Labs",
+        "Commerce Pulse",
+        "FinServe Analytics",
+        "GreenSupply Chain"
+      ]
+    },
+    "travelsync": {
+      "health_score": 43,
+      "risk_tier": "Red",
+      "reason": "aggregate risk: score 43 below Red threshold 45; several signals mid-range (tickets 3→7/20, login 22d→8/25, NPS 40→8/20, adoption 40%→10/25)"
+    },
+    "match_counts": true,
+    "reason_ok": true
+  },
+  "delete_status": 200,
+  "test_gone": true,
+  "original_post": {
+    "name": "Customer Health Score – Risk Alerts",
+    "active": false,
+    "updatedAt": "2026-11-09T12:47:53.791Z"
+  },
+  "workflows_remaining": [
+    [
+      "<redacted-local-instance-id>",
+      "Customer Health Score – Risk Alerts",
+      false,
+      null
+    ]
+  ],
+  "outcome": "import_run_compare_delete_ok",
+  "summary": {
+    "created_test_workflow": true,
+    "ran_successfully": true,
+    "matched_counts_10_4_1_5_38600": true,
+    "travelsync_aggregate_reason": true,
+    "deleted_test_workflow": true,
+    "original_untouched": true
+  }
+}

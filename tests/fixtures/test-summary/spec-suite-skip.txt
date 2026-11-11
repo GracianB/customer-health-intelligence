@@ -1,0 +1,12 @@
+﹣ visual (skipped) (0.363892ms) # Playwright module not found — visual/file:// tests skipped
+▶ unit
+  ✔ adds (0.227709ms)
+✔ unit (0.522062ms)
+ℹ tests 1
+ℹ suites 2
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 53.552364

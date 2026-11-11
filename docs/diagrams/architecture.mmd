@@ -1,0 +1,26 @@
+flowchart LR
+  subgraph Triggers
+    ST[Schedule Trigger Weekly]
+    MT[Manual Trigger]
+  end
+  SD[Sample Accounts Demo Data]
+  SC[Compute Health Score]
+  SW{Split by Risk Tier}
+  RED[Build Red Risk Alert]
+  AMB[Build Amber Nurture Task]
+  GRN[Flag Green Expansion]
+  SLACK[Send to Slack configure NoOp]
+  MER[Merge All Tiers]
+  SUM[Weekly Health Summary]
+
+  ST --> SD
+  MT --> SD
+  SD --> SC --> SW
+  SW -->|Red score less than 45| RED
+  SW -->|Amber score less than 70| AMB
+  SW -->|Green else| GRN
+  RED --> SLACK
+  RED --> MER
+  AMB --> MER
+  GRN --> MER
+  MER --> SUM

@@ -1,0 +1,24 @@
+{
+  "name": "customer-health-intelligence",
+  "version": "1.2.2",
+  "private": true,
+  "description": "Customer Health Intelligence v1.2 \u2014 configurable rules-based CS/RevOps health scoring (SAMPLE DATA)",
+  "scripts": {
+    "test": "node -e \"const fs=require('fs');const{spawnSync}=require('child_process');const f=fs.readdirSync('tests').filter(x=>x.endsWith('.test.js')).map(x=>'tests/'+x);const r=spawnSync(process.execPath,['--test',...f],{stdio:'inherit'});process.exit(r.status)\"",
+    "diagram": "mmdc -i docs/diagrams/architecture.mmd -o docs/diagrams/architecture.svg -b transparent && mmdc -i docs/diagrams/architecture.mmd -o docs/diagrams/architecture.png -b white -s 2",
+    "build:n8n": "node scripts/build-n8n-from-engine.js",
+    "build:cc-data": "node scripts/export-command-center-data.js",
+    "test:summary": "node scripts/test-summary.js",
+    "check:links": "node scripts/check-links.js ."
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.17.1"
+  },
+  "allowScripts": {
+    "puppeteer@25.16.0": true
+  }
+}

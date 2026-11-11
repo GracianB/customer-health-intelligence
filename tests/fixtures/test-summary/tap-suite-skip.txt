@@ -1,0 +1,29 @@
+TAP version 13
+# Subtest: visual (skipped)
+ok 1 - visual (skipped) # SKIP Playwright module not found — visual/file:// tests skipped
+  ---
+  duration_ms: 0.505216
+  type: 'suite'
+  ...
+# Subtest: unit
+    # Subtest: adds
+    ok 1 - adds
+      ---
+      duration_ms: 0.351386
+      type: 'test'
+      ...
+    1..1
+ok 2 - unit
+  ---
+  duration_ms: 0.807414
+  type: 'suite'
+  ...
+1..2
+# tests 1
+# suites 2
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 65.439434
