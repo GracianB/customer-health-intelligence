@@ -26,3 +26,13 @@ Captured from the real rendered Command Center with `scripts/capture-docs-screen
 | Mobile overview (390 px) | ![Mobile overview](./mobile-overview-healthcare.jpg) |
 
 Regenerate: `CHROME_PATH=/path/to/chrome node scripts/capture-docs-screenshots.cjs`
+
+## n8n workflow
+
+Captured from the **importable** workflow (`workflows/customer-health-intelligence.json`) opened in n8n **inactive** (not executed). The Slack node is a **NoOp**, pending configuration. No execution output is shown.
+
+| Shot | File |
+| --- | --- |
+| Full canvas, fit to view (1440×900) | ![n8n workflow canvas](./n8n-workflow-canvas.png) |
+| Zoomed scoring and routing section | ![Scoring section](./n8n-workflow-scoring.png) |
+| Compute Health Score — Parameters / JavaScript | ![Compute Health Score code](./n8n-workflow-code-node.png) |

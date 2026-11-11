@@ -112,6 +112,20 @@ All screenshots are captured from the real rendered demo (`scripts/capture-docs-
 
 Full gallery: [`docs/screenshots/`](./docs/screenshots/README.md).
 
+## n8n workflow
+
+These screenshots were captured from the **importable** workflow in [`workflows/customer-health-intelligence.json`](./workflows/customer-health-intelligence.json), opened in n8n **inactive** (not executed). The Slack delivery node is a **NoOp**, pending configuration — nothing is sent.
+
+| Full canvas (fit to view) | Scoring section |
+| --- | --- |
+| <img src="./docs/screenshots/n8n-workflow-canvas.png" alt="Inactive n8n workflow canvas, fit to view" width="100%"> | <img src="./docs/screenshots/n8n-workflow-scoring.png" alt="Zoomed scoring, split-by-tier and routing nodes" width="100%"> |
+
+**Compute Health Score** node — Parameters / JavaScript (rules-based, not ML). The panel shows configuration only; there is no execution output:
+
+<img src="./docs/screenshots/n8n-workflow-code-node.png" alt="Compute Health Score node parameters and JavaScript, no execution data" width="70%">
+
+Import guide: [`docs/import-guide.md`](./docs/import-guide.md). Optional local lab: `docker compose up` binds **127.0.0.1:5678** with pinned `n8nio/n8n:2.46.7`.
+
 ## Open the demo locally
 
 1. Download or clone this repository.

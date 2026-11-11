@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.3 — 2026-11-11 (Europe/Madrid) · documentation
+
+Documentation and screenshot gallery only. No engine, scoring or Command Center feature changes versus 1.2.2.
+
+### n8n workflow screenshots
+- Real screenshots of the importable n8n workflow (`workflows/customer-health-intelligence.json`), captured inactive, with the Slack node still a NoOp pending configuration: `docs/screenshots/n8n-workflow-*.png`.
+- README (EN), Spanish README and the screenshot gallery document the canvas, the scoring section and the Compute Health Score parameters/code panel (no execution output).
+
+
 ## 1.2.2 — 2026-11-11 (Europe/Madrid)
 
 Packaging and test-summary reliability only. No engine, scoring or Command Center feature changes versus 1.2.1.

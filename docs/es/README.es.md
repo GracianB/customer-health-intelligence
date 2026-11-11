@@ -31,6 +31,19 @@ Convierte señales de producto y soporte en **Health Score · Nivel de riesgo ·
 
 Pesos configurables (login / adopción / tickets / NPS / onboarding), umbrales Rojo &lt;45 / Ámbar &lt;70, gracia de onboarding por antigüedad. Explicación in-app: vista **Score & glossary**. `at_risk_mrr` = solo MRR Rojo (simulado).
 
+
+## Workflow de n8n
+
+Capturas reales del workflow importable ([`../../workflows/customer-health-intelligence.json`](../../workflows/customer-health-intelligence.json)), abierto en n8n **inactivo** (sin ejecutar). El nodo de Slack es un **NoOp**, pendiente de configuración: no se envía nada.
+
+| Lienzo completo | Sección de scoring |
+| --- | --- |
+| <img src="../screenshots/n8n-workflow-canvas.png" alt="Lienzo del workflow de n8n, inactivo, ajustado a la vista" width="100%"> | <img src="../screenshots/n8n-workflow-scoring.png" alt="Nodos de scoring y enrutado por nivel de riesgo" width="100%"> |
+
+Nodo **Compute Health Score** — Parameters / JavaScript (basado en reglas, no es ML). Solo se muestra la configuración, sin datos de ejecución:
+
+<img src="../screenshots/n8n-workflow-code-node.png" alt="Parámetros y JavaScript del nodo Compute Health Score, sin datos de ejecución" width="70%">
+
 ## Limitaciones
 
 No calibrado · datos ficticios · Slack NoOp · semanas/intervenciones SIMULADAS · sin credenciales CRM en el paquete.
